@@ -1,14 +1,14 @@
-import React from 'react'
 import Authentication from '#features/Authentication/ui/Authentication/Authentication'
-import './HomePage.css'
+import React from 'react'
+import './LoginPage.css'
 
-const HomePage: React.FC = () => {
+const LoginPage: React.FC = () => {
   return (
     <div className="home-container">
-      <h1>홈페이지</h1>
+      <h1>로그인 페이지</h1>
       <Authentication />
     </div>
   )
 }
 
-export default HomePage
+export default LoginPage
