@@ -1,0 +1,186 @@
+.frame--- {
+  width: 480px;
+  height: 385px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0);
+}
+.frame--- .frame-14 {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+.frame--- .frame-14 .instance--- {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 70px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 0px;
+  padding: 0px 20px 0px 20px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+}
+.frame--- .frame-14 .instance--- .text- {
+  flex-shrink: 0;
+  width: 56px;
+  height: 28px;
+  white-space: nowrap;
+  color: #6b7280;
+  font-family: 'Roboto';
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+}
+.frame--- .frame-14 .instance--- .path {
+  flex-shrink: 0;
+  width: 17.5px;
+  height: 20px;
+}
+.frame--- .frame-14 .instance----1 {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 70px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 0px;
+  padding: 0px 20px 0px 20px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+}
+.frame--- .frame-14 .instance----1 .text--1 {
+  flex-shrink: 0;
+  width: 74px;
+  height: 28px;
+  white-space: nowrap;
+  color: #6b7280;
+  font-family: 'Roboto';
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+}
+.frame--- .frame-14 .instance----1 .path-1 {
+  flex-shrink: 0;
+  width: 22.31px;
+  height: 17.5px;
+}
+.frame--- .frame-14 .instance---- {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 70px;
+  background: rgba(0, 0, 0, 0);
+}
+.frame--- .frame-14 .instance---- .div {
+  width: 480px;
+  height: 70px;
+  background: rgba(0, 0, 0, 0);
+}
+.frame--- .frame-14 .instance---- .div .password {
+  width: 480px;
+  height: 70px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+  padding: 20px 24px 20px 24px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+}
+.frame--- .frame-14 .instance---- .div .password .text--2 {
+  width: 123px;
+  height: 28px;
+  color: #6b7280;
+  font-family: 'Roboto';
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+}
+.frame--- .frame-14 .instance---- .div .span {
+  width: 22.5px;
+  height: 28px;
+}
+.frame--- .frame-14 .component--- {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 70px;
+  background: rgba(0, 0, 0, 0);
+}
+.frame--- .frame-14 .component--- .email {
+  width: 480px;
+  height: 70px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+  padding: 20px 24px 20px 24px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+}
+.frame--- .frame-14 .component--- .email .text--3 {
+  width: 56px;
+  height: 28px;
+  white-space: nowrap;
+  color: #6b7280;
+  font-family: 'Roboto';
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+}
+.frame--- .frame-14 .component--- .span-1 {
+  width: 20px;
+  height: 28px;
+}
+.frame--- .instance-- {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 70px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px 20px 0px;
+  background: #9debe3;
+}
+.frame--- .instance-- .text--4 {
+  flex-shrink: 0;
+  width: 56px;
+  height: 28px;
+  white-space: nowrap;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  text-align: center;
+}
