@@ -7,7 +7,11 @@ const WithIntroductionSectionLayout: React.FC = () => {
   return (
     <div className={styles['frame--']}>
       <IntroductionSection />
-      <Outlet />
+      <div className={styles['instance----']}>
+        <div className={styles['frame-']}>
+          <Outlet />
+        </div>
+      </div>
     </div>
   )
 }

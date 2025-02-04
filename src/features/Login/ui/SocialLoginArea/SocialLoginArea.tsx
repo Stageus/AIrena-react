@@ -1,4 +1,9 @@
+import {
+  goGoogleLoginPage,
+  goKakaoLoginPage,
+} from '#features/Login/model/oAuthService'
 import styles from './SocialLoginArea.module.css'
+
 const Root = ({}) => {
   return (
     <div className={styles['frame---']}>
@@ -8,13 +13,13 @@ const Root = ({}) => {
           <div className={styles['text--']}>간편 로그인</div>
         </div>
       </div>
-      <div className={styles['frame----1']}>
+      <div className={styles['frame----1']} onClick={goKakaoLoginPage}>
         <div className={styles['div-2']}>
           <div className={styles['rectangle--']}></div>
           <div className={styles['text---1']}>카카오로 로그인</div>
         </div>
       </div>
-      <div className={styles['frame----2']}>
+      <div className={styles['frame----2']} onClick={goGoogleLoginPage}>
         <div className={styles['div-3']}>
           <div className={styles['rectangle---1']}></div>
           <div className={styles['text---2']}>구글로 로그인</div>
