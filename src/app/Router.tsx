@@ -1,4 +1,5 @@
 import FindIdPage from '#pages/FindIdPage/FindIdPage'
+import FindPasswordPage from '#pages/FindPasswordPage/FindPasswordPage'
 import LoginPage from '#pages/LoginPage/LoginPage'
 import LoginRedirectPage from '#pages/LoginRedirectPage/LoginRedirectPage'
 import SignupPage from '#pages/SignupPage/SignupPage'
@@ -12,6 +13,7 @@ const AppRouter = () => (
         <Route path="/" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/find/id" element={<FindIdPage />} />
+        <Route path="/find/password" element={<FindPasswordPage />} />
       </Route>
       <Route path="/login/redirect" element={<LoginRedirectPage />} />
     </Routes>

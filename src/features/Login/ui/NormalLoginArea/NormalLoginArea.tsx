@@ -7,6 +7,10 @@ import styles from './NormalLoginArea.module.css'
 const Root = ({}) => {
   const navigate = useNavigate()
 
+  const goFindPassword = () => {
+    navigate('/find/password')
+  }
+
   const goFindId = () => {
     navigate('/find/id')
   }
@@ -24,7 +28,9 @@ const Root = ({}) => {
           아이디 찾기
         </div>
         <div className={styles['text--2']}>|</div>
-        <div className={styles['text---1']}>비밀번호 찾기</div>
+        <div onClick={goFindPassword} className={styles['text---1']}>
+          비밀번호 찾기
+        </div>
         <div className={styles['text--3']}>|</div>
         <div onClick={goSignup} className={styles['text--4']}>
           회원가입
