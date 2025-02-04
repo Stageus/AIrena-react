@@ -1,23 +1,22 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { createCustomAsyncThunk } from '#shared/utils/createCustomAsyncThunk'
-import axiosInstance from '#shared/api/axiosInstance'
 import { User } from '#entities/User'
+import axiosInstance from '#shared/api/axiosInstance'
+import { createCustomAsyncThunk } from '#shared/utils/createCustomAsyncThunk'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { initialState, LoginCredentials, RegisterCredentials } from './types'
-
 export const login = createCustomAsyncThunk<User, LoginCredentials>(
   'auth/login',
   (loginCredentials: LoginCredentials) =>
-    axiosInstance.post<User>('/api/login', loginCredentials),
+    axiosInstance.post<User>('/login', loginCredentials),
 )
 
 export const register = createCustomAsyncThunk<User, RegisterCredentials>(
   'auth/register',
   (registerCredentials: RegisterCredentials) =>
-    axiosInstance.post<User>('/api/register', registerCredentials),
+    axiosInstance.post<User>('/register', registerCredentials),
 )
 
 export const logout = createCustomAsyncThunk<void, void>('auth/logout', () =>
-  axiosInstance.post('/api/logout'),
+  axiosInstance.post('/logout'),
 )
 
 const authSlice = createSlice({
@@ -48,7 +47,6 @@ const authSlice = createSlice({
         state.error = action.payload || '로그인 실패'
       },
     )
-
     // 회원가입
     builder.addCase(register.pending, (state) => {
       state.loading = true
@@ -68,7 +66,6 @@ const authSlice = createSlice({
         state.error = action.payload || '회원가입 실패'
       },
     )
-
     // 로그아웃
     builder.addCase(logout.pending, (state) => {
       state.loading = true
@@ -87,7 +84,5 @@ const authSlice = createSlice({
     )
   },
 })
-
 export const { setUser, clearError } = authSlice.actions
-
 export default authSlice.reducer

@@ -1,15 +1,18 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import HomePage from '#pages/HomePage/HomePage'
-import NoticePage from '#pages/NoticePage/NoticePage'
-import MockTestPage from '#pages/MockTestPage/MockTestPage'
 import AdminPage from '#pages/AdminPage/AdminPage'
+import LoginPage from '#pages/LoginPage/LoginPage'
+import LoginRedirectPage from '#pages/LoginRedirectPage/LoginRedirectPage'
+import MockTestPage from '#pages/MockTestPage/MockTestPage'
+import WithIntroductionSectionLayout from '#shared/components/WithIntroductionSectionLayout/WithIntroductionSectionLayout'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
 const AppRouter = () => (
   <Router>
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/notice" element={<NoticePage />} />
-      <Route path="/mockTest" element={<MockTestPage />} />
+      <Route element={<WithIntroductionSectionLayout />}>
+        <Route path="/" element={<LoginPage />} />
+      </Route>
+      <Route path="/login/redirect" element={<LoginRedirectPage />} />
+      <Route path="/mocktest" element={<MockTestPage />} />
       <Route path="/admin" element={<AdminPage />} />
     </Routes>
   </Router>

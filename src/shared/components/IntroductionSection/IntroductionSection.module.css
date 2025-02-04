@@ -1,0 +1,49 @@
+.component-- {
+  width: 720px;
+  height: 1024px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.component-- .frame--- {
+  flex-shrink: 0;
+  width: 300px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.component-- .frame--- .image-5 {
+  flex-shrink: 0;
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+}
+.component-- .frame--- .airena {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 300px;
+  height: 61px;
+  color: #000000;
+  font-family: 'Alexandria';
+  font-size: 50px;
+  line-height: 61px;
+  font-weight: 400;
+  text-align: center;
+}
+.component-- .frame--- .ai----- {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 300px;
+  height: 64px;
+  color: #000000;
+  font-family: 'JetBrains Mono';
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+  text-align: center;
+}

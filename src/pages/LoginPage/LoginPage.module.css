@@ -1,0 +1,349 @@
+.frame-div {
+  width: 720px;
+  height: 1024px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  row-gap: 0px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+.frame-div .frame- {
+  flex-shrink: 0;
+  width: 576px;
+  height: 760px;
+  box-shadow:
+    0px 4px 6px -4px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%),
+    #ffffff;
+}
+.frame-div .frame- .frame-div-1 {
+  flex-shrink: 0;
+  width: 480px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.frame-div .frame- .frame-div-1 .frame--- {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 276px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 14px;
+  column-gap: 14px;
+  overflow: hidden;
+}
+.frame-div .frame- .frame-div-1 .frame--- .frame----1 {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 70px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 0px;
+  padding: 0px 20px 0px 20px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+}
+.frame-div .frame- .frame-div-1 .frame--- .frame----1 .text- {
+  flex-shrink: 0;
+  width: 56px;
+  height: 28px;
+  white-space: nowrap;
+  color: #6b7280;
+  font-family: 'Roboto';
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+}
+.frame-div .frame- .frame-div-1 .frame--- .frame----1 .path {
+  flex-shrink: 0;
+  width: 17.5px;
+  height: 20px;
+}
+.frame-div .frame- .frame-div-1 .frame--- .frame----2 {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 70px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 0px;
+  padding: 0px 20px 0px 20px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+}
+.frame-div .frame- .frame-div-1 .frame--- .frame----2 .text--1 {
+  flex-shrink: 0;
+  width: 74px;
+  height: 28px;
+  white-space: nowrap;
+  color: #6b7280;
+  font-family: 'Roboto';
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+}
+.frame-div .frame- .frame-div-1 .frame--- .frame----2 .path-1 {
+  flex-shrink: 0;
+  width: 22.31px;
+  height: 17.5px;
+}
+.frame-div .frame- .frame-div-1 .frame--- .div {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  row-gap: 0px;
+  background: rgba(0, 0, 0, 0);
+}
+.frame-div .frame- .frame-div-1 .frame--- .div .text-- {
+  flex-shrink: 0;
+  width: 78px;
+  height: 24px;
+  white-space: nowrap;
+  color: #000000;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.frame-div .frame- .frame-div-1 .frame--- .div .text--2 {
+  flex-shrink: 0;
+  width: 4px;
+  height: 24px;
+  white-space: nowrap;
+  color: #d1d5db;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.frame-div .frame- .frame-div-1 .frame--- .div .text---1 {
+  flex-shrink: 0;
+  width: 93px;
+  height: 24px;
+  white-space: nowrap;
+  color: #000000;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.frame-div .frame- .frame-div-1 .frame--- .div .text--3 {
+  flex-shrink: 0;
+  width: 4px;
+  height: 24px;
+  white-space: nowrap;
+  color: #d1d5db;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.frame-div .frame- .frame-div-1 .frame--- .div .text--4 {
+  flex-shrink: 0;
+  width: 59px;
+  height: 24px;
+  white-space: nowrap;
+  color: #000000;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.frame-div .frame- .frame-div-1 .frame--- .frame-- {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 70px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px 20px 0px;
+  background: #9debe3;
+}
+.frame-div .frame- .frame-div-1 .frame--- .frame-- .text--5 {
+  flex-shrink: 0;
+  width: 56px;
+  height: 28px;
+  white-space: nowrap;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  text-align: center;
+}
+.frame-div .frame- .frame-div-1 .frame----3 {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+.frame-div .frame- .frame-div-1 .frame----3 .div-1 {
+  flex-shrink: 0;
+  width: 480px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0);
+}
+.frame-div .frame- .frame-div-1 .frame----3 .div-1 .div-2 {
+  position: absolute;
+  top: 9.5px;
+  left: 0px;
+  width: 480px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0);
+  border-width: 1px 0px 0px 0px;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+.frame-div .frame- .frame-div-1 .frame----3 .div-1 .span {
+  position: absolute;
+  top: 0px;
+  left: 190.05px;
+  width: 100px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 16px 0px 16px;
+  background: #ffffff;
+}
+.frame-div .frame- .frame-div-1 .frame----3 .div-1 .span .text---2 {
+  flex-shrink: 0;
+  width: 68px;
+  height: 20px;
+  white-space: nowrap;
+  color: #6b7280;
+  font-family: 'Roboto';
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+}
+.frame-div .frame- .frame-div-1 .frame----3 .frame----4 {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 70px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%),
+    #fde047;
+  border: 1px solid #facc15;
+}
+.frame-div .frame- .frame-div-1 .frame----3 .frame----4 .div-3 {
+  flex-shrink: 0;
+  width: 158px;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 0px;
+}
+.frame-div .frame- .frame-div-1 .frame----3 .frame----4 .div-3 .rectangle-- {
+  flex-shrink: 0;
+  width: 27px;
+  height: 24px;
+  background: url(https://image-resource.creatie.ai/150880125742532/150880125742534/9c22e28f7e3241b2c497e1bcceb480a1.png),
+    rgba(0, 0, 0, 0);
+  object-fit: cover;
+  background-size: cover;
+}
+.frame-div .frame- .frame-div-1 .frame----3 .frame----4 .div-3 .text---3 {
+  flex-shrink: 0;
+  width: 121px;
+  height: 24px;
+  color: #374151;
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 500;
+  text-align: center;
+}
+.frame-div .frame- .frame-div-1 .frame----3 .frame----5 {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 70px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%),
+    #ffffff;
+  border: 1px solid #d1d5db;
+}
+.frame-div .frame- .frame-div-1 .frame----3 .frame----5 .div-4 {
+  flex-shrink: 0;
+  width: 139px;
+  height: 28px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 0px;
+}
+.frame-div .frame- .frame-div-1 .frame----3 .frame----5 .div-4 .rectangle---1 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background: url(https://image-resource.creatie.ai/150880125742532/150880125742534/fc22c355821382654195c2110dc845df.png),
+    rgba(0, 0, 0, 0);
+  object-fit: cover;
+  background-size: cover;
+}
+.frame-div .frame- .frame-div-1 .frame----3 .frame----5 .div-4 .text---4 {
+  flex-shrink: 0;
+  width: 104px;
+  height: 28px;
+  white-space: nowrap;
+  color: #374151;
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 500;
+  text-align: center;
+}

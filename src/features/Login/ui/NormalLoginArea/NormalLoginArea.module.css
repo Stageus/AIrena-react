@@ -1,0 +1,167 @@
+.frame--- {
+  width: 480px;
+  height: 276px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 14px;
+  column-gap: 14px;
+  overflow: hidden;
+}
+.frame--- .frame----1 {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 70px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 0px;
+  padding: 0px 20px 0px 20px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+}
+.frame--- .frame----1 .text- {
+  flex-shrink: 0;
+  width: 56px;
+  height: 28px;
+  white-space: nowrap;
+  color: #6b7280;
+  font-family: 'Roboto';
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+}
+.frame--- .frame----1 .path {
+  flex-shrink: 0;
+  width: 17.5px;
+  height: 20px;
+}
+.frame--- .frame----2 {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 70px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 0px;
+  padding: 0px 20px 0px 20px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+}
+.frame--- .frame----2 .text--1 {
+  flex-shrink: 0;
+  width: 74px;
+  height: 28px;
+  white-space: nowrap;
+  color: #6b7280;
+  font-family: 'Roboto';
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+}
+.frame--- .frame----2 .path-1 {
+  flex-shrink: 0;
+  width: 22.31px;
+  height: 17.5px;
+}
+.frame--- .div {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  row-gap: 0px;
+  background: rgba(0, 0, 0, 0);
+}
+.frame--- .div .text-- {
+  flex-shrink: 0;
+  width: 78px;
+  height: 24px;
+  white-space: nowrap;
+  color: #000000;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.frame--- .div .text--2 {
+  flex-shrink: 0;
+  width: 4px;
+  height: 24px;
+  white-space: nowrap;
+  color: #d1d5db;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.frame--- .div .text---1 {
+  flex-shrink: 0;
+  width: 93px;
+  height: 24px;
+  white-space: nowrap;
+  color: #000000;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.frame--- .div .text--3 {
+  flex-shrink: 0;
+  width: 4px;
+  height: 24px;
+  white-space: nowrap;
+  color: #d1d5db;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.frame--- .div .text--4 {
+  flex-shrink: 0;
+  width: 59px;
+  height: 24px;
+  white-space: nowrap;
+  color: #000000;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.frame--- .frame-- {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 70px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px 20px 0px;
+  background: #9debe3;
+}
+.frame--- .frame-- .text--5 {
+  flex-shrink: 0;
+  width: 56px;
+  height: 28px;
+  white-space: nowrap;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  text-align: center;
+}
