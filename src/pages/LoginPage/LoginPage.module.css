@@ -1,0 +1,10 @@
+.frame-div {
+  top: 0px;
+  left: 3px;
+  width: 480px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}

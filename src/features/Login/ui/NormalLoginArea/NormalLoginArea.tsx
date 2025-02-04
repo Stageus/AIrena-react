@@ -5,11 +5,11 @@ const Root = ({}) => {
     <div className={styles['frame---']}>
       <div className={styles['frame----1']}>
         <div className={styles['text-']}>아이디</div>
-        <svg id="42:6644" className={styles['path']}></svg>
+        <svg id="90:4551/90:4406" className={styles['path']}></svg>
       </div>
       <div className={styles['frame----2']}>
         <div className={styles['text--1']}>비밀번호</div>
-        <svg id="42:6656" className={styles['path-1']}></svg>
+        <svg id="90:4551/90:4367" className={styles['path-1']}></svg>
       </div>
       <div className={styles['div']}>
         <div className={styles['text--']}>아이디 찾기</div>
