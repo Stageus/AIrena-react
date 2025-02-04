@@ -11,8 +11,6 @@
 }
 .component-- .text- {
   flex-shrink: 0;
-  width: 56px;
-  height: 28px;
   white-space: nowrap;
   color: #ffffff;
   font-family: 'Roboto';

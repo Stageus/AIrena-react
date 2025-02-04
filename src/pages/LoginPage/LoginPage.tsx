@@ -5,9 +5,11 @@ import style from './LoginPage.module.css'
 
 const LoginPage: React.FC = () => {
   return (
-    <div className={style['frame-div']}>
-      <NormalLoginArea />
-      <SocialLoginArea />
+    <div className={style['frame-']}>
+      <div className={style['frame-div']}>
+        <NormalLoginArea />
+        <SocialLoginArea />
+      </div>
     </div>
   )
 }
