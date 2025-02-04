@@ -1,4 +1,4 @@
-import IntroductionSection from '#shared/components/IntroductionSection/IntroductionSection'
+import IntroductionSection from '#shared/components/WithIntroductionSectionLayout/IntroductionSection/IntroductionSection'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import styles from './WithIntroductionSectionLayout.module.css'
@@ -8,9 +8,7 @@ const WithIntroductionSectionLayout: React.FC = () => {
     <div className={styles['frame--']}>
       <IntroductionSection />
       <div className={styles['instance----']}>
-        <div className={styles['frame-']}>
-          <Outlet />
-        </div>
+        <Outlet />
       </div>
     </div>
   )
