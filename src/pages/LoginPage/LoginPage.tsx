@@ -1,14 +1,14 @@
-import Authentication from '#features/Authentication/ui/Authentication/Authentication'
+import LoginContainer from '#features/Login/ui/LoginContainer/LoginContainer'
+import IntroductionSection from '#shared/components/IntroductionSection/IntroductionSection'
 import React from 'react'
-import './LoginPage.css'
+import styles from './LoginPage.module.css'
 
 const LoginPage: React.FC = () => {
   return (
-    <div className="home-container">
-      <h1>로그인 페이지</h1>
-      <Authentication />
+    <div className={styles['frame--']}>
+      <IntroductionSection />
+      <LoginContainer />
     </div>
   )
 }
-
 export default LoginPage

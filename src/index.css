@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
   font-family: Arial, sans-serif;
   background-color: #f8f9fa;
 }
