@@ -1,4 +1,4 @@
-import SharedButton from '#shared/components/Button/SharedButton'
+import SharedButton from '#shared/components/Button/StandardButton/StandardButton'
 import EmailInput from '#shared/components/Input/EmailInput/EmailInput'
 import IdInput from '#shared/components/Input/IdInput/IdInput'
 import styles from './InfoInputArea.module.css'

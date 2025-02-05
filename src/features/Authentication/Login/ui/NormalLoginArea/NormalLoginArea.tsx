@@ -1,4 +1,4 @@
-import SharedButton from '#shared/components/Button/SharedButton'
+import SharedButton from '#shared/components/Button/StandardButton/StandardButton'
 import IdInput from '#shared/components/Input/IdInput/IdInput'
 import PasswordInput from '#shared/components/Input/PasswordInput/PasswordInput'
 import { useNavigate } from 'react-router-dom'

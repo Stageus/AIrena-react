@@ -1,4 +1,4 @@
-import SharedButton from '#shared/components/Button/SharedButton'
+import SharedButton from '#shared/components/Button/StandardButton/StandardButton'
 import NicknameInput from '#shared/components/Input/NicknameInput/\bNicknameInput'
 import styles from './InfoInputArea.module.css'
 

@@ -1,4 +1,4 @@
-import SharedButton from '#shared/components/Button/SharedButton'
+import SharedButton from '#shared/components/Button/StandardButton/StandardButton'
 import WegihtedeTextOutput from '#shared/components/Output/WeightedTextOutput/WeightedTextOutput'
 import styles from './GuideArea.module.css'
 
