@@ -1,4 +1,4 @@
-import InfoInputArea from '#features/FindPassword/ui/InfoInputArea/InfoInputArea'
+import InfoInputArea from '#features/Authentication/FindPassword/ui/InfoInputArea/InfoInputArea'
 import React from 'react'
 import style from './FindPasswordPage.module.css'
 

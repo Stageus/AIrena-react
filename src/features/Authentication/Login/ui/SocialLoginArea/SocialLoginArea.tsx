@@ -1,7 +1,7 @@
 import {
   goGoogleLoginPage,
   goKakaoLoginPage,
-} from '#features/Login/model/oAuthService'
+} from '#features/Authentication/Login/model/oAuthService'
 import styles from './SocialLoginArea.module.css'
 
 const Root = ({}) => {

@@ -1,4 +1,4 @@
-import findIdReducer from '#features/FindId/model/FindIdSlice'
+import findIdReducer from '#features/Authentication/FindId/model/FindIdSlice'
 import { configureStore } from '@reduxjs/toolkit'
 
 const store = configureStore({

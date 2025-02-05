@@ -1,4 +1,4 @@
-import InfoInputArea from '#features/ChangePassword/ui/InfoInputArea/InfoInputArea'
+import InfoInputArea from '#features/Authentication/ChangePassword/ui/InfoInputArea/InfoInputArea'
 import React from 'react'
 import styles from './ChangePasswordPage.module.css'
 

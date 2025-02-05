@@ -1,4 +1,4 @@
-import InfoInputArea from '#features/ChangeNickname/ui/InfoInputArea/InfoInputArea'
+import InfoInputArea from '#features/Authentication/ChangeNickname/ui/InfoInputArea/InfoInputArea'
 import React from 'react'
 import styles from './ChangeNicknamePage.module.css'
 

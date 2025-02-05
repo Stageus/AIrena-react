@@ -1,4 +1,4 @@
-import InfoInputArea from '#features/Signup/ui/InfoInputArea/InfoInputArea'
+import InfoInputArea from '#features/Authentication/Signup/ui/InfoInputArea/InfoInputArea'
 import React from 'react'
 import styles from './SignupPage.module.css'
 

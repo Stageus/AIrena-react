@@ -1,6 +1,6 @@
 import { RootState } from '#app/store'
-import FindIdResultArea from '#features/FindId/ui/FindIdResultArea/FindIdResultArea'
-import InfoInputArea from '#features/FindId/ui/InfoInputArea/InfoInputArea'
+import FindIdResultArea from '#features/Authentication/FindId/ui/FindIdResultArea/FindIdResultArea'
+import InfoInputArea from '#features/Authentication/FindId/ui/InfoInputArea/InfoInputArea'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import styles from './FindIdPage.module.css'

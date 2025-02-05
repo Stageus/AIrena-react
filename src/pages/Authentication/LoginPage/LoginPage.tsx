@@ -1,5 +1,5 @@
-import NormalLoginArea from '#features/Login/ui/NormalLoginArea/NormalLoginArea'
-import SocialLoginArea from '#features/Login/ui/SocialLoginArea/SocialLoginArea'
+import NormalLoginArea from '#features/Authentication/Login/ui/NormalLoginArea/NormalLoginArea'
+import SocialLoginArea from '#features/Authentication/Login/ui/SocialLoginArea/SocialLoginArea'
 import React from 'react'
 import styles from './LoginPage.module.css'
 
