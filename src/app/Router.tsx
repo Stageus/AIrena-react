@@ -1,5 +1,6 @@
 import ChangeNicknamePage from '#pages/ChangeNicknamePage/ChangeNicknamePage'
 import ChangePasswordPage from '#pages/ChangePasswordPage/ChangePasswordPage'
+import EmailVerifiactionGuidePage from '#pages/EmailVerifiactionGuidePage/EmailVerifiactionGuidePage'
 import FindIdPage from '#pages/FindIdPage/FindIdPage'
 import FindPasswordPage from '#pages/FindPasswordPage/FindPasswordPage'
 import LoginPage from '#pages/LoginPage/LoginPage'
@@ -21,6 +22,10 @@ const AppRouter = () => (
           <Route path="/change/password" element={<ChangePasswordPage />} />
           <Route path="/change/nickname" element={<ChangeNicknamePage />} />
         </Route>
+        <Route
+          path="/email-verification-guide"
+          element={<EmailVerifiactionGuidePage />}
+        />
         <Route path="/login/redirect" element={<LoginRedirectPage />} />
       </Route>
     </Routes>

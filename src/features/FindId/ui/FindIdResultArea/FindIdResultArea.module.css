@@ -1,0 +1,20 @@
+.info-output-area {
+  width: 480px;
+  height: 214px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.info-output-area .find-id-result {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 480px;
+  height: 24px;
+  color: #6b7280;
+  font-family: 'Roboto';
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+}

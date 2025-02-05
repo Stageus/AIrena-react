@@ -6,7 +6,6 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 export default defineConfig({
   plugins: [react(), svgr(), tsconfigPaths()],
   server: {
-    port: 3000,
     proxy: {
       '/api': {
         target: 'http://api.ai-rena.com:3001',
