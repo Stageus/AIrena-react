@@ -1,3 +1,5 @@
+import ChangeNicknamePage from '#pages/ChangeNicknamePage/ChangeNicknamePage'
+import ChangePasswordPage from '#pages/ChangePasswordPage/ChangePasswordPage'
 import FindIdPage from '#pages/FindIdPage/FindIdPage'
 import FindPasswordPage from '#pages/FindPasswordPage/FindPasswordPage'
 import LoginPage from '#pages/LoginPage/LoginPage'
@@ -16,6 +18,8 @@ const AppRouter = () => (
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/find/id" element={<FindIdPage />} />
           <Route path="/find/password" element={<FindPasswordPage />} />
+          <Route path="/change/password" element={<ChangePasswordPage />} />
+          <Route path="/change/nickname" element={<ChangeNicknamePage />} />
         </Route>
         <Route path="/login/redirect" element={<LoginRedirectPage />} />
       </Route>
