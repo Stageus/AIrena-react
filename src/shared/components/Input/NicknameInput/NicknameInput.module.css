@@ -1,0 +1,30 @@
+.nickname-input-box {
+  width: 480px;
+  height: 70px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 0px;
+  padding: 0px 20px 0px 20px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+}
+.nickname-input-box .nickname-text {
+  flex-shrink: 0;
+  width: 56px;
+  height: 28px;
+  white-space: nowrap;
+  color: #6b7280;
+  font-family: 'Roboto';
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+}
+.nickname-input-box .nickname-icon {
+  flex-shrink: 0;
+  width: 17.5px;
+  height: 20px;
+}
