@@ -2,8 +2,9 @@
   width: 1440px;
   height: 960px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  padding: 0px 0px 20px 0px;
+  column-gap: 25px;
+  row-gap: 0px;
 }

@@ -6,7 +6,8 @@ import FindPasswordPage from '#pages/Authentication/FindPasswordPage/FindPasswor
 import LoginPage from '#pages/Authentication/LoginPage/LoginPage'
 import LoginRedirectPage from '#pages/Authentication/LoginRedirectPage/LoginRedirectPage'
 import SignupPage from '#pages/Authentication/SignupPage/SignupPage'
-import MockTestListPage from '#pages/MockTest/MockTestListPage/MockTestListPage'
+import MocktestDetailPage from '#pages/Mocktest/MocktestDetailPage/MocktestDetailPage'
+import MocktestListPage from '#pages/Mocktest/MocktestListPage/MocktestListPage'
 import HorizontalRootPage from '#shared/components/RootPage/HorizontalRootPage/HorizontalRootPage'
 import VertialRootPage from '#shared/components/RootPage/VerticalRootPage/VerticalRootPage'
 import WithIntroductionSectionLayout from '#shared/components/WithIntroductionSectionLayout/WithIntroductionSectionLayout'
@@ -35,7 +36,8 @@ const AppRouter = () => (
       <Route element={<VertialRootPage />}>
         {/* 모의고사 페이지 */}
         <Route element={<WithMainHeaderLayout />}>
-          <Route path="/mocktest" element={<MockTestListPage />} />
+          <Route path="/mocktest" element={<MocktestListPage />} />
+          <Route path="/mocktest/:id" element={<MocktestDetailPage />} />
         </Route>
       </Route>
     </Routes>

@@ -1,5 +1,5 @@
-import MocktestArea from '#features/MockTest/MockTest/ui/MocktestArea/MocktestArea'
-import MocktestLegend from '#features/MockTest/MockTest/ui/MocktestLegend/MocktestLegend'
+import MocktestArea from '#features/Mocktest/ui/MocktestArea/MocktestArea'
+import MocktestLegend from '#features/Mocktest/ui/MocktestLegend/MocktestLegend'
 import ArticleSelectAndSortHeader from '#shared/components/Header/ArticleSelectAndSortHeader/ArticleSelectAndSortHeader'
 import styles from './MocktestListArea.module.css'
 

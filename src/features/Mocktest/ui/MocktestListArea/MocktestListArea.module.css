@@ -1,0 +1,12 @@
+.mocktest-list-area {
+  width: 1440px;
+  height: 802px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  row-gap: 14px;
+  column-gap: 14px;
+  padding: 10px 0px 0px 0px;
+  background: rgba(0, 0, 0, 0);
+}

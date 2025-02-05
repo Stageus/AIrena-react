@@ -1,0 +1,30 @@
+.delete-article-button {
+  width: 83.45px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 0px;
+  padding: 0px 16px 0px 16px;
+  background: #dc2626;
+}
+.delete-article-button .delete-icon {
+  flex-shrink: 0;
+  width: 14px;
+  height: 16px;
+}
+.delete-article-button .text {
+  flex-shrink: 0;
+  width: 30px;
+  height: 24px;
+  white-space: nowrap;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+}
