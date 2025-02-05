@@ -1,4 +1,4 @@
-import SharedButton from '#shared/components/Button/Button'
+import SharedButton from '#shared/components/Button/SharedButton'
 import IdInput from '#shared/components/Input/IdInput/IdInput'
 import PasswordInput from '#shared/components/Input/PasswordInput/PasswordInput'
 import { useNavigate } from 'react-router-dom'
@@ -20,19 +20,22 @@ const Root = ({}) => {
   }
 
   return (
-    <div className={styles['frame---']}>
+    <div className={styles['normal-login-area']}>
       <IdInput />
       <PasswordInput />
-      <div className={styles['div']}>
-        <div onClick={goFindId} className={styles['text--']}>
+      <div className={styles['auth-buttons']}>
+        <div onClick={goFindId} className={styles['find-id-button']}>
           아이디 찾기
         </div>
-        <div className={styles['text--2']}>|</div>
-        <div onClick={goFindPassword} className={styles['text---1']}>
+        <div className={styles['divisor']}>|</div>
+        <div
+          onClick={goFindPassword}
+          className={styles['find-password-button']}
+        >
           비밀번호 찾기
         </div>
-        <div className={styles['text--3']}>|</div>
-        <div onClick={goSignup} className={styles['text--4']}>
+        <div className={styles['divisor-1']}>|</div>
+        <div onClick={goSignup} className={styles['register-button']}>
           회원가입
         </div>
       </div>

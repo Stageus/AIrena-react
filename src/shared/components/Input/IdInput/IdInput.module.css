@@ -1,4 +1,4 @@
-.component--- {
+.id-input-box {
   width: 480px;
   height: 70px;
   border-radius: 8px;
@@ -12,7 +12,7 @@
   background: #ffffff;
   border: 1px solid #d1d5db;
 }
-.component--- .text- {
+.id-input-box .id-text {
   flex-shrink: 0;
   width: 56px;
   height: 28px;
@@ -23,7 +23,7 @@
   line-height: 28px;
   font-weight: 400;
 }
-.component--- .path {
+.id-input-box .id-icon {
   flex-shrink: 0;
   width: 17.5px;
   height: 20px;

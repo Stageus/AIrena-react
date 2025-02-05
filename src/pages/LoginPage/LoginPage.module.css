@@ -1,6 +1,4 @@
-.frame- {
-  top: 10px;
-  left: 20px;
+.narrow-background {
   width: 576px;
   height: 760px;
   box-shadow:
@@ -15,10 +13,8 @@
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%),
     #ffffff;
 }
-
-.frame- .frame-div {
-  top: 0px;
-  left: 3px;
+.narrow-background .info-input-area {
+  flex-shrink: 0;
   width: 480px;
   height: 500px;
   display: flex;
