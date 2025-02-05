@@ -4,9 +4,9 @@ import styles from './PasswordCheckInput.module.css'
 
 const PasswordCheckInput: React.FC = () => {
   return (
-    <div className={styles['component----']}>
-      <div className={styles['text--']}>비밀번호 확인</div>
-      <PasswordIcon className={styles['path']} />
+    <div className={styles['password-check-input-box']}>
+      <div className={styles['password-check-text']}>비밀번호 확인</div>
+      <PasswordIcon className={styles['password-icon']} />
     </div>
   )
 }

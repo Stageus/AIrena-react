@@ -4,9 +4,9 @@ import styles from './IdInput.module.css'
 
 const IdInput: React.FC = () => {
   return (
-    <div className={styles['component---']}>
-      <div className={styles['text-']}>아이디</div>
-      <IdIcon className={styles['path']} />
+    <div className={styles['id-input-box']}>
+      <div className={styles['id-text']}>아이디</div>
+      <IdIcon className={styles['id-icon']} />
     </div>
   )
 }

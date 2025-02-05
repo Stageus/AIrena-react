@@ -1,12 +1,12 @@
-import InfoInputPage from '#features/FindId/ui/InfoInputArea/InfoInputArea'
+import InfoInputArea from '#features/FindId/ui/InfoInputArea/InfoInputArea'
 import React from 'react'
-import style from './FindIdPage.module.css'
+import styles from './FindIdPage.module.css'
 
-const LoginPage: React.FC = () => {
+const FindIdPage: React.FC = () => {
   return (
-    <div className={style['frame-']}>
-      <InfoInputPage />
+    <div className={styles['narrow-background']}>
+      <InfoInputArea />
     </div>
   )
 }
-export default LoginPage
+export default FindIdPage

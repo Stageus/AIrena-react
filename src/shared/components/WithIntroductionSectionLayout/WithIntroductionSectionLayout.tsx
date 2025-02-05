@@ -5,12 +5,12 @@ import styles from './WithIntroductionSectionLayout.module.css'
 
 const WithIntroductionSectionLayout: React.FC = () => {
   return (
-    <div className={styles['frame--']}>
+    <>
       <IntroductionSection />
-      <div className={styles['instance----']}>
+      <div className={styles['wide-background']}>
         <Outlet />
       </div>
-    </div>
+    </>
   )
 }
 export default WithIntroductionSectionLayout

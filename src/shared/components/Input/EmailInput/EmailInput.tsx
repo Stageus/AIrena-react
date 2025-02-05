@@ -4,9 +4,9 @@ import styles from './EmailInput.module.css'
 
 const EmailInput: React.FC = () => {
   return (
-    <div className={styles['instance---']}>
-      <div className={styles['text-']}>이메일</div>
-      <EmailIcon className={styles['path']} />
+    <div className={styles['email-input-box']}>
+      <div className={styles['email-text']}>이메일</div>
+      <EmailIcon className={styles['email-icon']} />
     </div>
   )
 }

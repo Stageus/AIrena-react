@@ -1,19 +1,21 @@
-.frame--- {
+.social-login-area {
+  position: relative;
   width: 480px;
   height: 180px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
+  row-gap: 10px;
+  column-gap: 10px;
 }
-.frame--- .div {
-  position: relative;
+.social-login-area .simple-login-container {
   flex-shrink: 0;
   width: 480px;
   height: 20px;
   background: rgba(0, 0, 0, 0);
 }
-.frame--- .div .div-1 {
+.social-login-area .simple-login-container .divisor {
   position: absolute;
   top: 9.5px;
   left: 0px;
@@ -24,7 +26,7 @@
   border-style: solid;
   border-color: #e5e7eb;
 }
-.frame--- .div .span {
+.social-login-area .simple-login-container .simple-login-box {
   position: absolute;
   top: 0px;
   left: 190.05px;
@@ -37,7 +39,10 @@
   padding: 0px 16px 0px 16px;
   background: #ffffff;
 }
-.frame--- .div .span .text-- {
+.social-login-area
+  .simple-login-container
+  .simple-login-box
+  .simple-login-text {
   flex-shrink: 0;
   width: 68px;
   height: 20px;
@@ -48,7 +53,7 @@
   line-height: 20px;
   font-weight: 500;
 }
-.frame--- .frame----1 {
+.social-login-area .kakao-login-button {
   flex-shrink: 0;
   align-self: stretch;
   width: 480px;
@@ -63,7 +68,7 @@
     #fde047;
   border: 1px solid #facc15;
 }
-.frame--- .frame----1 .div-2 {
+.social-login-area .kakao-login-button .kakao-login-content {
   flex-shrink: 0;
   width: 158px;
   height: 20px;
@@ -73,7 +78,7 @@
   align-items: center;
   row-gap: 0px;
 }
-.frame--- .frame----1 .div-2 .rectangle-- {
+.social-login-area .kakao-login-button .kakao-login-content .kakao-logo {
   flex-shrink: 0;
   width: 27px;
   height: 24px;
@@ -82,7 +87,7 @@
   object-fit: cover;
   background-size: cover;
 }
-.frame--- .frame----1 .div-2 .text---1 {
+.social-login-area .kakao-login-button .kakao-login-content .kako-login-text {
   flex-shrink: 0;
   width: 121px;
   height: 24px;
@@ -93,7 +98,7 @@
   font-weight: 500;
   text-align: center;
 }
-.frame--- .frame----2 {
+.social-login-area .frame-google-login-button {
   flex-shrink: 0;
   align-self: stretch;
   width: 480px;
@@ -108,7 +113,7 @@
     #ffffff;
   border: 1px solid #d1d5db;
 }
-.frame--- .frame----2 .div-3 {
+.social-login-area .frame-google-login-button .google-login-content {
   flex-shrink: 0;
   width: 139px;
   height: 28px;
@@ -118,7 +123,10 @@
   align-items: center;
   row-gap: 0px;
 }
-.frame--- .frame----2 .div-3 .rectangle---1 {
+.social-login-area
+  .frame-google-login-button
+  .google-login-content
+  .google-logo {
   flex-shrink: 0;
   width: 24px;
   height: 24px;
@@ -127,7 +135,10 @@
   object-fit: cover;
   background-size: cover;
 }
-.frame--- .frame----2 .div-3 .text---2 {
+.social-login-area
+  .frame-google-login-button
+  .google-login-content
+  .google-login {
   flex-shrink: 0;
   width: 104px;
   height: 28px;

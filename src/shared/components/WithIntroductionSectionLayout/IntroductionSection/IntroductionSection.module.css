@@ -1,13 +1,14 @@
-.instance-- {
+.introduction-section {
   width: 720px;
   height: 1024px;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
-.instance-- .frame--- {
+.introduction-section .logo-with-text {
   flex-shrink: 0;
   width: 300px;
   height: 450px;
@@ -16,13 +17,17 @@
   justify-content: space-between;
   align-items: center;
 }
-.instance-- .frame--- .image-5 {
+.introduction-section .logo-with-text .big-logo {
   flex-shrink: 0;
   width: 260px;
   height: 260px;
+}
+.introduction-section .logo-with-text .big-logo .big-logo-1 {
+  width: calc(100% - 0% - 0%);
+  height: calc(100% - 0% - 0%);
   object-fit: cover;
 }
-.instance-- .frame--- .airena {
+.introduction-section .logo-with-text .airena {
   flex-shrink: 0;
   align-self: stretch;
   width: 300px;
@@ -34,7 +39,7 @@
   font-weight: 400;
   text-align: center;
 }
-.instance-- .frame--- .ai----- {
+.introduction-section .logo-with-text .introduction-text {
   flex-shrink: 0;
   align-self: stretch;
   width: 300px;
