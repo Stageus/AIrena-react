@@ -19,6 +19,10 @@ const Root = ({}) => {
     navigate('/signup')
   }
 
+  const goLoginRedirect = () => {
+    navigate('/login/redirect')
+  }
+
   return (
     <div className={styles['normal-login-area']}>
       <IdInput />
@@ -39,7 +43,7 @@ const Root = ({}) => {
           회원가입
         </div>
       </div>
-      <SharedButton name="로그인" onClick={() => {}} />
+      <SharedButton name="로그인" onClick={goLoginRedirect} />
     </div>
   )
 }

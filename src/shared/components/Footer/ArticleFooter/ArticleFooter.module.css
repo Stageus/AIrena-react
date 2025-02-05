@@ -1,0 +1,401 @@
+.article-footer {
+  width: 1376px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.article-footer .pagenation-and-write-footer {
+  flex-shrink: 0;
+  width: 1376px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 0px;
+  background: rgba(0, 0, 0, 0);
+}
+.pagenation-area {
+  width: 468.83px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  row-gap: 0px;
+  background: rgba(0, 0, 0, 0);
+}
+.pagenation-area .left-page-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 40px;
+}
+.pagenation-area .button {
+  flex-shrink: 0;
+  width: 40.98px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0px;
+  padding: 8px 16px 8px 16px;
+  background: #9debe3;
+}
+.pagenation-area .button .text-1 {
+  flex-shrink: 0;
+  width: 9px;
+  height: 24px;
+  white-space: nowrap;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+.pagenation-area .button-1 {
+  flex-shrink: 0;
+  width: 40.98px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0px;
+  padding: 8px 16px 8px 16px;
+  background: rgba(0, 0, 0, 0);
+}
+.pagenation-area .button-1 .text-2 {
+  flex-shrink: 0;
+  width: 9px;
+  height: 24px;
+  white-space: nowrap;
+  color: #374151;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+.pagenation-area .button-2 {
+  flex-shrink: 0;
+  width: 49.97px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0px;
+  padding: 8px 16px 8px 16px;
+  background: rgba(0, 0, 0, 0);
+}
+.pagenation-area .button-2 .text-10 {
+  flex-shrink: 0;
+  width: 9px;
+  height: 24px;
+  white-space: nowrap;
+  color: #374151;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+.pagenation-area .button-3 {
+  flex-shrink: 0;
+  width: 40.98px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0px;
+  padding: 8px 16px 8px 16px;
+  background: rgba(0, 0, 0, 0);
+}
+.pagenation-area .button-3 .text-9 {
+  flex-shrink: 0;
+  width: 9px;
+  height: 24px;
+  white-space: nowrap;
+  color: #374151;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+.pagenation-area .button-4 {
+  flex-shrink: 0;
+  width: 40.98px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0px;
+  padding: 8px 16px 8px 16px;
+  background: rgba(0, 0, 0, 0);
+}
+.pagenation-area .button-4 .text-8 {
+  flex-shrink: 0;
+  width: 9px;
+  height: 24px;
+  white-space: nowrap;
+  color: #374151;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+.pagenation-area .button-5 {
+  flex-shrink: 0;
+  width: 40.98px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0px;
+  padding: 8px 16px 8px 16px;
+  background: rgba(0, 0, 0, 0);
+}
+.pagenation-area .button-5 .text-7 {
+  flex-shrink: 0;
+  width: 9px;
+  height: 24px;
+  white-space: nowrap;
+  color: #374151;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+.pagenation-area .button-6 {
+  flex-shrink: 0;
+  width: 40.98px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0px;
+  padding: 8px 16px 8px 16px;
+  background: rgba(0, 0, 0, 0);
+}
+.pagenation-area .button-6 .text-6 {
+  flex-shrink: 0;
+  width: 9px;
+  height: 24px;
+  white-space: nowrap;
+  color: #374151;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+.pagenation-area .button-7 {
+  flex-shrink: 0;
+  width: 40.98px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0px;
+  padding: 8px 16px 8px 16px;
+  background: rgba(0, 0, 0, 0);
+}
+.pagenation-area .button-7 .text-5 {
+  flex-shrink: 0;
+  width: 9px;
+  height: 24px;
+  white-space: nowrap;
+  color: #374151;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+.pagenation-area .button-8 {
+  flex-shrink: 0;
+  width: 40.98px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0px;
+  padding: 8px 16px 8px 16px;
+  background: rgba(0, 0, 0, 0);
+}
+.pagenation-area .button-8 .text-4 {
+  flex-shrink: 0;
+  width: 9px;
+  height: 24px;
+  white-space: nowrap;
+  color: #374151;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+.pagenation-area .button-9 {
+  flex-shrink: 0;
+  width: 40.98px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0px;
+  padding: 8px 16px 8px 16px;
+  background: rgba(0, 0, 0, 0);
+}
+.pagenation-area .button-9 .text-3 {
+  flex-shrink: 0;
+  width: 18px;
+  height: 24px;
+  white-space: nowrap;
+  color: #374151;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+.pagenation-area .right-page-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 40px;
+}
+
+.article-footer .pagenation-and-write-footer .write-button {
+  flex-shrink: 0;
+  width: 86px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 0px;
+  padding: 8px 16px 8px 16px;
+  background: #7ae1e3;
+}
+.article-footer .pagenation-and-write-footer .write-button .write-icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 15.84px;
+}
+.article-footer .pagenation-and-write-footer .write-button .text {
+  flex-shrink: 0;
+  width: 30px;
+  height: 24px;
+  white-space: nowrap;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+.article-footer .search-footer {
+  flex-shrink: 0;
+  width: 1376px;
+  height: 42px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 0px;
+  background: rgba(0, 0, 0, 0);
+}
+.article-footer .search-footer .keyword-input {
+  flex-shrink: 0;
+  width: 1290.55px;
+  height: 42px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+  padding: 8px 48px 8px 16px;
+  overflow: hidden;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%),
+    #ffffff;
+  border: 1px solid #d1d5db;
+}
+.article-footer .search-footer .keyword-input .text-11 {
+  flex-shrink: 0;
+  width: 137px;
+  height: 24px;
+  white-space: nowrap;
+  color: #6b7280;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.article-footer .search-footer .search-button {
+  flex-shrink: 0;
+  width: 77.45px;
+  height: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+  padding: 8px 24px 8px 24px;
+  background: #9debe3;
+}
+.article-footer .search-footer .search-button .tedt {
+  flex-shrink: 0;
+  width: 30px;
+  height: 24px;
+  white-space: nowrap;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+}

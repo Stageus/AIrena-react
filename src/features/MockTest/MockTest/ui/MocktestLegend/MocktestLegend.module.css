@@ -1,0 +1,114 @@
+.mocktest-legend {
+  width: 1376px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  row-gap: 0px;
+}
+.mocktest-legend .number-output-box {
+  flex-shrink: 0;
+  width: 120px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  row-gap: 0px;
+  padding: 0px 20px 0px 20px;
+  background: rgba(0, 0, 0, 0);
+}
+.mocktest-legend .number-output-box .number {
+  flex-shrink: 0;
+  width: 30px;
+  height: 24px;
+  white-space: nowrap;
+  color: #4b5563;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.mocktest-legend .title-output-box {
+  flex-shrink: 0;
+  width: 560px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0);
+}
+.mocktest-legend .title-output-box .title {
+  width: 30px;
+  height: 24px;
+  white-space: nowrap;
+  color: #000000;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.mocktest-legend .write-nickname-output-box {
+  flex-shrink: 0;
+  width: 224px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0);
+}
+.mocktest-legend .write-nickname-output-box .writer-nickname {
+  width: 45px;
+  height: 24px;
+  white-space: nowrap;
+  color: #4b5563;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.mocktest-legend .write-date-output-box {
+  flex-shrink: 0;
+  width: 224px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0);
+}
+.mocktest-legend .write-date-output-box .write-date {
+  width: 45px;
+  height: 24px;
+  white-space: nowrap;
+  color: #4b5563;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.mocktest-legend .like-count-output-box {
+  flex-shrink: 0;
+  width: 248px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  row-gap: 0px;
+  padding: 0px 20px 0px 20px;
+  background: rgba(0, 0, 0, 0);
+}
+.mocktest-legend .like-count-output-box .content-box {
+  flex-shrink: 0;
+  width: 39px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 0px;
+}
+.mocktest-legend .like-count-output-box .content-box .like-count {
+  flex-shrink: 0;
+  width: 45px;
+  height: 24px;
+  white-space: nowrap;
+  color: #4b5563;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: right;
+}

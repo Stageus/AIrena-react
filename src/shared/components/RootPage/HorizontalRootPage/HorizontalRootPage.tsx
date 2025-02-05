@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import styles from './RootPage.module.css'
+import styles from './HorizontalRootPage.module.css'
 
 const WithIntroductionSectionLayout: React.FC = () => {
   return (
