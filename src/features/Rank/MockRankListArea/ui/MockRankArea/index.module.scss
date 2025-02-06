@@ -1,0 +1,72 @@
+.mock-rank-area {
+  width: 280px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  row-gap: 0px;
+  .rank-output-area {
+    flex-shrink: 0;
+    width: 60px;
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    row-gap: 0px;
+    .rank {
+      flex-shrink: 0;
+      width: 18px;
+      height: 24px;
+      white-space: nowrap;
+      color: #4b5563;
+      font-family: 'Roboto';
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+    }
+  }
+  .nickname-output-area {
+    flex-shrink: 0;
+    width: 160px;
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0px;
+    .nickname {
+      flex-shrink: 0;
+      width: 104px;
+      height: 24px;
+      white-space: nowrap;
+      color: #000000;
+      font-family: 'Roboto';
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+    }
+  }
+  .score-output-area {
+    flex-shrink: 0;
+    width: 60px;
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    row-gap: 0px;
+    .score {
+      flex-shrink: 0;
+      width: 56px;
+      height: 24px;
+      color: #4b5563;
+      font-family: 'Roboto';
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.article-select-and-sort-header {
+  width: 1376px;
+  height: 54px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 0px;
+  padding: 0px 10px 0px 10px;
+  background: rgba(0, 0, 0, 0);
+
+  .article-select-button {
+    flex-shrink: 0;
+    width: 126px;
+    height: 54px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 0px;
+
+    .total-article-button {
+      flex-shrink: 0;
+      width: 48px;
+      height: 54px;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      flex-wrap: wrap;
+      row-gap: 10px;
+      column-gap: 10px;
+      padding: 16px 4px 16px 4px;
+      background: rgba(0, 0, 0, 0);
+      border-width: 0px 0px 2px 0px;
+      border-style: solid;
+      border-color: #9debe3;
+
+      .text {
+        width: 39px;
+        height: 20px;
+        white-space: nowrap;
+        color: #9debe3;
+        font-family: 'Roboto';
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 500;
+        text-align: center;
+      }
+    }
+
+    .notice-article-button {
+      flex-shrink: 0;
+      width: 46.64px;
+      height: 54px;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      flex-wrap: wrap;
+      row-gap: 10px;
+      column-gap: 10px;
+      padding: 16px 4px 16px 4px;
+      background: rgba(0, 0, 0, 0);
+      border-width: 0px 0px 2px 0px;
+      border-style: solid;
+      border-color: rgba(0, 0, 0, 0);
+
+      .text-1 {
+        width: 39px;
+        height: 20px;
+        white-space: nowrap;
+        color: #6b7280;
+        font-family: 'Roboto';
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 500;
+        text-align: center;
+      }
+    }
+  }
+
+  .sort-select {
+    flex-shrink: 0;
+    width: 98px;
+    height: 42px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 0px;
+    padding: 0px 10px 0px 10px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+
+    .text-2 {
+      flex-shrink: 0;
+      width: 30px;
+      height: 24px;
+      white-space: nowrap;
+      color: #000000;
+      font-family: 'Roboto';
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+    }
+
+    .image {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      object-fit: cover;
+    }
+  }
+}

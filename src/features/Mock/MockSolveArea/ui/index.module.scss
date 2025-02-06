@@ -1,0 +1,46 @@
+.mock-solve-area {
+  width: 928px;
+  height: fit-content;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  row-gap: 50px;
+  column-gap: 50px;
+  padding: 24px;
+  background: #f9fafb;
+  .mock-quiz-output-area {
+    flex-shrink: 0;
+    width: 880px;
+    height: 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    row-gap: 16px;
+    column-gap: 16px;
+    .title {
+      flex-shrink: 0;
+      align-self: stretch;
+      width: 880px;
+      height: 32px;
+      color: #111827;
+      font-family: 'Roboto';
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 600;
+    }
+    .description {
+      flex-shrink: 0;
+      align-self: stretch;
+      width: 880px;
+      height: 28px;
+      color: #374151;
+      font-family: 'Roboto';
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 400;
+    }
+  }
+}

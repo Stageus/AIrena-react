@@ -1,0 +1,261 @@
+.mock-write-area {
+  width: 768px;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  background: rgba(0, 0, 0, 0);
+  .text {
+    flex-shrink: 0;
+    align-self: stretch;
+    width: 768px;
+    height: 32px;
+    white-space: nowrap;
+    color: #111827;
+    font-family: 'Roboto';
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+  }
+  .subject-input-area {
+    flex-shrink: 0;
+    align-self: stretch;
+    width: 768px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    row-gap: 8px;
+    column-gap: 8px;
+    background: rgba(0, 0, 0, 0);
+    .text-1 {
+      flex-shrink: 0;
+      width: 85px;
+      height: 20px;
+      white-space: nowrap;
+      color: #374151;
+      font-family: 'Roboto';
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+    }
+    .subject-input-box {
+      flex-shrink: 0;
+      align-self: stretch;
+      width: 768px;
+      height: 42px;
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+      row-gap: 0px;
+      padding: 0px 12px 0px 12px;
+      overflow: hidden;
+      background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0) 100%
+        ),
+        rgba(255, 255, 255, 1);
+      border: 1px solid #d1d5db;
+      .subject-placeholder {
+        flex-shrink: 0;
+        width: 85px;
+        height: 24px;
+        white-space: nowrap;
+        color: #6b7280;
+        font-family: 'Roboto';
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+      }
+    }
+  }
+  .quiz-count-input-area {
+    flex-shrink: 0;
+    align-self: stretch;
+    width: 768px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    row-gap: 8px;
+    column-gap: 8px;
+    background: rgba(0, 0, 0, 0);
+    .text-2 {
+      flex-shrink: 0;
+      width: 182px;
+      height: 20px;
+      white-space: nowrap;
+      color: #374151;
+      font-family: 'Roboto';
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+    }
+    .subject-input-content {
+      flex-shrink: 0;
+      width: 87px;
+      height: 42px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      row-gap: 0px;
+      .quiz-count-input-box {
+        flex-shrink: 0;
+        width: 66px;
+        height: 42px;
+        box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+        border-radius: 6px;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        column-gap: 10px;
+        row-gap: 0px;
+        padding: 0px 12px 0px 12px;
+        overflow: hidden;
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0) 100%
+          ),
+          rgba(255, 255, 255, 1);
+        border: 1px solid #d1d5db;
+        .quiz-count-input-placeholder {
+          flex-shrink: 0;
+          width: 44px;
+          height: 24px;
+          white-space: nowrap;
+          color: #6b7280;
+          font-family: 'Roboto';
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 400;
+        }
+      }
+      .text-3 {
+        flex-shrink: 0;
+        width: 15px;
+        height: 24px;
+        white-space: nowrap;
+        color: #000000;
+        font-family: 'Roboto';
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+      }
+    }
+  }
+  .title-input-area {
+    flex-shrink: 0;
+    align-self: stretch;
+    width: 768px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    row-gap: 8px;
+    column-gap: 8px;
+    background: rgba(0, 0, 0, 0);
+    .text-4 {
+      flex-shrink: 0;
+      width: 26px;
+      height: 20px;
+      white-space: nowrap;
+      color: #374151;
+      font-family: 'Roboto';
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+    }
+    .title-input-box {
+      flex-shrink: 0;
+      align-self: stretch;
+      width: 768px;
+      height: 42px;
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+      row-gap: 0px;
+      padding: 0px 12px 0px 12px;
+      overflow: hidden;
+      background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0) 100%
+        ),
+        rgba(255, 255, 255, 1);
+      border: 1px solid #d1d5db;
+      .title-input-placeholder {
+        flex-shrink: 0;
+        width: 373px;
+        height: 24px;
+        color: #6b7280;
+        font-family: 'Roboto';
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+      }
+    }
+  }
+  .content-input-area {
+    flex-shrink: 0;
+    align-self: stretch;
+    width: 768px;
+    height: 376px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    row-gap: 7px;
+    column-gap: 7px;
+    background: rgba(0, 0, 0, 0);
+    .text-5 {
+      flex-shrink: 0;
+      width: 26px;
+      height: 20px;
+      white-space: nowrap;
+      color: #374151;
+      font-family: 'Roboto';
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+    }
+  }
+  .image-submit-area {
+    flex-shrink: 0;
+    align-self: stretch;
+    width: 768px;
+    height: 138px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    row-gap: 8px;
+    column-gap: 8px;
+    background: rgba(0, 0, 0, 0);
+    .text-6 {
+      flex-shrink: 0;
+      align-self: stretch;
+      width: 768px;
+      height: 20px;
+      white-space: nowrap;
+      color: #374151;
+      font-family: 'Roboto';
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+    }
+  }
+}

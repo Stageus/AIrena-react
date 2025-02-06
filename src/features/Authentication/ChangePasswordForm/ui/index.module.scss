@@ -1,0 +1,19 @@
+.change-password-form {
+  width: 480px;
+  height: 251px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0);
+  .input-area {
+    flex-shrink: 0;
+    align-self: stretch;
+    width: 480px;
+    height: 153px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
