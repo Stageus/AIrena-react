@@ -1,6 +1,6 @@
-import EmailInput from '#shared/components/Input/EmailInput/EmailInput'
-import IdInput from '#shared/components/Input/IdInput/IdInput'
-import SharedButton from '#shared/components/StandardButton/StandardButton'
+import SharedButton from '#shared/components/button/StandardButton/StandardButton'
+import EmailInput from '#shared/components/input/EmailInput'
+import IdInput from '#shared/components/input/IdInput'
 import styles from './index.module.scss'
 
 const FindPasswordForm: React.FC = ({}) => {

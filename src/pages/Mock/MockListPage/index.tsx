@@ -1,5 +1,5 @@
 import MockListArea from '#features/Mock/MockListArea/ui'
-import ArticleFooter from '#shared/components/Footer/ArticleFooter/ArticleFooter'
+import ArticleFooter from '#shared/components/footer/ArticleFooter'
 import React from 'react'
 import styles from './index.module.scss'
 

@@ -1,6 +1,6 @@
-import IdInput from '#shared/components/Input/IdInput/IdInput'
-import PasswordInput from '#shared/components/Input/PasswordInput/PasswordInput'
-import SharedButton from '#shared/components/StandardButton/StandardButton'
+import SharedButton from '#shared/components/button/StandardButton/StandardButton'
+import IdInput from '#shared/components/input/IdInput'
+import PasswordInput from '#shared/components/input/PasswordInput'
 import { useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
 

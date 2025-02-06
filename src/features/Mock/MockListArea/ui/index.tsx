@@ -1,5 +1,5 @@
-import ArticleSelectAndSortHeader from '#shared/components/Header/ArticleSelectAndSortHeader/ArticleSelectAndSortHeader'
-import styles from '.index.module.scss'
+import ArticleSelectAndSortHeader from '#shared/components/header/ArticleSelectAndSortHeader'
+import styles from './index.module.scss'
 import MockArea from './MockArea'
 import MockLegend from './MockLegend'
 

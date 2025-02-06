@@ -1,6 +1,6 @@
-import WriteFooter from '#shared/components/Footer/WriteFooter/WriteFooter'
-import ImageUploadBox from '#shared/components/ImageUploadBox/ImageUploadBox'
-import TextEditor from '#shared/components/TextEditor/TextEditor'
+import WriteFooter from '#shared/components/footer/WriteFooter'
+import ImageUploadBox from '#shared/components/ImageUploadBox'
+import TextEditor from '#shared/components/TextEditor'
 import styles from './index.module.scss'
 const MockWriteArea: React.FC = () => {
   return (

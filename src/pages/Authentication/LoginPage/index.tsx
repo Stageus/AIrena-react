@@ -1,7 +1,7 @@
 import NormalLoginForm from '#features/Authentication/NormalLoginForm/ui'
 import SocialLoginArea from '#features/Authentication/SocialLoginArea/ui'
 import React from 'react'
-import styles from './LoginPage.module.scss'
+import styles from './index.module.scss'
 
 const LoginPage: React.FC = () => {
   return (
