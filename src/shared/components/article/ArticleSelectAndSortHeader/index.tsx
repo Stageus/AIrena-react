@@ -1,11 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
 
-interface ArticleSelectAndSortHeaderProps {}
-
-const ArticleSelectAndSortHeader: React.FC<
-  ArticleSelectAndSortHeaderProps
-> = ({}) => {
+const ArticleSelectAndSortHeader: React.FC = () => {
   const navigate = useNavigate()
   const goMockListPage = () => {
     navigate('/mock')

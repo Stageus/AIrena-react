@@ -20,7 +20,7 @@ const MockRankListArea: React.FC = () => {
           </div>
         </div>
         {Array.from({ length: 10 }).map((_, index) => (
-          <MockRankArea />
+          <MockRankArea key={index} />
         ))}
       </div>
     </div>

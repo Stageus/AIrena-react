@@ -1,14 +1,14 @@
 import { ReactComponent as WriteIcon } from '#assets/icons/write_icon.svg'
-import Pagination from '#shared/components/Pagination'
-import SearchFooter from '#shared/components/article/ArticleFooter/SearchFooter'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
+import Pagination from './Pagination'
+import SearchFooter from './SearchFooter'
 
 const ArticleFooter: React.FC = () => {
+  const location = useLocation().pathname
   const navigate = useNavigate()
-
   const goMockWritePage = () => {
-    navigate('/mock/write')
+    navigate(`${location}/write`)
   }
 
   return (

@@ -12,7 +12,9 @@ import MockResultPage from '#pages/Mock/MockResultPage'
 import MockSolvePage from '#pages/Mock/MockSolvePage'
 import MockSubmitAnswerGradingPage from '#pages/Mock/MockSubmitAnswerGradingPage'
 import MockWritePage from '#pages/Mock/MockWritePage'
+import NoticeDetailPage from '#pages/Notice/NoticeDetailPage'
 import NoticeListPage from '#pages/Notice/NoticeListPage'
+import NoticeWritePage from '#pages/Notice/NoticeWritePage'
 import WithIntroductionSectionLayout from '#shared/components/layout/WithIntroductionSectionLayout'
 import WithMainHeaderLayout from '#shared/components/layout/WithMainHeaderLayout'
 import HorizontalRootPage from '#shared/components/rootPage/HorizontalRootPage'
@@ -52,6 +54,8 @@ const AppRouter = () => (
           <Route path="/mock/:id/result" element={<MockResultPage />} />
           {/* 공지사항 페이지 */}
           <Route path="/notice" element={<NoticeListPage />} />
+          <Route path="/notice/write" element={<NoticeWritePage />} />
+          <Route path="/notice/:id" element={<NoticeDetailPage />} />
         </Route>
       </Route>
     </Routes>

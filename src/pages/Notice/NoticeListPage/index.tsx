@@ -1,5 +1,5 @@
-import NoticeListArea from '#features/Mock/Notice/NoticeListArea/ui'
-import ArticleFooter from '#shared/components/article/ArticleFooter'
+import NoticeListArea from '#features/Notice/NoticeListArea/ui'
+import ArticleFooter from '#shared/components/article/ArticleListFooter'
 import React from 'react'
 import styles from './index.module.scss'
 

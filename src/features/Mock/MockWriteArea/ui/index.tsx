@@ -1,4 +1,4 @@
-import WriteFooter from '#shared/components/article/ArticleFooter/WriteFooter'
+import WriteFooter from '#shared/components/article/ArticleWriteFooter'
 import ImageUploadBox from '#shared/components/ImageUploadBox'
 import TextEditor from '#shared/components/TextEditor'
 import styles from './index.module.scss'

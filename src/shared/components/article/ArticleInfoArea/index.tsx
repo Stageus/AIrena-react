@@ -1,9 +1,8 @@
 import { ReactComponent as LikeIcon } from '#assets/icons/like_icon.svg'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
 
 interface BaseArticleInfoProps {
-  articleType: 'mock' | 'notice'
   number: number
   title: string
   writerNickname: string
@@ -23,7 +22,6 @@ interface LikeNotExistsProps extends BaseArticleInfoProps {
 type ArticleInfoAreaProps = LikeExistsProps | LikeNotExistsProps
 
 const ArticleInfoArea: React.FC<ArticleInfoAreaProps> = ({
-  articleType,
   number,
   title,
   writerNickname,
@@ -31,10 +29,10 @@ const ArticleInfoArea: React.FC<ArticleInfoAreaProps> = ({
   likeExist,
   likeCount,
 }) => {
+  const location = useLocation().pathname
   const navigate = useNavigate()
-
   const goMockDetail = () => {
-    navigate(`/${articleType}/${number}`)
+    navigate(`${location}/${number}`)
   }
 
   return (

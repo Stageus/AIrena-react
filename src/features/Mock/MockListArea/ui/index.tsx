@@ -1,6 +1,6 @@
 import ArticleInfoArea from '#shared/components/article/ArticleInfoArea'
 import ArticleLegend from '#shared/components/article/ArticleLegend'
-import ArticleSelectAndSortHeader from '#shared/components/header/ArticleSelectAndSortHeader'
+import ArticleSelectAndSortHeader from '#shared/components/article/ArticleSelectAndSortHeader'
 import styles from './index.module.scss'
 
 const MockListArea: React.FC = () => {
@@ -11,7 +11,7 @@ const MockListArea: React.FC = () => {
       <ArticleLegend likeExist={likeExist} />
       {Array.from({ length: 10 }, (_, index) => (
         <ArticleInfoArea
-          articleType="mock"
+          key={index}
           number={index}
           title={'제목'}
           writerNickname={'스테이지어스'}
