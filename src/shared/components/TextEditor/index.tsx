@@ -1,16 +1,28 @@
-import styles from './index.module.scss'
+import Quill from 'quill'
+import 'quill/dist/quill.snow.css'
+import { useEffect, useRef } from 'react'
+import './index.module.css'
 
-const TextEditor: React.FC = () => {
-  return (
-    <div className={styles['text-editor']}>
-      <svg id="60:8862" className={styles['div']}></svg>
-      <div className={styles['content-input-box']}>
-        <div className={styles['content-place-holder']}>
-          ex) 누구나 알 수 있는 대한민국 상식 퀴즈 입니다
-        </div>
-      </div>
-    </div>
-  )
+const TextEditor = () => {
+  const editorRef = useRef<HTMLDivElement | null>(null)
+  const quillInstance = useRef<Quill | null>(null)
+
+  useEffect(() => {
+    const option = {
+      modules: {
+        toolbar: true,
+      },
+      placeholder: '내용을 입력해주세요',
+      theme: 'snow',
+    }
+
+    if (editorRef.current && !quillInstance.current) {
+      const quill = new Quill(editorRef.current, option)
+      quillInstance.current = quill
+    }
+  }, [])
+
+  return <div id="editor" ref={editorRef}></div>
 }
 
 export default TextEditor

@@ -6,3 +6,15 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.ql-toolbar {
+  align-self: stretch;
+}
+
+#editor {
+  align-self: stretch;
+}
+
+#editor .ql-editor {
+  align-self: stretch;
+}

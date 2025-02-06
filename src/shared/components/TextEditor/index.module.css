@@ -1,0 +1,7 @@
+#editor .ql-container {
+  height: 350px; /* 전체 에디터 영역 높이 (툴바를 제외한 영역) */
+}
+
+#editor .ql-editor {
+  min-height: 300px; /* 입력 영역 최소 높이 */
+}
