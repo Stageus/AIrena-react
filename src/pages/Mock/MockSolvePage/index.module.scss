@@ -15,3 +15,14 @@
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%),
     #ffffff;
 }
+
+.score-output-container {
+  width: 1376px;
+  height: 655px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  row-gap: 23px;
+  column-gap: 23px;
+}

@@ -53,34 +53,25 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    column-gap: 10px;
     row-gap: 0px;
     background: #9debe3;
-    .button-content {
+    .solve-icon {
       flex-shrink: 0;
-      width: 133px;
+      width: 18px;
+      height: 18px;
+    }
+    .text {
+      flex-shrink: 0;
+      width: 104px;
       height: 28px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      row-gap: 0px;
-      .solve-icon {
-        flex-shrink: 0;
-        width: 18px;
-        height: 18px;
-      }
-      .text {
-        flex-shrink: 0;
-        width: 104px;
-        height: 28px;
-        white-space: nowrap;
-        color: #ffffff;
-        font-family: 'Roboto';
-        font-size: 18px;
-        line-height: 28px;
-        font-weight: 700;
-        text-align: center;
-      }
+      white-space: nowrap;
+      color: #ffffff;
+      font-family: 'Roboto';
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 700;
+      text-align: center;
     }
   }
 }

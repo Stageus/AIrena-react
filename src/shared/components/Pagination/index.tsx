@@ -3,7 +3,7 @@ import { ReactComponent as RightPageIcon } from '#assets/icons/right_page_icon.s
 import PageButton from './PageButton'
 import styles from './index.module.scss'
 
-const Pagination: React.FC = ({}) => {
+const Pagination: React.FC = () => {
   return (
     <div className={styles['pagination-area']}>
       <div className={styles['left-page-button']}>

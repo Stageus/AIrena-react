@@ -8,7 +8,9 @@ import LoginRedirectPage from '#pages/Authentication/LoginRedirectPage'
 import SignupPage from '#pages/Authentication/SignupPage'
 import MockDetailPage from '#pages/Mock/MockDetailPage'
 import MockListPage from '#pages/Mock/MockListPage'
+import MockResultPage from '#pages/Mock/MockResultPage'
 import MockSolvePage from '#pages/Mock/MockSolvePage'
+import MockSubmitAnswerGradingPage from '#pages/Mock/MockSubmitAnswerGradingPage'
 import MockWritePage from '#pages/Mock/MockWritePage'
 import WithIntroductionSectionLayout from '#shared/components/layout/WithIntroductionSectionLayout'
 import WithMainHeaderLayout from '#shared/components/layout/WithMainHeaderLayout'
@@ -42,6 +44,11 @@ const AppRouter = () => (
           <Route path="/mock/:id" element={<MockDetailPage />} />
           <Route path="/mock/write" element={<MockWritePage />} />
           <Route path="/mock/:id/solve" element={<MockSolvePage />} />
+          <Route
+            path="/mock/:id/grading"
+            element={<MockSubmitAnswerGradingPage />}
+          />
+          <Route path="/mock/:id/result" element={<MockResultPage />} />
         </Route>
       </Route>
     </Routes>

@@ -1,0 +1,170 @@
+.mock-result-area {
+  width: 448px;
+  height: 363px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 25px;
+  column-gap: 25px;
+  .text {
+    flex-shrink: 0;
+    width: 174px;
+    height: 36px;
+    white-space: nowrap;
+    color: #111827;
+    font-family: 'Roboto';
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 800;
+    text-align: center;
+  }
+  .mock-result-output-box {
+    flex-shrink: 0;
+    width: 448px;
+    height: 302px;
+    box-shadow:
+      0px 1px 2px -1px rgba(0, 0, 0, 0.1),
+      0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 0px 35px 0px;
+    overflow: hidden;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      rgba(255, 255, 255, 1);
+    .total-score-output-content {
+      flex-shrink: 0;
+      width: 148px;
+      height: 68px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0);
+      .total-score {
+        flex-shrink: 0;
+        width: 148px;
+        height: 48px;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: end;
+        row-gap: 0px;
+        .total-score-1 {
+          flex-shrink: 0;
+          width: 83px;
+          height: 48px;
+          white-space: nowrap;
+          color: #000000;
+          font-family: 'Roboto';
+          font-size: 48px;
+          line-height: 48px;
+          font-weight: 700;
+          text-align: center;
+        }
+        .divisor {
+          flex-shrink: 0;
+          width: 9px;
+          height: 32px;
+          white-space: nowrap;
+          color: #6b7280;
+          font-family: 'Roboto';
+          font-size: 24px;
+          line-height: 32px;
+          font-weight: 700;
+          text-align: center;
+        }
+        .perfect-score {
+          flex-shrink: 0;
+          width: 56px;
+          height: 32px;
+          white-space: nowrap;
+          color: #6b7280;
+          font-family: 'Roboto';
+          font-size: 24px;
+          line-height: 32px;
+          font-weight: 700;
+          text-align: center;
+        }
+      }
+      .text-1 {
+        flex-shrink: 0;
+        width: 26px;
+        height: 20px;
+        white-space: nowrap;
+        color: #6b7280;
+        font-family: 'Roboto';
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        text-align: center;
+      }
+    }
+    .top-rate-output-content {
+      flex-shrink: 0;
+      width: 144px;
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0);
+      .top-rate {
+        flex-shrink: 0;
+        width: 144px;
+        height: 40px;
+        white-space: nowrap;
+        color: #000000;
+        font-family: 'Roboto';
+        font-size: 36px;
+        line-height: 40px;
+        font-weight: 700;
+        text-align: center;
+      }
+      .text-2 {
+        flex-shrink: 0;
+        width: 39px;
+        height: 20px;
+        white-space: nowrap;
+        color: #6b7280;
+        font-family: 'Roboto';
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        text-align: center;
+      }
+    }
+    .ok-button {
+      flex-shrink: 0;
+      width: 368px;
+      height: 46px;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      row-gap: 0px;
+      background: #9debe3;
+      border: 1px solid rgba(0, 0, 0, 0);
+      .text-3 {
+        flex-shrink: 0;
+        width: 26px;
+        height: 20px;
+        white-space: nowrap;
+        color: #ffffff;
+        font-family: 'Roboto';
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 500;
+        text-align: center;
+      }
+    }
+  }
+}

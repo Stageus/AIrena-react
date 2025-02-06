@@ -23,10 +23,8 @@ const MockDetailArea: React.FC = () => {
         onClick={navigateToSolvePage}
         className={styles['mock-solve-button']}
       >
-        <div className={styles['button-content']}>
-          <SolveIcon className={styles['solve-icon']} />
-          <div className={styles['text']}>모의고사 풀기</div>
-        </div>
+        <SolveIcon className={styles['solve-icon']} />
+        <div className={styles['text']}>모의고사 풀기</div>
       </div>
     </div>
   )
