@@ -6,6 +6,7 @@ import FindPasswordPage from '#pages/Authentication/FindPasswordPage'
 import LoginPage from '#pages/Authentication/LoginPage'
 import LoginRedirectPage from '#pages/Authentication/LoginRedirectPage'
 import SignupPage from '#pages/Authentication/SignupPage'
+import ErrorPage from '#pages/Error'
 import MockDetailPage from '#pages/Mock/MockDetailPage'
 import MockListPage from '#pages/Mock/MockListPage'
 import MockResultPage from '#pages/Mock/MockResultPage'
@@ -15,6 +16,7 @@ import MockWritePage from '#pages/Mock/MockWritePage'
 import NoticeDetailPage from '#pages/Notice/NoticeDetailPage'
 import NoticeListPage from '#pages/Notice/NoticeListPage'
 import NoticeWritePage from '#pages/Notice/NoticeWritePage'
+import TotalRankPage from '#pages/Rank/TotalRankPage'
 import WithIntroductionSectionLayout from '#shared/components/layout/WithIntroductionSectionLayout'
 import WithMainHeaderLayout from '#shared/components/layout/WithMainHeaderLayout'
 import HorizontalRootPage from '#shared/components/rootPage/HorizontalRootPage'
@@ -56,6 +58,11 @@ const AppRouter = () => (
           <Route path="/notice" element={<NoticeListPage />} />
           <Route path="/notice/write" element={<NoticeWritePage />} />
           <Route path="/notice/:id" element={<NoticeDetailPage />} />
+          {/* 전체 랭킹 페이지 */}
+          <Route path="/rank/total" element={<TotalRankPage />} />
+          {/* 에러 페이지 */}
+          <Route path="/mock/999" element={<ErrorPage />} />
+          <Route path="/error" element={<ErrorPage />} />
         </Route>
       </Route>
     </Routes>

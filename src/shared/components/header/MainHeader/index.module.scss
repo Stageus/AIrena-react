@@ -1,4 +1,5 @@
 .main-header {
+  position: relative;
   width: 1440px;
   height: 64px;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
@@ -9,8 +10,7 @@
   row-gap: 0px;
   padding: 0px 32px 0px 32px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%),
-    #ffffff;
-
+    rgba(255, 255, 255, 1);
   .logo-and-name {
     flex-shrink: 0;
     width: 100px;
@@ -21,19 +21,18 @@
     align-items: center;
     row-gap: 0px;
     background: rgba(0, 0, 0, 0);
-
     .mini-logo {
       flex-shrink: 0;
       width: 32px;
       height: 32px;
-
       .mini-logo-1 {
+        right: 0%;
+        bottom: 0%;
         width: calc(100% - 0% - 0%);
         height: calc(100% - 0% - 0%);
         object-fit: cover;
       }
     }
-
     .airena {
       flex-shrink: 0;
       width: 60px;
@@ -46,10 +45,47 @@
       font-weight: 700;
     }
   }
-
-  .profile-icon {
+  .util-button-content {
     flex-shrink: 0;
-    width: 17.5px;
-    height: 20px;
+    width: 150px;
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 0px;
+    background: rgba(0, 0, 0, 0);
+    .total-rank-button {
+      flex-shrink: 0;
+      width: 91px;
+      height: 24px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      row-gap: 0px;
+      background: rgba(0, 0, 0, 0);
+      .rank-icon {
+        flex-shrink: 0;
+        width: 22.5px;
+        height: 20px;
+      }
+      .text {
+        flex-shrink: 0;
+        width: 63px;
+        height: 24px;
+        white-space: nowrap;
+        color: #4b5563;
+        font-family: 'Roboto';
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+      }
+    }
+    .profile-icon {
+      flex-shrink: 0;
+      width: 17.5px;
+      height: 20px;
+    }
   }
 }

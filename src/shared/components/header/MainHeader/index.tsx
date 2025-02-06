@@ -1,11 +1,23 @@
 import { ReactComponent as ProfileIcon } from '#assets/icons/profile_icon.svg'
+import { ReactComponent as RankIcon } from '#assets/icons/rank_icon.svg'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
+import ProfileModal from './ProfileModal'
 
 const MainHeader: React.FC = () => {
+  const [showProfileModal, setShowProfileModal] = useState(false)
+
   const navigate = useNavigate()
   const goMockPage = () => {
     navigate('/mock')
+  }
+  const goTotalRankPage = () => {
+    navigate('/rank/total')
+  }
+
+  const toggleProfileModal = () => {
+    setShowProfileModal((prev) => !prev)
   }
 
   return (
@@ -19,7 +31,17 @@ const MainHeader: React.FC = () => {
         </div>
         <div className={styles['airena']}>AIrena</div>
       </div>
-      <ProfileIcon className={styles['profile-icon']} />
+      <div className={styles['util-button-content']}>
+        <div onClick={goTotalRankPage} className={styles['total-rank-button']}>
+          <RankIcon className={styles['rank-icon']} />
+          <div className={styles['text']}>전체 랭킹</div>
+        </div>
+        <ProfileIcon
+          onClick={toggleProfileModal}
+          className={styles['profile-icon']}
+        />
+      </div>
+      {showProfileModal && <ProfileModal />}
     </div>
   )
 }
