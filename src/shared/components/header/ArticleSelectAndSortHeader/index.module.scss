@@ -34,18 +34,22 @@
       background: rgba(0, 0, 0, 0);
       border-width: 0px 0px 2px 0px;
       border-style: solid;
-      border-color: #9debe3;
+      border-color: rgba(0, 0, 0, 0);
 
       .text {
         width: 39px;
         height: 20px;
         white-space: nowrap;
-        color: #9debe3;
+        color: #6b7280;
         font-family: 'Roboto';
         font-size: 14px;
         line-height: 20px;
         font-weight: 500;
         text-align: center;
+      }
+
+      .in-this-article {
+        color: #9debe3;
       }
     }
 
@@ -77,6 +81,14 @@
         font-weight: 500;
         text-align: center;
       }
+
+      .in-this-article {
+        color: #9debe3;
+      }
+    }
+
+    .in-this-article {
+      border-color: #9debe3;
     }
   }
 

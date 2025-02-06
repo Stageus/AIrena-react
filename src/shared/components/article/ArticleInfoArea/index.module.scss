@@ -1,11 +1,17 @@
-.mock-legend {
+.article-info-area {
   width: 1376px;
-  height: 24px;
+  height: 56px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   row-gap: 0px;
+  padding: 16px 0px 16px 0px;
+  overflow: hidden;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%),
+    rgba(255, 255, 255, 1);
   .number-output-box {
     flex-shrink: 0;
     width: 120px;
@@ -19,7 +25,7 @@
     background: rgba(0, 0, 0, 0);
     .number {
       flex-shrink: 0;
-      width: 30px;
+      width: 18px;
       height: 24px;
       white-space: nowrap;
       color: #4b5563;
@@ -35,7 +41,7 @@
     height: 24px;
     background: rgba(0, 0, 0, 0);
     .title {
-      width: 30px;
+      width: 52px;
       height: 24px;
       white-space: nowrap;
       color: #000000;
@@ -51,7 +57,7 @@
     height: 24px;
     background: rgba(0, 0, 0, 0);
     .writer-nickname {
-      width: 45px;
+      width: 89px;
       height: 24px;
       white-space: nowrap;
       color: #4b5563;
@@ -67,7 +73,7 @@
     height: 24px;
     background: rgba(0, 0, 0, 0);
     .write-date {
-      width: 45px;
+      width: 81px;
       height: 24px;
       white-space: nowrap;
       color: #4b5563;
@@ -97,9 +103,14 @@
       justify-content: space-between;
       align-items: center;
       row-gap: 0px;
+      .like-icon {
+        flex-shrink: 0;
+        width: 17.23px;
+        height: 13.68px;
+      }
       .like-count {
         flex-shrink: 0;
-        width: 45px;
+        width: 18px;
         height: 24px;
         white-space: nowrap;
         color: #4b5563;
