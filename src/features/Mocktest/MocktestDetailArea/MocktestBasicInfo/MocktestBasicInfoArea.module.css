@@ -1,0 +1,95 @@
+.mocktest-basic-info-area {
+  width: 459.32px;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  column-gap: 24px;
+  row-gap: 0px;
+  background: rgba(0, 0, 0, 0);
+}
+.mocktest-basic-info-area .writer-nickname-output-box {
+  flex-shrink: 0;
+  width: 158.25px;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 0px;
+  background: rgba(0, 0, 0, 0);
+}
+.mocktest-basic-info-area .writer-nickname-output-box .nickname-icon {
+  flex-shrink: 0;
+  width: 12.25px;
+  height: 14px;
+}
+.mocktest-basic-info-area .writer-nickname-output-box .writer-nickname {
+  flex-shrink: 0;
+  width: 136px;
+  height: 20px;
+  white-space: nowrap;
+  color: #4b5563;
+  font-family: 'Roboto';
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.mocktest-basic-info-area .write-date-output-box {
+  flex-shrink: 0;
+  width: 138.25px;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 0px;
+  background: rgba(0, 0, 0, 0);
+}
+.mocktest-basic-info-area .write-date-output-box .date-icon {
+  flex-shrink: 0;
+  width: 12.25px;
+  height: 14px;
+}
+.mocktest-basic-info-area .write-date-output-box .write-date {
+  flex-shrink: 0;
+  width: 116px;
+  height: 20px;
+  white-space: nowrap;
+  color: #4b5563;
+  font-family: 'Roboto';
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.mocktest-basic-info-area .quiz-count-output-box {
+  flex-shrink: 0;
+  width: 114.82px;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 0px;
+  background: rgba(0, 0, 0, 0);
+}
+.mocktest-basic-info-area .quiz-count-output-box .quiz-count-icon {
+  flex-shrink: 0;
+  width: 13.82px;
+  height: 12.25px;
+}
+.mocktest-basic-info-area .quiz-count-output-box .text-quiz-count {
+  flex-shrink: 0;
+  width: 91px;
+  height: 20px;
+  white-space: nowrap;
+  color: #4b5563;
+  font-family: 'Roboto';
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
