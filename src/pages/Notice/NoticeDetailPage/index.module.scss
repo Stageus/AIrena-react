@@ -1,0 +1,13 @@
+.notice-detail-container {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%);
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  row-gap: 0px;
+}

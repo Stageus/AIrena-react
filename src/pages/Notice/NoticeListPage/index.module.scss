@@ -1,0 +1,10 @@
+.notice-list-container {
+  width: 1440px;
+  height: 960px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  row-gap: 25px;
+  column-gap: 25px;
+}

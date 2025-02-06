@@ -5,7 +5,7 @@ const MockRankListArea: React.FC = () => {
   return (
     <div className={styles['mock-rank-list-area']}>
       <div className={styles['rank-text']}>
-        <div className={styles['text']}>모의고사 순위</div>
+        <div className={styles['text']}>모의고사 랭킹</div>
       </div>
       <div className={styles['mock-rank-list-content']}>
         <div className={styles['mock-rank-legend']}>
@@ -20,7 +20,7 @@ const MockRankListArea: React.FC = () => {
           </div>
         </div>
         {Array.from({ length: 10 }).map((_, index) => (
-          <MockRankArea />
+          <MockRankArea key={index} />
         ))}
       </div>
     </div>

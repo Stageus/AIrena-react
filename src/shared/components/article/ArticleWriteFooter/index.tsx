@@ -2,7 +2,7 @@ import CancelButton from '#shared/components/button/CancelButton'
 import SubmitButton from '#shared/components/button/EditButton'
 import styles from './index.module.scss'
 
-const WriteFooter: React.FC = ({}) => {
+const ArticleWriteFooter: React.FC = ({}) => {
   return (
     <div className={styles['write-footer']}>
       <CancelButton></CancelButton>
@@ -10,4 +10,4 @@ const WriteFooter: React.FC = ({}) => {
     </div>
   )
 }
-export default WriteFooter
+export default ArticleWriteFooter

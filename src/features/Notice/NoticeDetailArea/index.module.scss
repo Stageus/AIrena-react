@@ -1,0 +1,173 @@
+.notice-detail-area {
+  position: relative;
+  width: 832px;
+  height: fit-content;
+  box-shadow:
+    0px 1px 2px -1px rgba(0, 0, 0, 0.1),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  row-gap: 32px;
+  column-gap: 32px;
+  padding: 20px 32px 20px 32px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%),
+    rgba(255, 255, 255, 1);
+  .notice-detail-content {
+    flex-shrink: 0;
+    align-self: stretch;
+    width: 768px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 10px;
+    background: rgba(0, 0, 0, 0);
+    .title-output-box {
+      flex-shrink: 0;
+      align-self: stretch;
+      width: 768px;
+      height: 101px;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      row-gap: 20px;
+      column-gap: 20px;
+      padding: 12px 0px 12px 0px;
+      background: rgba(0, 0, 0, 0);
+      border-width: 0px 0px 1px 0px;
+      border-style: solid;
+      border-color: #e5e7eb;
+      .text-title {
+        flex-shrink: 0;
+        width: 368px;
+        height: 36px;
+        white-space: nowrap;
+        color: #111827;
+        font-family: 'Roboto';
+        font-size: 30px;
+        line-height: 36px;
+        font-weight: 700;
+      }
+    }
+    .content-output-box {
+      flex-shrink: 0;
+      align-self: stretch;
+      width: 768px;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      flex-wrap: wrap;
+      row-gap: 10px;
+      column-gap: 10px;
+      padding: 32px 0px 32px 0px;
+      background: rgba(0, 0, 0, 0);
+      .text {
+        flex-shrink: 0;
+        width: 226px;
+        height: 28px;
+        white-space: nowrap;
+        color: #374151;
+        font-family: 'Roboto';
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 400;
+      }
+      .text-1 {
+        flex-shrink: 0;
+        width: 418px;
+        height: 28px;
+        white-space: nowrap;
+        color: #374151;
+        font-family: 'Roboto';
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 400;
+      }
+      .text-2 {
+        flex-shrink: 0;
+        width: 397px;
+        height: 28px;
+        white-space: nowrap;
+        color: #374151;
+        font-family: 'Roboto';
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 400;
+      }
+      .text-3 {
+        flex-shrink: 0;
+        width: 78px;
+        height: 28px;
+        white-space: nowrap;
+        color: #374151;
+        font-family: 'Roboto';
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 400;
+      }
+    }
+    .frame-image-output-box {
+      flex-shrink: 0;
+      align-self: stretch;
+      width: 768px;
+      height: 384px;
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: start;
+      flex-wrap: wrap;
+      column-gap: 10px;
+      row-gap: 0px;
+      background: rgba(0, 0, 0, 0);
+      .img {
+        flex-shrink: 0;
+        width: 376px;
+        height: 192px;
+        border-radius: 8px;
+        background: url(https://image-resource.creatie.ai/150880125742532/150880125742534/fcc7f502ff3075256476d532d3098b5b.png),
+          rgba(0, 0, 0, 0);
+        object-fit: cover;
+        background-size: cover;
+      }
+      .img-1 {
+        flex-shrink: 0;
+        width: 376px;
+        height: 192px;
+        border-radius: 8px;
+        background: url(https://image-resource.creatie.ai/150880125742532/150880125742534/3acfd969bf17b60197dd1e863d3eccf1.png),
+          rgba(0, 0, 0, 0);
+        object-fit: cover;
+        background-size: cover;
+      }
+      .img-2 {
+        flex-shrink: 0;
+        width: 376px;
+        height: 192px;
+        border-radius: 8px;
+        background: url(https://image-resource.creatie.ai/150880125742532/150880125742534/e2667a77cd0f9af1649536a4d0b26527.png),
+          rgba(0, 0, 0, 0);
+        object-fit: cover;
+        background-size: cover;
+      }
+      .img-3 {
+        flex-shrink: 0;
+        width: 376px;
+        height: 192px;
+        border-radius: 8px;
+        background: url(https://image-resource.creatie.ai/150880125742532/150880125742534/b7f33790f4a4e4376bce070b816307ee.png),
+          rgba(0, 0, 0, 0);
+        object-fit: cover;
+        background-size: cover;
+      }
+    }
+  }
+}

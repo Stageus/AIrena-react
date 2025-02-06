@@ -1,0 +1,21 @@
+.total-rank-area {
+  width: 1376px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  .rank-list-area {
+    flex-shrink: 0;
+    width: 1376px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    background: #ffffff;
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color: #e5e7eb;
+  }
+}
