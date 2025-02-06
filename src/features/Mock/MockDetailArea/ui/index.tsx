@@ -1,26 +1,27 @@
 import { ReactComponent as SolveIcon } from '#assets/icons/solve_icon.svg'
 import ArticleManagementArea from '#shared/components/ArticleManagementArea/ArticleManagementArea'
 import { useNavigate } from 'react-router-dom'
-import MocktestLikeArea from './MockLikeArea/MocktestLikeArea.module'
-import styles from './MocktestDetailArea.module.css'
+import MockBasicInfoArea from './MockBasicInfoArea'
+import MockLikeArea from './MockLikeArea'
+import styles from './index.module.scss'
 
-const Root = ({}) => {
+const MockDetailArea: React.FC = () => {
   const navigate = useNavigate()
   const navigateToSolvePage = () => {
-    navigate('/mocktest/1/solve')
+    navigate('/mock/1/solve')
   }
 
   return (
-    <div className={styles['mocktest-detail-area']}>
+    <div className={styles['mock-detail-area']}>
       <div className={styles['title']}>대한민국 퀴즈</div>
       <div className={styles['description']}>대한민국에 관한 퀴즈입니다</div>
       <div className={styles['thumbnail']}></div>
-      <MocktestBasicInfoArea />
+      <MockBasicInfoArea />
       <ArticleManagementArea />
-      <MocktestLikeArea />
+      <MockLikeArea />
       <div
         onClick={navigateToSolvePage}
-        className={styles['mocktest-solve-button']}
+        className={styles['mock-solve-button']}
       >
         <div className={styles['button-content']}>
           <SolveIcon className={styles['solve-icon']} />
@@ -30,4 +31,4 @@ const Root = ({}) => {
     </div>
   )
 }
-export default Root
+export default MockDetailArea

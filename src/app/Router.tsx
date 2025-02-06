@@ -1,17 +1,16 @@
 import ChangeNicknamePage from '#pages/Authentication/ChangeNicknamePage'
 import ChangePasswordPage from '#pages/Authentication/ChangePasswordPage'
-import EmailVerificationGuidePage from '#pages/Authentication/EmailVerifiactionGuidePage'
+import EmailVerificationGuidePage from '#pages/Authentication/EmailVerificationGuidePage'
 import FindIdPage from '#pages/Authentication/FindIdPage'
 import FindPasswordPage from '#pages/Authentication/FindPasswordPage'
 import LoginPage from '#pages/Authentication/LoginPage'
 import LoginRedirectPage from '#pages/Authentication/LoginRedirectPage'
 import SignupPage from '#pages/Authentication/SignupPage'
-import MocktestDetailPage from '#pages/Mocktest/MocktestDetailPage'
-import MocktestListPage from '#pages/Mocktest/MocktestListPage'
-import MocktestSolvePage from '#pages/Mocktest/MocktestSolvePage'
-import MocktestWritePage from '#pages/Mocktest/MocktestWritePage'
+import MockDetailPage from '#pages/mock/MockDetailPage'
+import MockListPage from '#pages/mock/MockListPage'
+import MockSolvePage from '#pages/mock/MockSolvePage'
+import MockWritePage from '#pages/mock/MockWritePage'
 import HorizontalRootPage from '#shared/components/RootPage/HorizontalRootPage/HorizontalRootPage'
-import VertialRootPage from '#shared/components/RootPage/VerticalRootPage/VerticalRootPage'
 import WithIntroductionSectionLayout from '#shared/components/WithIntroductionSectionLayout/WithIntroductionSectionLayout'
 import WithMainHeaderLayout from '#shared/components/WithMainHeaderLayout/WithMainHeaderLayout'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
@@ -35,13 +34,13 @@ const AppRouter = () => (
         />
         <Route path="/login/redirect" element={<LoginRedirectPage />} />
       </Route>
-      <Route element={<VertialRootPage />}>
+      <Route element={<VerticalRootPage />}>
         <Route element={<WithMainHeaderLayout />}>
           {/* 모의고사 페이지 */}
-          <Route path="/mocktest" element={<MocktestListPage />} />
-          <Route path="/mocktest/:id" element={<MocktestDetailPage />} />
-          <Route path="/mocktest/write" element={<MocktestWritePage />} />
-          <Route path="/mocktest/:id/solve" element={<MocktestSolvePage />} />
+          <Route path="/mock" element={<MockListPage />} />
+          <Route path="/mock/:id" element={<MockDetailPage />} />
+          <Route path="/mock/write" element={<MockWritePage />} />
+          <Route path="/mock/:id/solve" element={<MockSolvePage />} />
         </Route>
       </Route>
     </Routes>

@@ -1,5 +1,5 @@
-import NormalLoginArea from '#features/Authentication/Login/ui/NormalLoginArea/NormalLoginArea'
-import SocialLoginArea from '#features/Authentication/Login/ui/SocialLoginArea/SocialLoginArea'
+import NormalLoginForm from '#features/Authentication/NormalLoginForm/ui'
+import SocialLoginArea from '#features/Authentication/SocialLoginArea/ui'
 import React from 'react'
 import styles from './LoginPage.module.scss'
 
@@ -7,7 +7,7 @@ const LoginPage: React.FC = () => {
   return (
     <div className={styles['narrow-background']}>
       <div className={styles['info-input-area']}>
-        <NormalLoginArea />
+        <NormalLoginForm />
         <SocialLoginArea />
       </div>
     </div>

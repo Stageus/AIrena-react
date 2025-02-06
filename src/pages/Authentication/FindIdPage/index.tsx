@@ -1,6 +1,6 @@
 import { RootState } from '#app/store'
-import FindIdResultArea from '#features/Authentication/FindId/ui/FindIdResultArea/FindIdResultArea'
-import InfoInputArea from '#features/Authentication/FindId/ui/InfoInputArea/InfoInputArea'
+import FindIdForm from '#features/Authentication/FindIdForm/ui'
+import FindIdResultArea from '#features/Authentication/FindIdResultArea/ui'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import styles from './index.module.scss'
@@ -10,7 +10,7 @@ const FindIdPage: React.FC = () => {
 
   return (
     <div className={styles['narrow-background']}>
-      {showResult == false && <InfoInputArea />}
+      {showResult == false && <FindIdForm />}
       {showResult == true && <FindIdResultArea />}
     </div>
   )
