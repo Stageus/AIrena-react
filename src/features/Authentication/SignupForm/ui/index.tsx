@@ -13,7 +13,7 @@ const SignupForm: React.FC = () => {
     navigate('/email-verification-guide')
   }
   return (
-    <div className={'signup-form'}>
+    <div className={styles['signup-form']}>
       <div className={styles['info-input-area']}>
         <IdInput />
         <PasswordInput />

@@ -11,7 +11,7 @@ const FindIdResultArea = ({}) => {
   }
 
   return (
-    <div className={styles['.find-id-result-area']}>
+    <div className={styles['find-id-result-area']}>
       <div className={styles['find-id-result']}>아이디 찾기 결과</div>
       <WeightedTextOutput text={'pine7420'} />
       <SharedButton name="로그인페이지로 이동" onClick={goLoginPage} />

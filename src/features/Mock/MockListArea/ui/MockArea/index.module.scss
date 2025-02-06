@@ -1,7 +1,4 @@
 .mock-area {
-  position: absolute;
-  top: 2px;
-  left: 3px;
   width: 1376px;
   height: 56px;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
@@ -44,9 +41,6 @@
     height: 24px;
     background: rgba(0, 0, 0, 0);
     .title {
-      position: absolute;
-      top: 0px;
-      left: 0px;
       width: 52px;
       height: 24px;
       white-space: nowrap;
@@ -63,9 +57,6 @@
     height: 24px;
     background: rgba(0, 0, 0, 0);
     .writer-nickname {
-      position: absolute;
-      top: 0px;
-      left: 0px;
       width: 89px;
       height: 24px;
       white-space: nowrap;
@@ -82,9 +73,6 @@
     height: 24px;
     background: rgba(0, 0, 0, 0);
     .write-date {
-      position: absolute;
-      top: 0px;
-      left: 0px;
       width: 81px;
       height: 24px;
       white-space: nowrap;
