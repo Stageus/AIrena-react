@@ -1,9 +1,8 @@
 import { ReactComponent as SolveIcon } from '#assets/icons/solve_icon.svg'
 import ArticleManagementArea from '#shared/components/ArticleManagementArea/ArticleManagementArea'
 import { useNavigate } from 'react-router-dom'
-import MocktestBasicInfoArea from './MocktestBasicInfo/MocktestBasicInfoArea'
+import MocktestLikeArea from './MockLikeArea/MocktestLikeArea.module'
 import styles from './MocktestDetailArea.module.css'
-import MocktestLikeArea from './MocktestLikeArea/MocktestLikeArea.module'
 
 const Root = ({}) => {
   const navigate = useNavigate()

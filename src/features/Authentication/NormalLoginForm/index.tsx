@@ -2,9 +2,9 @@ import SharedButton from '#shared/components/Button/StandardButton/StandardButto
 import IdInput from '#shared/components/Input/IdInput/IdInput'
 import PasswordInput from '#shared/components/Input/PasswordInput/PasswordInput'
 import { useNavigate } from 'react-router-dom'
-import styles from './NormalLoginArea.module.css'
+import styles from './index.module.scss'
 
-const Root = ({}) => {
+const NormalLoginForm: React.FC = ({}) => {
   const navigate = useNavigate()
 
   const goFindPassword = () => {
@@ -24,10 +24,10 @@ const Root = ({}) => {
   }
 
   return (
-    <div className={styles['normal-login-area']}>
+    <div className={styles['normal-login-form']}>
       <IdInput />
       <PasswordInput />
-      <div className={styles['auth-buttons']}>
+      <div className={styles['auth-button-area']}>
         <div onClick={goFindId} className={styles['find-id-button']}>
           아이디 찾기
         </div>
@@ -47,4 +47,4 @@ const Root = ({}) => {
     </div>
   )
 }
-export default Root
+export default NormalLoginForm

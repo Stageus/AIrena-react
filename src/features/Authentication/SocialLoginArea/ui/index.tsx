@@ -1,10 +1,7 @@
-import {
-  goGoogleLoginPage,
-  goKakaoLoginPage,
-} from '#features/Authentication/Login/model/oAuthService'
-import styles from './SocialLoginArea.module.css'
+import { goGoogleLoginPage, goKakaoLoginPage } from '../model/oAuthService'
+import styles from './index.module.scss'
 
-const Root = ({}) => {
+const SocialLoginArea: React.FC = () => {
   return (
     <div className={styles['social-login-area']}>
       <div className={styles['simple-login-container']}>
@@ -31,4 +28,4 @@ const Root = ({}) => {
     </div>
   )
 }
-export default Root
+export default SocialLoginArea

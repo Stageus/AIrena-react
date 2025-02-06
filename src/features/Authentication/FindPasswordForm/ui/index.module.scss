@@ -1,14 +1,19 @@
-.signup-form {
+.find-password-form {
+  position: absolute;
+  top: 0.5px;
+  left: 0px;
   width: 480px;
-  height: 430px;
+  height: 251px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   background: rgba(0, 0, 0, 0);
-  .info-input-area {
+  .input-area {
+    flex-shrink: 0;
+    align-self: stretch;
     width: 480px;
-    height: 322px;
+    height: 153px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

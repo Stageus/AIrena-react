@@ -1,11 +1,26 @@
-import InfoInputArea from '#features/Authentication/SignupForm/ui/InfoInputArea'
+import SharedButton from '#shared/components/Button/StandardButton/StandardButton'
+import EmailInput from '#shared/components/Input/EmailInput/EmailInput'
+import IdInput from '#shared/components/Input/IdInput/IdInput'
+import PasswordCheckInput from '#shared/components/Input/PasswordCheckInput/PasswordCheckInput'
+import PasswordInput from '#shared/components/Input/PasswordInput/PasswordInput'
 import React from 'react'
-import './index.module.scss'
+import { useNavigate } from 'react-router-dom'
+import styles from './index.module.scss'
 
 const SignupForm: React.FC = () => {
+  const navigate = useNavigate()
+  const goEmailVerificationGuidePage = () => {
+    navigate('/email-verification-guide')
+  }
   return (
     <div className={'signup-form'}>
-      <InfoInputArea />
+      <div className={styles['info-input-area']}>
+        <IdInput />
+        <PasswordInput />
+        <PasswordCheckInput />
+        <EmailInput />
+      </div>
+      <SharedButton name="회원가입" onClick={goEmailVerificationGuidePage} />
     </div>
   )
 }

@@ -1,12 +1,12 @@
 import SharedButton from '#shared/components/Button/StandardButton/StandardButton'
 import EmailInput from '#shared/components/Input/EmailInput/EmailInput'
 import IdInput from '#shared/components/Input/IdInput/IdInput'
-import styles from './InfoInputArea.module.css'
+import styles from './index.module.scss'
 
-const Root = ({}) => {
+const FindPasswordForm: React.FC = ({}) => {
   return (
-    <div className={styles['info-input-area']}>
-      <div className={styles['input-container']}>
+    <div className={styles['find-password-form']}>
+      <div className={styles['input-area']}>
         <IdInput />
         <EmailInput />
       </div>
@@ -14,4 +14,4 @@ const Root = ({}) => {
     </div>
   )
 }
-export default Root
+export default FindPasswordForm

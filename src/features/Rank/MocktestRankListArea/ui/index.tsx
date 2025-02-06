@@ -1,4 +1,4 @@
-import MocktestRankArea from './MocktestRankArea/MocktestRanArea'
+import MocktestRankArea from './MockRankArea/MocktestRanArea'
 import styles from './MocktestRankListArea.module.css'
 
 const MocktestRankListArea = ({}) => {

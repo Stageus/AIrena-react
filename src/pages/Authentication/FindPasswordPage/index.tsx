@@ -1,6 +1,6 @@
-import InfoInputArea from '#features/Authentication/FindPassword/ui/InfoInputArea/InfoInputArea'
+import InfoInputArea from '#features/Authentication/FindPasswordForm/ui/InfoInputArea/InfoInputArea'
 import React from 'react'
-import style from './FindPasswordPage.module.css'
+import style from './index.module.scss'
 
 const LoginPage: React.FC = () => {
   return (
