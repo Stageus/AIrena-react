@@ -1,5 +1,5 @@
-import CancelButton from '#shared/components/Button/CancelButton/CancelButton'
-import SubmitButton from '#shared/components/Button/EditButton/EditButton'
+import CancelButton from '#shared/components/CancelButton'
+import SubmitButton from '#shared/components/EditButton'
 import styles from './WriteFooter.module.css'
 
 const WriteFooter: React.FC = ({}) => {

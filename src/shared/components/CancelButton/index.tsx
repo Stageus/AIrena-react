@@ -1,6 +1,6 @@
 import { ReactComponent as CancelIcon } from '#assets/icons/cancel_icon.svg'
 import React from 'react'
-import styles from './CancelButton.module.css'
+import styles from './index.module.scss'
 
 const CancelButton: React.FC = () => {
   return (

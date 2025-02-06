@@ -1,5 +1,5 @@
-import SharedButton from '#shared/components/Button/StandardButton/StandardButton'
 import NicknameInput from '#shared/components/Input/NicknameInput/NicknameInput'
+import SharedButton from '#shared/components/StandardButton/StandardButton'
 import styles from './index.module.scss'
 
 const ChangeNicknameForm: React.FC = () => {

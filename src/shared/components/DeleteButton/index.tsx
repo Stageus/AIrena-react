@@ -1,6 +1,6 @@
 import { ReactComponent as DeleteIcon } from '#assets/icons/delete_icon.svg'
 import React from 'react'
-import styles from './DeleteButton.module.css'
+import styles from './index.module.scss'
 
 const DeleteButton: React.FC = () => {
   return (

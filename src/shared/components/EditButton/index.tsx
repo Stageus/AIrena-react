@@ -1,6 +1,6 @@
 import { ReactComponent as EditIcon } from '#assets/icons/submit_icon.svg'
 import React from 'react'
-import styles from './EditButton.module.css'
+import styles from './index.module.scss'
 
 const EditButton: React.FC = () => {
   return (

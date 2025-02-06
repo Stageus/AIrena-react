@@ -1,6 +1,6 @@
 import { ReactComponent as CompleteIcon } from '#assets/icons/complete_icon.svg'
 import React from 'react'
-import styles from './CompleteButton.module.css'
+import styles from './index.module.scss'
 
 const CompleteButton: React.FC = () => {
   return (

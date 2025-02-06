@@ -1,6 +1,6 @@
 import { AppDispatch } from '#app/store'
-import SharedButton from '#shared/components/Button/StandardButton/StandardButton'
 import EmailInput from '#shared/components/Input/EmailInput/EmailInput'
+import SharedButton from '#shared/components/StandardButton/StandardButton'
 import { useDispatch } from 'react-redux'
 import { setShowResult } from '../model/FindIdSlice'
 import styles from './index.module.scss'

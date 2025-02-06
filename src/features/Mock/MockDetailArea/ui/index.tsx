@@ -1,5 +1,5 @@
 import { ReactComponent as SolveIcon } from '#assets/icons/solve_icon.svg'
-import ArticleManagementArea from '#shared/components/ArticleManagementArea/ArticleManagementArea'
+import ArticleManagementArea from '#shared/components/ArticleManagementArea'
 import { useNavigate } from 'react-router-dom'
 import MockBasicInfoArea from './MockBasicInfoArea'
 import MockLikeArea from './MockLikeArea'

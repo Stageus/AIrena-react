@@ -1,6 +1,6 @@
 import { ReactComponent as LeftPageIcon } from '#assets/icons/left_page_icon.svg'
 import { ReactComponent as RightPageIcon } from '#assets/icons/right_page_icon.svg'
-import PageButton from '#shared/components/Button/PageButton/PageButton'
+import PageButton from '#shared/components/PageButton/PageButton'
 import styles from './Pagenation.module.css'
 
 const Root = ({}) => {

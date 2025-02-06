@@ -1,5 +1,5 @@
-import SharedButton from '#shared/components/Button/StandardButton/StandardButton'
 import WeightedTextOutput from '#shared/components/Output/WeightedTextOutput'
+import SharedButton from '#shared/components/StandardButton/StandardButton'
 import styles from './index.module.scss'
 
 const EmailVerificationGuide: React.FC = ({}) => {
