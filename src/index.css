@@ -3,18 +3,15 @@ body {
   background-color: #f8f9fa;
 }
 
+#editor {
+  height: 300px;
+}
+
+#editor-container {
+  align-self: stretch;
+  height: fit-content;
+}
+
 * {
   box-sizing: border-box;
-}
-
-.ql-toolbar {
-  align-self: stretch;
-}
-
-#editor {
-  align-self: stretch;
-}
-
-#editor .ql-editor {
-  align-self: stretch;
 }

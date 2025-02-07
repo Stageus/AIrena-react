@@ -22,7 +22,11 @@ const TextEditor = () => {
     }
   }, [])
 
-  return <div id="editor" ref={editorRef}></div>
+  return (
+    <div id="editor-container">
+      <div id="editor" ref={editorRef}></div>
+    </div>
+  )
 }
 
 export default TextEditor
