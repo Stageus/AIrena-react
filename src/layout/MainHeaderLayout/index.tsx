@@ -3,14 +3,12 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 import styles from './index.module.scss'
 
-const WithMainHeaderLayout: React.FC = () => {
+const MainHeaderLayout: React.FC = () => {
   return (
-    <>
+    <div className={styles['with-main-header-layout']}>
       <MainHeader />
-      <div className={styles['main-area']}>
-        <Outlet />
-      </div>
-    </>
+      <Outlet />
+    </div>
   )
 }
-export default WithMainHeaderLayout
+export default MainHeaderLayout

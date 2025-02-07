@@ -1,27 +1,26 @@
 import Quill from 'quill'
 import 'quill/dist/quill.snow.css'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import option from '../model/option'
 import './index.module.css'
 
 const TextEditor = () => {
   const editorRef = useRef<HTMLDivElement | null>(null)
   const quillInstance = useRef<Quill | null>(null)
 
-  useEffect(() => {
-    const option = {
-      modules: {
-        toolbar: true,
-      },
-      placeholder: '내용을 입력해주세요',
-      theme: 'snow',
-    }
+  const [content, setContent] = useState('')
 
+  useEffect(() => {
     if (editorRef.current && !quillInstance.current) {
       const quill = new Quill(editorRef.current, option)
       quillInstance.current = quill
+      quill.on('text-change', () => {
+        setContent(quill.root.innerHTML)
+      })
     }
   }, [])
 
+  console.log(content)
   return (
     <div id="editor-container">
       <div id="editor" ref={editorRef}></div>

@@ -1,9 +1,10 @@
-.mock-solve-container {
+.with-main-header-layout {
   width: 1440px;
   height: fit-content;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  padding: 20px 0px 20px 0px;
+  background: #f5f5f5;
 }

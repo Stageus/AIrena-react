@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background-color: #ffffff;
 
   .logo-with-text {
     flex-shrink: 0;
@@ -27,7 +28,7 @@
       }
     }
 
-    .airena {
+    .ai-rena {
       flex-shrink: 0;
       align-self: stretch;
       width: 300px;

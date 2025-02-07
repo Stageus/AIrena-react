@@ -1,10 +1,12 @@
 .mock-write-area {
   width: 768px;
-  height: 900px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
   align-items: start;
+  row-gap: 16px;
+  column-gap: 16px;
   background: rgba(0, 0, 0, 0);
   .text {
     flex-shrink: 0;
@@ -237,7 +239,7 @@
     flex-shrink: 0;
     align-self: stretch;
     width: 768px;
-    height: 138px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: start;

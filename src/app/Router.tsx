@@ -17,53 +17,50 @@ import NoticeDetailPage from '#pages/Notice/NoticeDetailPage'
 import NoticeListPage from '#pages/Notice/NoticeListPage'
 import NoticeWritePage from '#pages/Notice/NoticeWritePage'
 import TotalRankPage from '#pages/Rank/TotalRankPage'
-import WithIntroductionSectionLayout from '#shared/components/layout/WithIntroductionSectionLayout'
-import WithMainHeaderLayout from '#shared/components/layout/WithMainHeaderLayout'
-import HorizontalRootPage from '#shared/components/rootPage/HorizontalRootPage'
-import VerticalRootPage from '#shared/components/rootPage/VerticalRootPage'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import IntroductionLayout from 'src/layout/IntroductionLayout'
+import MainHeaderLayout from 'src/layout/MainHeaderLayout'
 
 const AppRouter = () => (
   <Router>
     <Routes>
       {/* 인증 페이지 */}
-      <Route element={<HorizontalRootPage />}>
-        <Route element={<WithIntroductionSectionLayout />}>
-          <Route path="/" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
-          <Route path="/find/id" element={<FindIdPage />} />
-          <Route path="/find/password" element={<FindPasswordPage />} />
-          <Route path="/change/password" element={<ChangePasswordPage />} />
-          <Route path="/change/nickname" element={<ChangeNicknamePage />} />
-        </Route>
-        <Route
-          path="/email-verification-guide"
-          element={<EmailVerificationGuidePage />}
-        />
-        <Route path="/login/redirect" element={<LoginRedirectPage />} />
+      <Route element={<IntroductionLayout />}>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/find/id" element={<FindIdPage />} />
+        <Route path="/find/password" element={<FindPasswordPage />} />
+        <Route path="/change/password" element={<ChangePasswordPage />} />
+        <Route path="/change/nickname" element={<ChangeNicknamePage />} />
       </Route>
-      <Route element={<VerticalRootPage />}>
-        <Route element={<WithMainHeaderLayout />}>
-          {/* 모의고사 페이지 */}
-          <Route path="/mock" element={<MockListPage />} />
-          <Route path="/mock/:id" element={<MockDetailPage />} />
-          <Route path="/mock/write" element={<MockWritePage />} />
-          <Route path="/mock/:id/solve" element={<MockSolvePage />} />
-          <Route
-            path="/mock/:id/grading"
-            element={<MockSubmitAnswerGradingPage />}
-          />
-          <Route path="/mock/:id/result" element={<MockResultPage />} />
-          {/* 공지사항 페이지 */}
-          <Route path="/notice" element={<NoticeListPage />} />
-          <Route path="/notice/write" element={<NoticeWritePage />} />
-          <Route path="/notice/:id" element={<NoticeDetailPage />} />
-          {/* 전체 랭킹 페이지 */}
-          <Route path="/rank/total" element={<TotalRankPage />} />
-          {/* 에러 페이지 */}
-          <Route path="/mock/999" element={<ErrorPage />} />
-          <Route path="/error" element={<ErrorPage />} />
-        </Route>
+      <Route
+        path="/email-verification-guide"
+        element={<EmailVerificationGuidePage />}
+      />
+      <Route path="/login/redirect" element={<LoginRedirectPage />} />
+      <Route element={<MainHeaderLayout />}>
+        {/* 모의고사 페이지 */}
+        <Route path="/mock" element={<MockListPage />} />
+        <Route path="/mock/:id" element={<MockDetailPage />} />
+        <Route path="/mock/write" element={<MockWritePage />} />
+        <Route path="/mock/:id/solve" element={<MockSolvePage />} />
+        <Route
+          path="/mock/:id/grading"
+          element={<MockSubmitAnswerGradingPage />}
+        />
+        <Route path="/mock/:id/result" element={<MockResultPage />} />
+
+        {/* 공지사항 페이지 */}
+        <Route path="/notice" element={<NoticeListPage />} />
+        <Route path="/notice/write" element={<NoticeWritePage />} />
+        <Route path="/notice/:id" element={<NoticeDetailPage />} />
+
+        {/* 전체 랭킹 페이지 */}
+        <Route path="/rank/total" element={<TotalRankPage />} />
+
+        {/* 에러 페이지 */}
+        <Route path="/mock/999" element={<ErrorPage />} />
+        <Route path="/error" element={<ErrorPage />} />
       </Route>
     </Routes>
   </Router>
