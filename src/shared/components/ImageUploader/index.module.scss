@@ -1,6 +1,6 @@
 .image-uploader {
   width: 768px;
-  height: 236px;
+  height: fit-content;
   border-radius: 6px;
   display: flex;
   flex-direction: column;
@@ -10,25 +10,19 @@
   column-gap: 20px;
   background: rgba(0, 0, 0, 0);
   border: 2px dashed #d1d5db;
-  .image-preview {
+  .image-preview-content {
     flex-shrink: 0;
     align-self: stretch;
     width: 764px;
-    height: 150px;
+    height: fit-content;
     display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: start;
+    flex-wrap: wrap;
     row-gap: 0px;
-    .small-logo {
+    .image-preview {
       flex-shrink: 0;
       width: 150px;
       height: 150px;
-      .small-logo-1 {
-        width: calc(100% - 0% - 0%);
-        height: calc(100% - 0% - 0%);
-        object-fit: cover;
-      }
+      object-fit: contain;
     }
   }
   .image-submit-content {

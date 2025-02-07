@@ -5,22 +5,18 @@ import option from '../model/option'
 import './index.module.css'
 
 const TextEditor = () => {
-  const editorRef = useRef<HTMLDivElement | null>(null)
-  const quillInstance = useRef<Quill | null>(null)
-
   const [content, setContent] = useState('')
 
+  const editorRef = useRef<HTMLDivElement | null>(null)
   useEffect(() => {
-    if (editorRef.current && !quillInstance.current) {
+    if (editorRef.current) {
       const quill = new Quill(editorRef.current, option)
-      quillInstance.current = quill
       quill.on('text-change', () => {
         setContent(quill.root.innerHTML)
       })
     }
   }, [])
 
-  console.log(content)
   return (
     <div id="editor-container">
       <div id="editor" ref={editorRef}></div>
