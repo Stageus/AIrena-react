@@ -38,10 +38,6 @@ const MockWriteArea: React.FC = () => {
     }
   }
 
-  if (isLoading) {
-    return <div className={styles['loading']}>생성중입니다...</div>
-  }
-
   const goMockPage = () => {
     const isConfirmed = window.confirm(
       '변경 내용이 초기화됩니다. 페이지를 벗어나시겠습니까?',
@@ -52,62 +48,70 @@ const MockWriteArea: React.FC = () => {
   }
 
   return (
-    <div className={styles['mock-write-area']}>
-      <div className={styles['text']}>모의고사 작성</div>
-      {/* 퀴즈 생성 주제 입력 */}
-      <div className={styles['subject-input-area']}>
-        <div className={styles['text-1']}>퀴즈 생성 주제</div>
-        <div className={styles['subject-input-box']}>
-          <input
-            type="text"
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-            placeholder="ex) 대한민국"
-            className={styles['subject-input']}
-          />
-        </div>
-      </div>
-      {/* 퀴즈 생성 개수 입력 */}
-      <div className={styles['quiz-count-input-area']}>
-        <div className={styles['text-2']}>퀴즈 생성 개수(최대 10개 가능)</div>
-        <div className={styles['subject-input-content']}>
-          <div className={styles['quiz-count-input-box']}>
+    <>
+      <div
+        className={styles['mock-write-area']}
+        style={{ display: isLoading ? 'none' : 'flex' }}
+      >
+        <div className={styles['text']}>모의고사 작성</div>
+        {/* 퀴즈 생성 주제 입력 */}
+        <div className={styles['subject-input-area']}>
+          <div className={styles['text-1']}>퀴즈 생성 주제</div>
+          <div className={styles['subject-input-box']}>
             <input
-              type="number"
-              value={quizCount}
-              onChange={(e) => setQuizCount(Number(e.target.value))}
-              min={1}
-              max={10}
-              className={styles['quiz-count-input']}
+              type="text"
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+              placeholder="ex) 대한민국"
+              className={styles['subject-input']}
             />
           </div>
-          <div className={styles['text-3']}>개</div>
         </div>
-      </div>
-      <div className={styles['title-input-area']}>
-        <div className={styles['text-4']}>제목</div>
-        <div className={styles['title-input-box']}>
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => {
-              setTitle(e.target.value)
-            }}
-            placeholder="ex) 대한민국 상식 퀴즈"
-            className={styles['title-input']}
-          />
+        {/* 퀴즈 생성 개수 입력 */}
+        <div className={styles['quiz-count-input-area']}>
+          <div className={styles['text-2']}>퀴즈 생성 개수(최대 10개 가능)</div>
+          <div className={styles['subject-input-content']}>
+            <div className={styles['quiz-count-input-box']}>
+              <input
+                type="number"
+                value={quizCount}
+                onChange={(e) => setQuizCount(Number(e.target.value))}
+                min={1}
+                max={10}
+                className={styles['quiz-count-input']}
+              />
+            </div>
+            <div className={styles['text-3']}>개</div>
+          </div>
         </div>
+        <div className={styles['title-input-area']}>
+          <div className={styles['text-4']}>제목</div>
+          <div className={styles['title-input-box']}>
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => {
+                setTitle(e.target.value)
+              }}
+              placeholder="ex) 대한민국 상식 퀴즈"
+              className={styles['title-input']}
+            />
+          </div>
+        </div>
+        <div className={styles['content-input-area']}>
+          <div className={styles['text-5']}>내용</div>
+          <TextEditor setContent={setContent} />
+        </div>
+        <div className={styles['image-submit-area']}>
+          <div className={styles['text-6']}>썸네일 등록</div>
+          <ImageUploader setFiles={setFiles} />
+        </div>
+        <WriteFooter onCancelClick={goMockPage} onSubmitClick={handleSubmit} />
       </div>
-      <div className={styles['content-input-area']}>
-        <div className={styles['text-5']}>내용</div>
-        <TextEditor setContent={setContent} />
+      <div style={{ display: isLoading ? 'block' : 'none' }}>
+        생성중입니다...
       </div>
-      <div className={styles['image-submit-area']}>
-        <div className={styles['text-6']}>썸네일 등록</div>
-        <ImageUploader setFiles={setFiles} />
-      </div>
-      <WriteFooter onCancelClick={goMockPage} onSubmitClick={handleSubmit} />
-    </div>
+    </>
   )
 }
 export default MockWriteArea
