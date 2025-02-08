@@ -1,12 +1,20 @@
 import CancelButton from '#shared/components/button/CancelButton'
-import SubmitButton from '#shared/components/button/EditButton'
+import SubmitButton from '#shared/components/button/SubmitButton'
 import styles from './index.module.scss'
 
-const ArticleWriteFooter: React.FC = ({}) => {
+interface ArticleWriteFooterProps {
+  onCancelClick: () => void
+  onSubmitClick: () => void
+}
+
+const ArticleWriteFooter: React.FC<ArticleWriteFooterProps> = ({
+  onCancelClick,
+  onSubmitClick,
+}) => {
   return (
     <div className={styles['write-footer']}>
-      <CancelButton></CancelButton>
-      <SubmitButton></SubmitButton>
+      <CancelButton onClick={onCancelClick}></CancelButton>
+      <SubmitButton onClick={onSubmitClick}></SubmitButton>
     </div>
   )
 }

@@ -1,7 +1,12 @@
 import MockResultArea from '#features/Mock/MockResultArea'
 import React from 'react'
+import styles from './index.module.scss'
 
 const MockResultPage: React.FC = () => {
-  return <MockResultArea />
+  return (
+    <div className={styles['mock-submit-answer-grading-container']}>
+      <MockResultArea />
+    </div>
+  )
 }
 export default MockResultPage

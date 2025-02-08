@@ -11,7 +11,7 @@ const IntroductionSection: React.FC = () => {
             className={styles['big-logo-1']}
           />
         </div>
-        <div className={styles['airena']}>AIrena</div>
+        <div className={styles['ai-rena']}>AIrena</div>
         <div className={styles['introduction-text']}>
           <div>
             <span>

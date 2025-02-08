@@ -6,7 +6,7 @@ import styles from './index.module.scss'
 const NoticeListArea: React.FC = () => {
   const likeExist = false
   return (
-    <div className={styles['mock-list-area']}>
+    <div className={styles['notice-list-area']}>
       <ArticleSelectAndSortHeader />
       <ArticleLegend likeExist={likeExist} />
       {Array.from({ length: 10 }, (_, index) => (

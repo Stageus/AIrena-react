@@ -1,10 +1,12 @@
 .mock-write-area {
   width: 768px;
-  height: 900px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
   align-items: start;
+  row-gap: 16px;
+  column-gap: 16px;
   background: rgba(0, 0, 0, 0);
   .text {
     flex-shrink: 0;
@@ -43,8 +45,7 @@
     }
     .subject-input-box {
       flex-shrink: 0;
-      align-self: stretch;
-      width: 768px;
+      width: 100%;
       height: 42px;
       box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
       border-radius: 6px;
@@ -62,10 +63,11 @@
         ),
         rgba(255, 255, 255, 1);
       border: 1px solid #d1d5db;
-      .subject-placeholder {
+      .subject-input {
         flex-shrink: 0;
-        width: 85px;
+        width: 100%;
         height: 24px;
+        border: none;
         white-space: nowrap;
         color: #6b7280;
         font-family: 'Roboto';
@@ -128,10 +130,11 @@
           ),
           rgba(255, 255, 255, 1);
         border: 1px solid #d1d5db;
-        .quiz-count-input-placeholder {
+        .quiz-count-input {
           flex-shrink: 0;
-          width: 44px;
+          width: 100%;
           height: 24px;
+          border: none;
           white-space: nowrap;
           color: #6b7280;
           font-family: 'Roboto';
@@ -178,8 +181,7 @@
     }
     .title-input-box {
       flex-shrink: 0;
-      align-self: stretch;
-      width: 768px;
+      width: 100%;
       height: 42px;
       box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
       border-radius: 6px;
@@ -197,9 +199,10 @@
         ),
         rgba(255, 255, 255, 1);
       border: 1px solid #d1d5db;
-      .title-input-placeholder {
+      .title-input {
         flex-shrink: 0;
-        width: 373px;
+        border: none;
+        width: 100%;
         height: 24px;
         color: #6b7280;
         font-family: 'Roboto';
@@ -237,7 +240,7 @@
     flex-shrink: 0;
     align-self: stretch;
     width: 768px;
-    height: 138px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: start;

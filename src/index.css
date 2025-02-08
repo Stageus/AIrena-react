@@ -1,3 +1,7 @@
+html {
+  overflow-y: scroll; /* 세로 스크롤바 공간을 항상 확보 */
+}
+
 body {
   margin: 0;
   background-color: #f8f9fa;

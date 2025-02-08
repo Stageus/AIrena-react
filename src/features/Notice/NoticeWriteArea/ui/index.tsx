@@ -1,6 +1,6 @@
 import WriteFooter from '#shared/components/article/ArticleWriteFooter'
-import ImageUploadBox from '#shared/components/ImageUploadBox'
-import TextEditor from '#shared/components/TextEditor'
+import ImageUploadBox from '#shared/components/ImageUploader'
+import TextEditor from '#shared/components/TextEditor/ui'
 import styles from './index.module.scss'
 
 const NoticeWriteArea: React.FC = () => {
