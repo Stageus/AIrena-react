@@ -1,12 +1,14 @@
 import Quill from 'quill'
 import 'quill/dist/quill.snow.css'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import option from '../model/option'
 import './index.module.css'
 
-const TextEditor = () => {
-  const [content, setContent] = useState('')
+interface TextEditorProps {
+  setContent: (content: string) => void
+}
 
+const TextEditor: React.FC<TextEditorProps> = ({ setContent }) => {
   const editorRef = useRef<HTMLDivElement | null>(null)
   useEffect(() => {
     if (editorRef.current) {

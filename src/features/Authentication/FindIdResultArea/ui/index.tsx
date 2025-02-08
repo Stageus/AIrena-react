@@ -1,5 +1,5 @@
 import SharedButton from '#shared/components/button/StandardButton/StandardButton'
-import WeightedTextOutput from '#shared/components/output/WeightedTextOutput'
+import WeightedTextOutput from '#shared/components/WeightedTextOutput'
 import { useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
 

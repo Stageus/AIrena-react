@@ -2,7 +2,11 @@ import { ReactComponent as UploadIcon } from '#assets/icons/upload_icon.svg'
 import { useEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 
-const ImageUploader: React.FC = () => {
+interface ImageUploaderProps {
+  setFiles: (files: File[]) => void
+}
+
+const ImageUploader: React.FC<ImageUploaderProps> = ({ setFiles }) => {
   const createdUrls = useRef<string[]>([])
   const [previewUrls, setPreviewUrls] = useState<string[]>([])
   const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -14,12 +18,14 @@ const ImageUploader: React.FC = () => {
       return
     }
 
-    const newUrls: string[] = [...previewUrls]
-    Array.from(files).forEach((file) => {
-      newUrls.push(URL.createObjectURL(file))
-    })
+    setFiles(Array.from(files))
 
-    setPreviewUrls((prev) => [...prev, ...newUrls])
+    const newUrls: string[] = [
+      ...previewUrls,
+      ...Array.from(files).map((file) => URL.createObjectURL(file)),
+    ]
+
+    setPreviewUrls(newUrls)
     createdUrls.current.push(...newUrls)
   }
 

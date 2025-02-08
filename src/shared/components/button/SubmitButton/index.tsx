@@ -1,10 +1,14 @@
 import { ReactComponent as SubmitIcon } from '#assets/icons/submit_icon.svg'
 import React from 'react'
-import styles from './EditButton.module.css'
+import styles from './index.module.scss'
 
-const SubmitButton: React.FC = () => {
+interface SubmitButtonProps {
+  onClick: () => Promise<void>
+}
+
+const SubmitButton: React.FC<SubmitButtonProps> = ({ onClick }) => {
   return (
-    <div className={styles['submit-button']}>
+    <div onClick={onClick} className={styles['submit-button']}>
       <SubmitIcon className={styles['submit-icon']} />
       <div className={styles['text']}>등록</div>
     </div>

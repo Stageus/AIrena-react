@@ -1,4 +1,4 @@
-import MainHeader from '#shared/components/header/MainHeader'
+import MainHeader from '#shared/components/MainHeader'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import styles from './index.module.scss'
