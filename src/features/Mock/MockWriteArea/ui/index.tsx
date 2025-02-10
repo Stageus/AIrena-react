@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { requestMockPost } from '../api'
 import styles from './index.module.scss'
+import Loading from './Loading'
 
 const MockWriteArea: React.FC = () => {
   const [subject, setSubject] = useState<string>('')
@@ -20,16 +21,16 @@ const MockWriteArea: React.FC = () => {
     formData.append('subject', subject)
     formData.append('quizCount', quizCount.toString())
     formData.append('title', title)
-    formData.append('content', content)
+    formData.append('description', content)
     if (files) {
       Array.from(files).forEach((file) => {
-        formData.append('file', file)
+        formData.append('image', file)
       })
     }
 
     setIsLoading(true)
     try {
-      const response = await requestMockPost({ formData })
+      const response = await requestMockPost(formData)
       navigate(`/mock/${response.articleId}`)
     } catch (error) {
       console.error('등록 처리 중 오류 발생:', error)
@@ -108,9 +109,7 @@ const MockWriteArea: React.FC = () => {
         </div>
         <WriteFooter onCancelClick={goMockPage} onSubmitClick={handleSubmit} />
       </div>
-      <div style={{ display: isLoading ? 'block' : 'none' }}>
-        생성중입니다...
-      </div>
+      <Loading isLoading={isLoading} />
     </>
   )
 }
