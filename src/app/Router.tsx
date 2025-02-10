@@ -34,7 +34,11 @@ const AppRouter = () => (
         <Route path="/change/nickname" element={<ChangeNicknamePage />} />
       </Route>
       <Route
-        path="/email-verification-guide"
+        path="/signup/email-verification-guide"
+        element={<EmailVerificationGuidePage />}
+      />
+      <Route
+        path="/signup/verify?token=asfasfasfafs"
         element={<EmailVerificationGuidePage />}
       />
       <Route path="/login/redirect" element={<LoginRedirectPage />} />
