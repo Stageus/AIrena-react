@@ -1,5 +1,5 @@
 .article-creation-basic-info-area {
-  width: 320.5px;
+  width: fit-content;
   height: 20px;
   display: flex;
   flex-direction: row;
@@ -10,8 +10,8 @@
   background: rgba(0, 0, 0, 0);
   .writer-nickname-output-box {
     flex-shrink: 0;
-    width: 158.25px;
-    height: 20px;
+    width: fit-content;
+    height: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -26,7 +26,7 @@
     }
     .writer-nickname {
       flex-shrink: 0;
-      width: 136px;
+      width: fit-content;
       height: 20px;
       white-space: nowrap;
       color: #4b5563;
@@ -38,7 +38,7 @@
   }
   .write-date-output-box {
     flex-shrink: 0;
-    width: 138.25px;
+    width: fit-content;
     height: 20px;
     display: flex;
     flex-direction: row;
@@ -54,7 +54,7 @@
     }
     .write-date {
       flex-shrink: 0;
-      width: 116px;
+      width: fit-content;
       height: 20px;
       white-space: nowrap;
       color: #4b5563;

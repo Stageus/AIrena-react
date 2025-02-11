@@ -27,7 +27,7 @@
     flex-shrink: 0;
     align-self: stretch;
     width: 976px;
-    height: 24px;
+    height: fit-content;
     color: #4b5563;
     font-family: 'Roboto';
     font-size: 16px;
@@ -44,6 +44,8 @@
       rgba(0, 0, 0, 0);
     object-fit: contain;
     background-size: contain;
+    background-position: center; /* 이미지를 가운데 정렬 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
   }
   .mock-solve-button {
     width: 976px;

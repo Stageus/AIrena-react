@@ -10,7 +10,7 @@ const MainHeader: React.FC = () => {
 
   const navigate = useNavigate()
   const goMockPage = () => {
-    navigate('/mock')
+    navigate('/mock/list')
   }
   const goTotalRankPage = () => {
     navigate('/rank/total')

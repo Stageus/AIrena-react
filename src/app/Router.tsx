@@ -44,8 +44,8 @@ const AppRouter = () => (
       <Route path="/login/redirect" element={<LoginRedirectPage />} />
       <Route element={<MainHeaderLayout />}>
         {/* 모의고사 페이지 */}
-        <Route path="/mock" element={<MockListPage />} />
-        <Route path="/mock/:id" element={<MockDetailPage />} />
+        <Route path="/mock/list" element={<MockListPage />} />
+        <Route path="/mock/:idx" element={<MockDetailPage />} />
         <Route path="/mock/write" element={<MockWritePage />} />
         <Route path="/mock/:id/solve" element={<MockSolvePage />} />
         <Route

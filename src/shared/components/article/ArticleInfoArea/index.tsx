@@ -1,9 +1,11 @@
 import { ReactComponent as LikeIcon } from '#assets/icons/like_icon.svg'
+import { UUID } from 'crypto'
 import { useLocation, useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
 
 interface BaseArticleInfoProps {
   number: number
+  idx: UUID
   title: string
   writerNickname: string
   writeDate: string
@@ -23,16 +25,17 @@ type ArticleInfoAreaProps = LikeExistsProps | LikeNotExistsProps
 
 const ArticleInfoArea: React.FC<ArticleInfoAreaProps> = ({
   number,
+  idx,
   title,
   writerNickname,
   writeDate,
   likeExist,
   likeCount,
 }) => {
-  const location = useLocation().pathname
+  const location = useLocation().pathname.split('/')[1]
   const navigate = useNavigate()
   const goMockDetail = () => {
-    navigate(`${location}/${number}`)
+    navigate(`/${location}/${idx}`)
   }
 
   return (

@@ -4,17 +4,31 @@ import styles from './index.module.scss'
 import Pagination from './Pagination'
 import SearchFooter from './SearchFooter'
 
-const ArticleFooter: React.FC = () => {
-  const location = useLocation().pathname
+interface ArticleFooterProps {
+  firstPageNumber: number
+  lastPageNumber: number
+  currentPageNumber: number
+}
+
+const ArticleFooter: React.FC<ArticleFooterProps> = ({
+  firstPageNumber,
+  lastPageNumber,
+  currentPageNumber,
+}) => {
+  const location = useLocation().pathname.split('/')[1]
   const navigate = useNavigate()
   const goMockWritePage = () => {
-    navigate(`${location}/write`)
+    navigate(`/${location}/write`)
   }
 
   return (
     <div className={styles['article-footer']}>
       <div className={styles['pagination-and-write-footer']}>
-        <Pagination />
+        <Pagination
+          firstPageNumber={firstPageNumber}
+          lastPageNumber={lastPageNumber}
+          currentPageNumber={currentPageNumber}
+        />
         <div onClick={goMockWritePage} className={styles['write-button']}>
           <WriteIcon className={styles['write-icon']} />
           <div className={styles['text']}>작성</div>
