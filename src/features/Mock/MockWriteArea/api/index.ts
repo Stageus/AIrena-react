@@ -1,12 +1,12 @@
 import axiosMultipartInstance from '#shared/api/axiosMultipartInstance'
 import { UUID } from 'crypto'
 
-export interface MockPostResponse {
+export interface MockWriteResponse {
   articleId: UUID
 }
 
 export const requestMockPost = async (formData: FormData) => {
-  const response = await axiosMultipartInstance.post<MockPostResponse>(
+  const response = await axiosMultipartInstance.post<MockWriteResponse>(
     '/mock/write',
     formData,
   )

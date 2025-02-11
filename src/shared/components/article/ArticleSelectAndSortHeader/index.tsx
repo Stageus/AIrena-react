@@ -4,14 +4,14 @@ import styles from './index.module.scss'
 const ArticleSelectAndSortHeader: React.FC = () => {
   const navigate = useNavigate()
   const goMockListPage = () => {
-    navigate('/mock')
+    navigate('/mock/list')
   }
   const goNoticeListPage = () => {
     navigate('/notice')
   }
 
   const location = useLocation()
-  const isMockPage = location.pathname === '/mock'
+  const isMockPage = location.pathname === '/mock/list'
   const isNoticePage = location.pathname === '/notice'
 
   return (
