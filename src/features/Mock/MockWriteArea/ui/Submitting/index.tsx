@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 
-interface LoadingProps {
-  isLoading: boolean
+interface SubmittingProps {
+  submitting: boolean
 }
 
-const Loading: React.FC<LoadingProps> = ({ isLoading }) => {
+const Submitting: React.FC<SubmittingProps> = ({ submitting }) => {
   const [elapsedTime, setElapsedTime] = useState<number>(0)
   const timerRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
-    if (isLoading) {
+    if (submitting) {
       let seconds = 0
       if (timerRef.current) clearInterval(timerRef.current)
 
@@ -26,12 +26,12 @@ const Loading: React.FC<LoadingProps> = ({ isLoading }) => {
       }
       setElapsedTime(0)
     }
-  }, [isLoading])
+  }, [submitting])
 
   return (
     <div
       className={styles['loading-container']}
-      style={{ display: isLoading ? 'flex' : 'none' }}
+      style={{ display: submitting ? 'flex' : 'none' }}
     >
       <div className={styles['loading-area']}>
         <div className={styles['spinner']}></div>
@@ -42,4 +42,4 @@ const Loading: React.FC<LoadingProps> = ({ isLoading }) => {
   )
 }
 
-export default Loading
+export default Submitting

@@ -109,9 +109,8 @@
         border: 1px solid #e5e7eb;
         .correct-answer {
           flex-shrink: 0;
-          width: 67px;
-          height: 28px;
-          white-space: nowrap;
+          overflow-wrap: break-word;
+          height: fit-content;
           color: #111827;
           font-family: 'Roboto';
           font-size: 18px;

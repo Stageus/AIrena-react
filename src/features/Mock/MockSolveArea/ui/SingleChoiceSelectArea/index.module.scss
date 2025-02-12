@@ -29,12 +29,12 @@
       border: 1px solid #d1d5db;
       .text {
         flex-shrink: 0;
-        width: 78px;
-        height: 24px;
-        white-space: nowrap;
+        width: 400px;
+        overflow-wrap: break-word;
+        height: fit-content;
         color: #374151;
         font-family: 'Roboto';
-        font-size: 28px;
+        font-size: 18px;
         line-height: 24px;
         font-weight: 500;
         text-align: center;

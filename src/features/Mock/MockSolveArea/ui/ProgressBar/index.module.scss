@@ -1,0 +1,32 @@
+.content {
+  width: 880px;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 0px;
+  background: rgba(0, 0, 0, 0);
+  .text {
+    flex-shrink: 0;
+    width: 39px;
+    height: 20px;
+    white-space: nowrap;
+    color: #374151;
+    font-family: 'Roboto';
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+  .number {
+    flex-shrink: 0;
+    width: 30px;
+    height: 20px;
+    white-space: nowrap;
+    color: #374151;
+    font-family: 'Roboto';
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+}
