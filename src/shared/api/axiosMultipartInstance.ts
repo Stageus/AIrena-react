@@ -1,7 +1,8 @@
 import axios from 'axios'
+const apiBaseUrl = import.meta.env.VITE_API_URL as string
 
 export const axiosMultipartInstance = axios.create({
-  baseURL: '/api',
+  baseURL: apiBaseUrl,
 })
 
 axiosMultipartInstance.interceptors.request.use(
