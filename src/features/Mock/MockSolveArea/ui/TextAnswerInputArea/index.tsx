@@ -1,17 +1,35 @@
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 import styles from './index.module.scss'
 
-const TextAnswerInputArea: React.FC = () => {
-  const navigate = useNavigate()
-  const goGradingPage = () => {
-    navigate('/mock/1/grading')
+interface TextAnswerInputAreaProps {
+  handleSubmit: (
+    singleChoiceAnswer: number | null,
+    textAnswer: string | null,
+  ) => void
+}
+
+const TextAnswerInputArea: React.FC<TextAnswerInputAreaProps> = ({
+  handleSubmit,
+}) => {
+  const [text, setText] = useState<string>('')
+
+  const handleClick = () => {
+    handleSubmit(null, text)
   }
+
   return (
     <div className={styles['text-answer-input-area']}>
       <div className={styles['answer-input']}>
-        <div className={styles['placeholder']}>답을 입력하세요</div>
+        <div className={styles['placeholder']}>
+          <input
+            type="text"
+            onChange={(e) => setText(e.target.value)}
+            placeholder="답을 입력하세요"
+            className={styles['placeholder']}
+          />
+        </div>
       </div>
-      <div onClick={goGradingPage} className={styles['submit-button']}>
+      <div onClick={handleClick} className={styles['submit-button']}>
         <div className={styles['text']}>답안 제출하기</div>
       </div>
     </div>

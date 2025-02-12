@@ -47,12 +47,12 @@ const AppRouter = () => (
         <Route path="/mock/list" element={<MockListPage />} />
         <Route path="/mock/:idx" element={<MockDetailPage />} />
         <Route path="/mock/write" element={<MockWritePage />} />
-        <Route path="/mock/:id/solve" element={<MockSolvePage />} />
+        <Route path="/mock/solve/:idx" element={<MockSolvePage />} />
         <Route
-          path="/mock/:id/grading"
+          path="/mock/grading/:idx"
           element={<MockSubmitAnswerGradingPage />}
         />
-        <Route path="/mock/:id/result" element={<MockResultPage />} />
+        <Route path="/mock/result/:idx" element={<MockResultPage />} />
 
         {/* 공지사항 페이지 */}
         <Route path="/notice" element={<NoticeListPage />} />
@@ -61,10 +61,8 @@ const AppRouter = () => (
 
         {/* 전체 랭킹 페이지 */}
         <Route path="/rank/total" element={<TotalRankPage />} />
-
         {/* 에러 페이지 */}
-        <Route path="/mock/999" element={<ErrorPage />} />
-        <Route path="/error" element={<ErrorPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>
   </Router>

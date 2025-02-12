@@ -42,7 +42,7 @@ const MockListArea: React.FC = () => {
       <div className={styles['mock-list-area']}>
         <ArticleSelectAndSortHeader />
         <ArticleLegend likeExist={likeExist} />
-        {mockList?.mocks.map(
+        {mockList?.mocks?.map(
           ({ idx, title, writerNickname, createdAt, likeCount }, index) => (
             <ArticleInfoArea
               key={index}

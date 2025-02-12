@@ -1,4 +1,4 @@
-import MockSubmitAnswerGradingArea from '#features/Mock/MockSubmitAnswerGradingArea'
+import MockSubmitAnswerGradingArea from '#features/Mock/MockSubmitAnswerGradingArea/ui'
 import React from 'react'
 import styles from './index.module.scss'
 

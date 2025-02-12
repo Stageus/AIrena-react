@@ -10,15 +10,15 @@ import MockLikeArea from './MockLikeArea'
 import styles from './index.module.scss'
 
 const MockDetailArea: React.FC = () => {
-  const navigate = useNavigate()
-  const navigateToSolvePage = () => {
-    navigate('/mock/1/solve')
-  }
-
   const { idx } = useParams<{ idx: UUID }>()
 
   if (!idx) {
     return null
+  }
+
+  const navigate = useNavigate()
+  const navigateToSolvePage = () => {
+    navigate(`/mock/solve/${idx}`)
   }
 
   const [loading, setLoading] = useState(true)
@@ -28,7 +28,6 @@ const MockDetailArea: React.FC = () => {
     const fetchData = async () => {
       const data = await requestMockDetail({ idx })
       setMockDetail(data)
-      console.log(data)
       setLoading(false)
     }
 

@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { requestMockPost } from '../api'
 import styles from './index.module.scss'
-import Loading from './Loading'
+import Submitting from './Submitting'
 
 const MockWriteArea: React.FC = () => {
   const [subject, setSubject] = useState<string>('')
@@ -13,7 +13,7 @@ const MockWriteArea: React.FC = () => {
   const [title, setTitle] = useState<string>('')
   const [content, setContent] = useState<string>('')
   const [files, setFiles] = useState<File[] | null>(null)
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [submitting, setSubmitting] = useState<boolean>(false)
   const navigate = useNavigate()
 
   const handleSubmit = async () => {
@@ -28,14 +28,14 @@ const MockWriteArea: React.FC = () => {
       })
     }
 
-    setIsLoading(true)
+    setSubmitting(true)
     try {
       const response = await requestMockPost(formData)
       navigate(`/mock/${response.articleId}`)
     } catch (error) {
       console.error('등록 처리 중 오류 발생:', error)
     } finally {
-      setIsLoading(false)
+      setSubmitting(false)
     }
   }
 
@@ -52,7 +52,7 @@ const MockWriteArea: React.FC = () => {
     <>
       <div
         className={styles['mock-write-area']}
-        style={{ display: isLoading ? 'none' : 'flex' }}
+        style={{ display: submitting ? 'none' : 'flex' }}
       >
         <div className={styles['text']}>모의고사 작성</div>
         {/* 퀴즈 생성 주제 입력 */}
@@ -109,7 +109,7 @@ const MockWriteArea: React.FC = () => {
         </div>
         <WriteFooter onCancelClick={goMockPage} onSubmitClick={handleSubmit} />
       </div>
-      <Loading isLoading={isLoading} />
+      <Submitting submitting={submitting} />
     </>
   )
 }
