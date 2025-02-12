@@ -26,7 +26,7 @@
     .mock-quiz-output-area {
       flex-shrink: 0;
       width: 880px;
-      height: 76px;
+      height: fit-content;
       display: flex;
       flex-direction: column;
       justify-content: start;
@@ -48,7 +48,8 @@
         flex-shrink: 0;
         align-self: stretch;
         width: 880px;
-        height: 28px;
+        height: fit-content;
+        overflow-wrap: break-word;
         color: #374151;
         font-family: 'Roboto';
         font-size: 20px;

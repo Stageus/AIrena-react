@@ -16,6 +16,7 @@
     flex-shrink: 0;
     width: 120px;
     height: 24px;
+    overflow: hidden;
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -41,7 +42,9 @@
     height: 24px;
     background: rgba(0, 0, 0, 0);
     .title {
-      width: 52px;
+      width: 90%;
+      overflow: hidden;
+      text-overflow: ellipsis;
       height: 24px;
       white-space: nowrap;
       color: #000000;
@@ -57,7 +60,9 @@
     height: 24px;
     background: rgba(0, 0, 0, 0);
     .writer-nickname {
-      width: 89px;
+      width: 90%;
+      overflow: hidden;
+      text-overflow: ellipsis;
       height: 24px;
       white-space: nowrap;
       color: #4b5563;
