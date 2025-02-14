@@ -1,8 +1,13 @@
-import React from 'react'
-import { Navigate } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const LoginRedirectPage: React.FC = () => {
-  return <Navigate to="/mock/list" replace />
+  const navigate = useNavigate()
+  useEffect(() => {
+    navigate('mock/list')
+  }, [])
+
+  return <></>
 }
 
 export default LoginRedirectPage

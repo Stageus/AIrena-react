@@ -1,8 +1,20 @@
-import React from 'react'
-import { Navigate } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 
 const ChangePasswordPage: React.FC = () => {
-  return <Navigate to="/change/password" replace />
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const token = searchParams.get('token') as string
+    if (!token) {
+      return
+    }
+    navigate(`/change/password?token=${token}`)
+  }, [])
+
+  return <></>
 }
 
 export default ChangePasswordPage

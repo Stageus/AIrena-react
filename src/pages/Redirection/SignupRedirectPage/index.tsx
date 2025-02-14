@@ -1,8 +1,13 @@
-import React from 'react'
-import { Navigate } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const SignupRedirectPage: React.FC = () => {
-  return <Navigate to="/change/nickname" replace />
+  const navigate = useNavigate()
+  useEffect(() => {
+    navigate('change/nickname')
+  }, [])
+
+  return <></>
 }
 
 export default SignupRedirectPage
