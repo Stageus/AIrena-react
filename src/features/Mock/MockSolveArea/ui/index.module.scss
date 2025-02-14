@@ -1,11 +1,8 @@
 .mock-solve-area {
   width: 992px;
-  height: 674px;
+  height: fit-content;
   border-radius: 8px;
   display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
   row-gap: 50px;
   column-gap: 50px;
   padding: 24px;

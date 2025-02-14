@@ -13,7 +13,7 @@ export interface MockResultResponse {
 
 export const requestMockResult = async (request: MockResultRequest) => {
   const response = await axiosInstance.get<MockResultResponse>(
-    `/mock/result/${request.idx}`,
+    `/mock/${request.idx}/result`,
   )
   return response.data
 }

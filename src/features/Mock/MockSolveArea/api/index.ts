@@ -10,13 +10,11 @@ export interface MockQuizResponse {
   title: string
   description: string
   singleChoiceChoices: string[] | null
-  currentQuizIndex: number
-  totalQuizCount: number
 }
 
 export const requestMockQuiz = async (request: MockQuizRequest) => {
   const response = await axiosInstance.get<MockQuizResponse>(
-    `/mock/solve/${request.idx}`,
+    `/mock/quiz/${request.idx}`,
   )
   return response.data
 }
@@ -26,9 +24,9 @@ export interface MockAnswerRequest {
   textAnswer: string | null
 }
 
-export const requestMockAnswer = async (
+export const requestQuizAnswer = async (
   idx: UUID,
   request: MockAnswerRequest,
 ) => {
-  await axiosInstance.post<void>(`/mock/solve/${idx}`, request)
+  await axiosInstance.post<void>(`/mock/quiz/${idx}`, request)
 }

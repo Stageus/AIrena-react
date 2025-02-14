@@ -1,9 +1,8 @@
 import { UUID } from 'crypto'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { MockQuizResponse, requestMockAnswer, requestMockQuiz } from '../api'
+import { MockQuizResponse, requestMockQuiz, requestQuizAnswer } from '../api'
 import styles from './index.module.scss'
-import ProgressBar from './ProgressBar'
 import SingleChoiceSelectArea from './SingleChoiceSelectArea'
 import Submitting from './Submitting'
 import TextAnswerInputArea from './TextAnswerInputArea'
@@ -37,12 +36,12 @@ const MockSolveArea: React.FC = () => {
   ) => {
     const fetchData = async () => {
       setSubmitting(true)
-      await requestMockAnswer(idx, {
+      await requestQuizAnswer(idx, {
         singleChoiceAnswer,
         textAnswer,
       })
       setSubmitting(false)
-      navigate(`/mock/grading/${idx}`)
+      navigate(`/mock/grading/${idx}`, { replace: true })
     }
 
     fetchData()
@@ -52,8 +51,6 @@ const MockSolveArea: React.FC = () => {
   const title: string = mockQuiz?.title ?? ''
   const description: string = mockQuiz?.description ?? ''
   const singleChoiceChoices: string[] = mockQuiz?.singleChoiceChoices ?? []
-  const currentQuizIndex: number = mockQuiz?.currentQuizIndex ?? 0
-  const totalQuizCount: number = mockQuiz?.totalQuizCount ?? 0
 
   if (loading) {
     return null
@@ -65,7 +62,6 @@ const MockSolveArea: React.FC = () => {
         className={styles['mock-solve-area']}
         style={{ display: submitting ? 'none' : 'flex' }}
       >
-        <ProgressBar current={currentQuizIndex} total={totalQuizCount} />
         <div className={styles['mock-solve-content-area']}>
           <div className={styles['mock-quiz-output-area']}>
             <div className={styles['title']}>{title}</div>

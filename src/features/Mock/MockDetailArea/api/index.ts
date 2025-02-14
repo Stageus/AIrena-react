@@ -12,7 +12,7 @@ export interface MockDetailResponse {
   writerNickname: string
   createdAt: string
   quizCount: number
-  isSolved: boolean
+  firstQuizIdx: UUID
 }
 
 export const requestMockDetail = async (request: MockDetailRequest) => {
