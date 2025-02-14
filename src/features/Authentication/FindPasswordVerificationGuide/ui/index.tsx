@@ -3,7 +3,7 @@ import WeightedTextOutput from '#shared/components/WeightedTextOutput'
 import { requestSendEmailFromToken } from '../api'
 import styles from './index.module.scss'
 
-const EmailVerificationGuide: React.FC = ({}) => {
+const FindPasswordVerificationGuide: React.FC = ({}) => {
   const handleClick = () => {
     const fetch = async () => {
       await requestSendEmailFromToken()
@@ -24,10 +24,12 @@ const EmailVerificationGuide: React.FC = ({}) => {
         <div className={styles['text-1']}>입력하신</div>
         <WeightedTextOutput text={'pine7420@naver.com'} />
         <div className={styles['text-3']}>로 인증 이메일을 발송했어요</div>
-        <div className={styles['text-4']}>확인 후 가입을 완료해드릴게요</div>
+        <div className={styles['text-4']}>
+          확인 후 비밀번호 변경을 완료해드릴게요
+        </div>
       </div>
       <SharedButton name={'인증 이메일 다시보내기'} onClick={handleClick} />
     </div>
   )
 }
-export default EmailVerificationGuide
+export default FindPasswordVerificationGuide
