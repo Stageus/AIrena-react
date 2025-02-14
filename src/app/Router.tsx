@@ -4,9 +4,7 @@ import EmailVerificationGuidePage from '#pages/Authentication/EmailVerificationG
 import FindIdPage from '#pages/Authentication/FindIdPage'
 import FindPasswordPage from '#pages/Authentication/FindPasswordPage'
 import LoginPage from '#pages/Authentication/LoginPage'
-import LoginRedirectPage from '#pages/Authentication/LoginRedirectPage'
 import SignupPage from '#pages/Authentication/SignupPage'
-import SignupVerifyPage from '#pages/Authentication/SignupVerifyPage'
 import ErrorPage from '#pages/Error'
 import MockDetailPage from '#pages/Mock/MockDetailPage'
 import MockListPage from '#pages/Mock/MockListPage'
@@ -18,6 +16,8 @@ import NoticeDetailPage from '#pages/Notice/NoticeDetailPage'
 import NoticeListPage from '#pages/Notice/NoticeListPage'
 import NoticeWritePage from '#pages/Notice/NoticeWritePage'
 import TotalRankPage from '#pages/Rank/TotalRankPage'
+import LoginRedirectPage from '#pages/Redirection/LoginRedirectPage'
+import SignupVerifyPage from '#pages/Redirection/SignupVerifyRedirectPage'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -46,8 +46,7 @@ const AppRouter = () => (
         element={<EmailVerificationGuidePage />}
       />
       <Route path="/signup/verify" element={<SignupVerifyPage />} />
-      <Route path="/login/redirect" element={<LoginRedirectPage />} />
-      <Route path="/signup/redirect" element={<LoginPage />} />
+
       <Route element={<MainHeaderLayout />}>
         {/* 모의고사 페이지 */}
         <Route path="/mock/list" element={<MockListPage />} />
@@ -67,6 +66,12 @@ const AppRouter = () => (
         {/* 에러 페이지 */}
         <Route path="*" element={<ErrorPage />} />
       </Route>
+
+      {/* 리디렉션 페이지 */}
+      <Route path="/redirect/login" element={<LoginRedirectPage />} />
+      <Route path="/redirect/signup" element={<SignupVerifyPage />} />
+      <Route path="/redirect/signup/verify" element={<SignupVerifyPage />} />
+      <Route path="/redirect/change/password" element={<LoginRedirectPage />} />
     </Routes>
   </Router>
 )

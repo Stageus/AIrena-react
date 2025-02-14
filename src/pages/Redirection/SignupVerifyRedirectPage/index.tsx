@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { requestSignupVerify } from '../api'
+import { requestSignupVerify } from './api'
 
-const SignupVerifyArea: React.FC = () => {
+const SignupVerifyPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams()
   const navigate = useNavigate()
   const goNicknameChangePage = () => {
@@ -21,7 +21,6 @@ const SignupVerifyArea: React.FC = () => {
 
     fetchData()
   }, [])
-
   return <></>
 }
-export default SignupVerifyArea
+export default SignupVerifyPage
