@@ -41,8 +41,13 @@ const AppRouter = () => (
         path="/signup/email-verification-guide"
         element={<EmailVerificationGuidePage />}
       />
+      <Route
+        path="/find/password/email-verification-guide"
+        element={<EmailVerificationGuidePage />}
+      />
       <Route path="/signup/verify" element={<SignupVerifyPage />} />
       <Route path="/login/redirect" element={<LoginRedirectPage />} />
+      <Route path="/signup/redirect" element={<LoginPage />} />
       <Route element={<MainHeaderLayout />}>
         {/* 모의고사 페이지 */}
         <Route path="/mock/list" element={<MockListPage />} />
