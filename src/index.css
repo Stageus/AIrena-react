@@ -10,3 +10,12 @@ body {
 * {
   box-sizing: border-box;
 }
+
+#editor {
+  height: 300px;
+}
+
+#editor-container {
+  align-self: stretch;
+  height: fit-content;
+}

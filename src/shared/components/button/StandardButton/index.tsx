@@ -1,4 +1,4 @@
-import styles from './StadardButton.module.css'
+import styles from './index.module.scss'
 
 interface SharedButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {

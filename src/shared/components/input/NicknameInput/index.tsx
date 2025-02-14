@@ -2,10 +2,19 @@ import { ReactComponent as NicknameIcon } from '#assets/icons/nickname_icon.svg'
 import React from 'react'
 import styles from './index.module.scss'
 
-const NicknameInput: React.FC = () => {
+interface NicknameInputProps {
+  setNickname: (text: string) => void
+}
+
+const NicknameInput: React.FC<NicknameInputProps> = ({ setNickname }) => {
   return (
     <div className={styles['nickname-input-box']}>
-      <div className={styles['nickname-text']}>닉네임</div>
+      <input
+        type="text"
+        onChange={(e) => setNickname(e.target.value)}
+        placeholder="아이디"
+        className={styles['nickname-text']}
+      />
       <NicknameIcon className={styles['nickname-icon']} />
     </div>
   )

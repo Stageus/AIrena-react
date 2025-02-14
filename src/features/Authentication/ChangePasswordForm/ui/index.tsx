@@ -1,4 +1,4 @@
-import SharedButton from '#shared/components/button/StandardButton/StandardButton'
+import SharedButton from '#shared/components/button/StandardButton'
 import PasswordCheckInput from '#shared/components/input/PasswordCheckInput'
 import PasswordInput from '#shared/components/input/PasswordInput'
 import styles from './index.module.scss'
