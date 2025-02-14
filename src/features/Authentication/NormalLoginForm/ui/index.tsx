@@ -1,7 +1,9 @@
-import SharedButton from '#shared/components/button/StandardButton/StandardButton'
+import SharedButton from '#shared/components/button/StandardButton'
 import IdInput from '#shared/components/input/IdInput'
 import PasswordInput from '#shared/components/input/PasswordInput'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { requestCheckLogin, requestNormalLogin } from '../api'
 import styles from './index.module.scss'
 
 const NormalLoginForm: React.FC = ({}) => {
@@ -23,10 +25,34 @@ const NormalLoginForm: React.FC = ({}) => {
     navigate('/login/redirect')
   }
 
+  const [id, setId] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await requestCheckLogin()
+      if (result.status === 200) {
+        goLoginRedirect()
+      }
+    }
+
+    fetchData()
+  }, [])
+
+  const handleClick = () => {
+    const fetchData = async () => {
+      const result = await requestNormalLogin({ id, password })
+      if (result.status === 200) {
+        goLoginRedirect()
+      }
+    }
+
+    fetchData()
+  }
   return (
     <div className={styles['normal-login-form']}>
-      <IdInput />
-      <PasswordInput />
+      <IdInput setId={setId} />
+      <PasswordInput setPassword={setPassword} />
       <div className={styles['auth-button-area']}>
         <div onClick={goFindId} className={styles['find-id-button']}>
           아이디 찾기
@@ -43,7 +69,7 @@ const NormalLoginForm: React.FC = ({}) => {
           회원가입
         </div>
       </div>
-      <SharedButton name="로그인" onClick={goLoginRedirect} />
+      <SharedButton name="로그인" onClick={handleClick} />
     </div>
   )
 }

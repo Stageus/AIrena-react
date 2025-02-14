@@ -2,10 +2,19 @@ import { ReactComponent as PasswordIcon } from '#assets/icons/password_icon.svg'
 import React from 'react'
 import styles from './index.module.scss'
 
-const PasswordInput: React.FC = () => {
+interface PasswordInputProps {
+  setPassword: (text: string) => void
+}
+
+const PasswordInput: React.FC<PasswordInputProps> = ({ setPassword }) => {
   return (
     <div className={styles['password-input-box']}>
-      <div className={styles['password-text']}>비밀번호</div>
+      <input
+        type="password"
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="비밀번호"
+        className={styles['password-text']}
+      />
       <PasswordIcon className={styles['password-icon']} />
     </div>
   )

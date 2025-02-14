@@ -18,7 +18,10 @@ const MockDetailArea: React.FC = () => {
 
   const navigate = useNavigate()
   const navigateToSolvePage = () => {
-    navigate(`/mock/solve/${idx}`)
+    if (!mockDetail) {
+      return
+    }
+    navigate(`/mock/solve/${mockDetail.firstQuizIdx}`)
   }
 
   const [loading, setLoading] = useState(true)

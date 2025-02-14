@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { toast } from 'react-toastify'
 const apiBaseUrl = import.meta.env.VITE_API_URL as string
 
 const axiosInstance = axios.create({
@@ -6,29 +7,38 @@ const axiosInstance = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  withCredentials: true,
 })
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('token')
-    if (token && config.headers) {
-      config.headers.Authorization = `Bearer ${token}`
-    }
     return config
   },
-  (error) => Promise.reject(error),
+  (error) => {
+    Promise.reject(error)
+  },
 )
 
 axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response && error.response.status === 401) {
-      localStorage.removeItem('token')
-      window.location.href = '/'
-    } else if (error.response.status === 404) {
-      window.location.href = '/error' // 에러 페이지로 이동
+    if (
+      error.response &&
+      error.response.status === 401 &&
+      window.location.pathname == '/'
+    ) {
+      return Promise.reject(error)
     }
-    return Promise.reject(error)
+
+    if (
+      error.response &&
+      error.response.status === 401 &&
+      window.location.pathname !== '/'
+    ) {
+      window.location.href = '/'
+    }
+
+    toast.error(error.response.data.message)
   },
 )
 
