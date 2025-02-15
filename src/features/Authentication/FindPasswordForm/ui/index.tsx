@@ -12,7 +12,7 @@ const FindPasswordForm: React.FC = ({}) => {
 
   const navigate = useNavigate()
   const goEmailVerificationGuidePage = () => {
-    navigate('/signup/email-verification-guide')
+    navigate('/find/password/email-verification-guide')
   }
 
   const handleOnClick = () => {

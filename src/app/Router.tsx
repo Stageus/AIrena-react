@@ -1,9 +1,10 @@
 import ChangeNicknamePage from '#pages/Authentication/ChangeNicknamePage'
 import ChangePasswordPage from '#pages/Authentication/ChangePasswordPage'
 import FindIdPage from '#pages/Authentication/FindIdPage'
+import FindPasswordEmailVerificationGuidePage from '#pages/Authentication/FindPasswordEmailVerificationGuidePage'
 import FindPasswordPage from '#pages/Authentication/FindPasswordPage'
 import LoginPage from '#pages/Authentication/LoginPage'
-import EmailVerificationGuidePage from '#pages/Authentication/SignupEmailVerificationGuidePage'
+import SignupEmailVerificationGuidePage from '#pages/Authentication/SignupEmailVerificationGuidePage'
 import SignupPage from '#pages/Authentication/SignupPage'
 import ErrorPage from '#pages/Error'
 import MockDetailPage from '#pages/Mock/MockDetailPage'
@@ -16,6 +17,7 @@ import NoticeDetailPage from '#pages/Notice/NoticeDetailPage'
 import NoticeListPage from '#pages/Notice/NoticeListPage'
 import NoticeWritePage from '#pages/Notice/NoticeWritePage'
 import TotalRankPage from '#pages/Rank/TotalRankPage'
+import ChangePasswordRedirectPage from '#pages/Redirection/ChangePasswordRedirectPage'
 import LoginRedirectPage from '#pages/Redirection/LoginRedirectPage'
 import SignupVerifyPage from '#pages/Redirection/SignupVerifyRedirectPage'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
@@ -39,11 +41,11 @@ const AppRouter = () => (
       </Route>
       <Route
         path="/signup/email-verification-guide"
-        element={<EmailVerificationGuidePage />}
+        element={<SignupEmailVerificationGuidePage />}
       />
       <Route
         path="/find/password/email-verification-guide"
-        element={<EmailVerificationGuidePage />}
+        element={<FindPasswordEmailVerificationGuidePage />}
       />
       <Route path="/signup/verify" element={<SignupVerifyPage />} />
 
@@ -71,7 +73,10 @@ const AppRouter = () => (
       <Route path="/redirect/login" element={<LoginRedirectPage />} />
       <Route path="/redirect/signup" element={<SignupVerifyPage />} />
       <Route path="/redirect/signup/verify" element={<SignupVerifyPage />} />
-      <Route path="/redirect/change/password" element={<LoginRedirectPage />} />
+      <Route
+        path="/redirect/change/password"
+        element={<ChangePasswordRedirectPage />}
+      />
     </Routes>
   </Router>
 )

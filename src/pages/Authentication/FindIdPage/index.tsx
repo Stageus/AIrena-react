@@ -1,4 +1,3 @@
-import { RootState } from '#app/store'
 import FindIdForm from '#features/Authentication/FindIdForm/ui'
 import FindIdResultArea from '#features/Authentication/FindIdResultArea/ui'
 import React from 'react'

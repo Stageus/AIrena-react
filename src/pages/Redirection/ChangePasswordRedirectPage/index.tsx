@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
-const ChangePasswordPage: React.FC = () => {
+const ChangePasswordRedirectPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams()
 
   const navigate = useNavigate()
@@ -17,4 +17,4 @@ const ChangePasswordPage: React.FC = () => {
   return <></>
 }
 
-export default ChangePasswordPage
+export default ChangePasswordRedirectPage

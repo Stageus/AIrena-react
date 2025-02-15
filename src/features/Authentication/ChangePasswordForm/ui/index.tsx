@@ -21,7 +21,7 @@ const ChangePasswordForm: React.FC = () => {
         passwordCheck,
         token,
       })
-      if (result.status === 201) {
+      if (result.status === 200) {
         alert('비밀번호가 변경되었습니다. 다시 로그인 해주세요.')
         navigate('/')
       }
