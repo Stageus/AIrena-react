@@ -22,7 +22,7 @@ const NormalLoginForm: React.FC = ({}) => {
   }
 
   const goLoginRedirect = () => {
-    navigate('/login/redirect')
+    navigate('/redirect/login')
   }
 
   const [id, setId] = useState<string>('')
