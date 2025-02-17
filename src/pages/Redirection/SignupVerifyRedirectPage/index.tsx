@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { requestSignupVerify } from './api'
 
-const SignupVerifyPage: React.FC = () => {
+const SignupVerifyRedirectPage: React.FC = () => {
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
   const hasFetched = useRef(false)
@@ -25,4 +25,4 @@ const SignupVerifyPage: React.FC = () => {
   return <></>
 }
 
-export default SignupVerifyPage
+export default SignupVerifyRedirectPage

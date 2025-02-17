@@ -19,7 +19,11 @@ import NoticeWritePage from '#pages/Notice/NoticeWritePage'
 import TotalRankPage from '#pages/Rank/TotalRankPage'
 import ChangePasswordRedirectPage from '#pages/Redirection/ChangePasswordRedirectPage'
 import LoginRedirectPage from '#pages/Redirection/LoginRedirectPage'
-import SignupVerifyPage from '#pages/Redirection/SignupVerifyRedirectPage'
+import SignupRedirectPage from '#pages/Redirection/SignupRedirectPage'
+import {
+  default as SignupVerifyPage,
+  default as SignupVerifyRedirectPage,
+} from '#pages/Redirection/SignupVerifyRedirectPage'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -71,8 +75,11 @@ const AppRouter = () => (
 
       {/* 리디렉션 페이지 */}
       <Route path="/redirect/login" element={<LoginRedirectPage />} />
-      <Route path="/redirect/signup" element={<SignupVerifyPage />} />
-      <Route path="/redirect/signup/verify" element={<SignupVerifyPage />} />
+      <Route path="/redirect/signup" element={<SignupRedirectPage />} />
+      <Route
+        path="/redirect/signup/verify"
+        element={<SignupVerifyRedirectPage />}
+      />
       <Route
         path="/redirect/change/password"
         element={<ChangePasswordRedirectPage />}
