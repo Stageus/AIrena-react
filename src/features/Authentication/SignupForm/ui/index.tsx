@@ -11,7 +11,7 @@ import styles from './index.module.scss'
 const SignupForm: React.FC = () => {
   const navigate = useNavigate()
   const goEmailVerificationGuidePage = () => {
-    navigate('/signup/email-verification-guide')
+    navigate(`/signup/email-verification-guide?email=${email}`)
   }
 
   const [id, setId] = React.useState('')

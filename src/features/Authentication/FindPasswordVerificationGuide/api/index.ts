@@ -1,5 +1,13 @@
 import axiosInstance from '#shared/api/axiosInstance'
 
-export const requestSendEmailFromToken = async () => {
-  return await axiosInstance.get<void>('/member/send-email')
+export interface SendChangePasswordVerifyEmailResponse {
+  email: string
+}
+
+export const requestSendChangePasswordVerifyEmail = async (
+  request: SendChangePasswordVerifyEmailResponse,
+) => {
+  return await axiosInstance.get<void>(
+    `/member/change/password/email?email=${request.email}`,
+  )
 }
