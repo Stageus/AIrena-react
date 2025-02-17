@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 const SignupRedirectPage: React.FC = () => {
   const navigate = useNavigate()
   useEffect(() => {
-    navigate('change/nickname')
+    navigate('/change/nickname')
   }, [])
 
   return <></>
