@@ -15,7 +15,7 @@ const ChangeNicknameForm: React.FC = () => {
       const result = await requestChangeNickname({ nickname })
       if (result.status === 200) {
         alert('닉네임 변경이 완료되었습니다.')
-        navigate('/mock')
+        navigate('/mock/list')
       }
     }
     fetch()

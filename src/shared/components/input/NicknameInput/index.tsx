@@ -12,7 +12,7 @@ const NicknameInput: React.FC<NicknameInputProps> = ({ setNickname }) => {
       <input
         type="text"
         onChange={(e) => setNickname(e.target.value)}
-        placeholder="아이디"
+        placeholder="닉네임"
         className={styles['nickname-text']}
       />
       <NicknameIcon className={styles['nickname-icon']} />

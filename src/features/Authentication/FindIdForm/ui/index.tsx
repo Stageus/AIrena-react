@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { FindIdResponse, requestFindId } from '../api'
 import styles from './index.module.scss'
 
-const FindIdForm = ({}) => {
+const FindIdArea = ({}) => {
   const [email, setEmail] = useState('')
   const [findIdResponse, setFindIdResponse] = useState<FindIdResponse | null>(
     null,
@@ -45,4 +45,4 @@ const FindIdForm = ({}) => {
     </div>
   )
 }
-export default FindIdForm
+export default FindIdArea

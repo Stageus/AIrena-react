@@ -1,7 +1,15 @@
-import { goGoogleLoginPage, goKakaoLoginPage } from '../model/oAuthService'
 import styles from './index.module.scss'
+const API_URL = import.meta.env.VITE_API_URL
 
 const SocialLoginArea: React.FC = () => {
+  const goGoogleLoginPage = (): void => {
+    window.location.href = `${API_URL}/member/login/google`
+  }
+
+  const goKakaoLoginPage = (): void => {
+    window.location.href = `${API_URL}/member/login/kakao`
+  }
+
   return (
     <div className={styles['social-login-area']}>
       <div className={styles['simple-login-content']}>
