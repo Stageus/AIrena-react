@@ -1,30 +1,42 @@
 import axios from 'axios'
+import { toast } from 'react-toastify'
 const apiBaseUrl = import.meta.env.VITE_API_URL as string
 
-export const axiosMultipartInstance = axios.create({
+const axiosInstance = axios.create({
   baseURL: apiBaseUrl,
+  withCredentials: true,
 })
 
-axiosMultipartInstance.interceptors.request.use(
+axiosInstance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('token')
-    if (token && config.headers) {
-      config.headers.Authorization = `Bearer ${token}`
-    }
     return config
   },
-  (error) => Promise.reject(error),
-)
-
-axiosMultipartInstance.interceptors.response.use(
-  (response) => response,
   (error) => {
-    if (error.response && error.response.status === 401) {
-      localStorage.removeItem('token')
-      window.location.href = '/'
-    }
-    return Promise.reject(error)
+    Promise.reject(error)
   },
 )
 
-export default axiosMultipartInstance
+axiosInstance.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (
+      error.response &&
+      error.response.status === 401 &&
+      window.location.pathname == '/'
+    ) {
+      return Promise.reject(error)
+    }
+
+    if (
+      error.response &&
+      error.response.status === 401 &&
+      window.location.pathname !== '/'
+    ) {
+      window.location.href = '/'
+    }
+
+    toast.error(error.response.data.message)
+  },
+)
+
+export default axiosInstance

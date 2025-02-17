@@ -1,7 +1,8 @@
 import { ReactComponent as LogoutIcon } from '#assets/icons/logout_icon.svg'
 import { ReactComponent as ProfileIcon } from '#assets/icons/profile_icon.svg'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { requestLogout } from './api'
+import { ProfileResponse, requestLogout, requestProfile } from './api'
 import styles from './index.module.scss'
 
 const ProfileModal: React.FC = () => {
@@ -13,6 +14,21 @@ const ProfileModal: React.FC = () => {
   const goNicknameChangePage = () => {
     navigate('/change/nickname')
   }
+
+  const [profileResponse, setProfileResponse] =
+    useState<ProfileResponse | null>(null)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await requestProfile()
+      if (result.status === 200) {
+        console.log(result.data)
+        setProfileResponse(result.data)
+      }
+    }
+
+    fetchData()
+  }, [])
 
   const handleClick = () => {
     const fetchData = async () => {
@@ -32,7 +48,7 @@ const ProfileModal: React.FC = () => {
           <div className={styles['profile-icon-background']}>
             <ProfileIcon />
           </div>
-          <div className={styles['nickname']}>똑똑한 너구리</div>
+          <div className={styles['nickname']}>{profileResponse?.nickname}</div>
         </div>
       </div>
       <div className={styles['divisor']}></div>
