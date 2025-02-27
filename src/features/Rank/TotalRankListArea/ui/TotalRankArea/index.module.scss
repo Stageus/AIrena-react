@@ -64,6 +64,28 @@
         font-weight: 500;
       }
     }
+    .PLATINUM-tier-content {
+      width: 70px;
+      height: 20px;
+      border-radius: 9999px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      row-gap: 0px;
+      background: #dcfce7;
+      .PLATINUM-tier {
+        flex-shrink: 0;
+        width: 49px;
+        height: 16px;
+        white-space: nowrap;
+        color: #166534;
+        font-family: 'Roboto';
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 500;
+      }
+    }
     .GOLD-tier-content {
       width: 50px;
       height: 20px;
@@ -185,6 +207,10 @@
 
 .DIAMOND-background {
   background: #eff6ff;
+}
+
+.PLATINUM-background {
+  background: #f0fdf4;
 }
 
 .GOLD-background {

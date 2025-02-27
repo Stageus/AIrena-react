@@ -4,7 +4,7 @@ import styles from './index.module.scss'
 
 interface ArticleWriteFooterProps {
   onCancelClick: () => void
-  onSubmitClick: () => void
+  onSubmitClick: () => Promise<void>
 }
 
 const ArticleWriteFooter: React.FC<ArticleWriteFooterProps> = ({

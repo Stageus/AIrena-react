@@ -29,14 +29,9 @@ const MockWriteArea: React.FC = () => {
     }
 
     setSubmitting(true)
-    try {
-      const response = await requestMockPost(formData)
-      navigate(`/mock/${response.articleId}`)
-    } catch (error) {
-      console.error('등록 처리 중 오류 발생:', error)
-    } finally {
-      setSubmitting(false)
-    }
+    const response = await requestMockPost(formData)
+    navigate(`/mock/${response.articleId}`)
+    setSubmitting(false)
   }
 
   const goMockPage = () => {
@@ -44,7 +39,7 @@ const MockWriteArea: React.FC = () => {
       '변경 내용이 초기화됩니다. 페이지를 벗어나시겠습니까?',
     )
     if (isConfirmed) {
-      navigate('/mock')
+      navigate('/mock/list')
     }
   }
 

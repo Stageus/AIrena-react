@@ -1,18 +1,18 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
 
-const ArticleSelectAndSortHeader: React.FC = () => {
+const ArticleSelectHeader: React.FC = ({}) => {
   const navigate = useNavigate()
   const goMockListPage = () => {
-    navigate('/mock/list')
+    window.location.replace('/mock/list')
   }
   const goNoticeListPage = () => {
-    navigate('/notice')
+    window.location.replace('/notice/list')
   }
 
   const location = useLocation()
-  const isMockPage = location.pathname === '/mock/list'
-  const isNoticePage = location.pathname === '/notice'
+  const isMockPage = location.pathname.startsWith('/mock')
+  const isNoticePage = location.pathname.startsWith('/notice')
 
   return (
     <div className={styles['article-select-and-sort-header']}>
@@ -38,14 +38,7 @@ const ArticleSelectAndSortHeader: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className={styles['sort-select']}>
-        <div className={styles['text-2']}>정렬</div>
-        <img
-          src="https://image-resource.creatie.ai/150880125742532/150880125742534/ef0d5f9b0dd3ddc582782e4f4b44dd00.png"
-          className={styles['image']}
-        />
-      </div>
     </div>
   )
 }
-export default ArticleSelectAndSortHeader
+export default ArticleSelectHeader

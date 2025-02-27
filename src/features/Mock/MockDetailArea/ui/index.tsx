@@ -4,6 +4,7 @@ import { UUID } from 'crypto'
 import DOMPurify from 'dompurify'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import MockRankListArea from '../MockRankListArea'
 import { MockDetailResponse, requestMockDetail } from '../api'
 import MockBasicInfoArea from './MockBasicInfoArea'
 import MockLikeArea from './MockLikeArea'
@@ -50,29 +51,32 @@ const MockDetailArea: React.FC = () => {
 
   return (
     <div className={styles['mock-detail-area']}>
-      <div className={styles['title']}>{title}</div>
-      <div
-        className={styles['description']}
-        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(description) }}
-      ></div>
-      <div
-        className={styles['thumbnail']}
-        style={{ backgroundImage: `url(${image})` }}
-      ></div>
-      <MockBasicInfoArea
-        nickname={writerNickname}
-        createdAt={createdAt}
-        quizCount={quizCount}
-      />
-      <ArticleManagementArea />
-      <MockLikeArea />
-      <div
-        onClick={navigateToSolvePage}
-        className={styles['mock-solve-button']}
-      >
-        <SolveIcon className={styles['solve-icon']} />
-        <div className={styles['text']}>모의고사 풀기</div>
+      <div className={styles['mock-content-area']}>
+        <div className={styles['title']}>{title}</div>
+        <div
+          className={styles['description']}
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(description) }}
+        ></div>
+        <div
+          className={styles['thumbnail']}
+          style={{ backgroundImage: `url(${image})` }}
+        ></div>
+        <MockBasicInfoArea
+          nickname={writerNickname}
+          createdAt={createdAt}
+          quizCount={quizCount}
+        />
+        <ArticleManagementArea />
+        <MockLikeArea />
+        <div
+          onClick={navigateToSolvePage}
+          className={styles['mock-solve-button']}
+        >
+          <SolveIcon className={styles['solve-icon']} />
+          <div className={styles['text']}>모의고사 풀기</div>
+        </div>
       </div>
+      <MockRankListArea />
     </div>
   )
 }
