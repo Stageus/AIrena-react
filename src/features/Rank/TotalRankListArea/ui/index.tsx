@@ -7,6 +7,7 @@ import styles from './index.module.scss'
 
 const TotalRankListArea: React.FC = () => {
   const [rankList, setRankList] = useState<RankListResponse | null>(null)
+  const [rankListLength, setRankListLength] = useState<number>(10)
   const [current, setCurrent] = useState(0)
   const [loading, setLoading] = useState<boolean>(false)
   const [hasMore, setHasMore] = useState<boolean>(true)
@@ -19,7 +20,7 @@ const TotalRankListArea: React.FC = () => {
 
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && hasMore) {
-          setCurrent((prev) => prev + 1)
+          setCurrent((prev) => prev + rankListLength)
         }
       })
 
@@ -32,10 +33,10 @@ const TotalRankListArea: React.FC = () => {
     const fetchData = async () => {
       setLoading(true)
       const response = await requestRankList({ current })
+      setRankListLength(response.ranks.length)
       setRankList((prev) => {
         if (prev) {
           return {
-            ...prev,
             ranks: [...prev.ranks, ...response.ranks],
           }
         }
