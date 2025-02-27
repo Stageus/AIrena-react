@@ -6,10 +6,19 @@ export interface MockListRequest {
   display: number
 }
 
+export interface MockListSearchRequest {
+  title: string
+  current: number
+  display: number
+  sort: string
+}
+
 export interface MockListResponse {
   firstPageNumber: number
   currentPageNumber: number
   lastPageNumber: number
+  prevPageExist: boolean
+  nextPageExist: boolean
   mocks: {
     idx: UUID
     title: string
@@ -22,6 +31,13 @@ export interface MockListResponse {
 export const requestMockList = async (request: MockListRequest) => {
   const response = await axiosInstance.get<MockListResponse>(
     `/mock/list?current=${request.current}&display=${request.display}`,
+  )
+  return response.data
+}
+
+export const requestMockListSearch = async (request: MockListSearchRequest) => {
+  const response = await axiosInstance.get<MockListResponse>(
+    `/mock/list/search?title=${request.title}&current=${request.current}&display=${request.display}&sort=${request.sort}`,
   )
   return response.data
 }

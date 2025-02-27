@@ -1,17 +1,19 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
 
 interface PageButtonProps {
+  setCurrent: (current: number) => void
   isSelected: boolean
   number: number
 }
 
-const PageButton: React.FC<PageButtonProps> = ({ isSelected, number }) => {
-  const navigate = useNavigate()
-
+const PageButton: React.FC<PageButtonProps> = ({
+  setCurrent,
+  isSelected,
+  number,
+}) => {
   const onClick = () => {
-    navigate(`/mock/list?current=${number}`)
+    setCurrent(number)
   }
 
   return (

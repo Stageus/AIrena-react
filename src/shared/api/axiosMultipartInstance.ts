@@ -19,23 +19,8 @@ axiosInstance.interceptors.request.use(
 axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (
-      error.response &&
-      error.response.status === 401 &&
-      window.location.pathname == '/'
-    ) {
-      return Promise.reject(error)
-    }
-
-    if (
-      error.response &&
-      error.response.status === 401 &&
-      window.location.pathname !== '/'
-    ) {
-      window.location.href = '/'
-    }
-
     toast.error(error.response.data.message)
+    return Promise.reject(error)
   },
 )
 

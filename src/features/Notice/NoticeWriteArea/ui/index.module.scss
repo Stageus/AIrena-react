@@ -64,10 +64,12 @@
         ),
         rgba(255, 255, 255, 1);
       border: 1px solid #d1d5db;
-      .title-input-placeholder {
+      .title-input {
         flex-shrink: 0;
-        width: 373px;
+        width: 100%;
         height: 24px;
+        border: none;
+        white-space: nowrap;
         color: #6b7280;
         font-family: 'Roboto';
         font-size: 16px;

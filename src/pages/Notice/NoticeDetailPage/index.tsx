@@ -1,4 +1,4 @@
-import NoticeDetailArea from '#features/Notice/NoticeDetailArea'
+import NoticeDetailArea from '#features/Notice/NoticeDetailArea/ui'
 import React from 'react'
 import styles from './index.module.scss'
 

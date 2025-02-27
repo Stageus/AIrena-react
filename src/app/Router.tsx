@@ -63,9 +63,9 @@ const AppRouter = () => (
         <Route path="/mock/result/:idx" element={<MockResultPage />} />
 
         {/* 공지사항 페이지 */}
-        <Route path="/notice" element={<NoticeListPage />} />
+        <Route path="/notice/list" element={<NoticeListPage />} />
         <Route path="/notice/write" element={<NoticeWritePage />} />
-        <Route path="/notice/:id" element={<NoticeDetailPage />} />
+        <Route path="/notice/:idx" element={<NoticeDetailPage />} />
 
         {/* 전체 랭킹 페이지 */}
         <Route path="/rank/total" element={<TotalRankPage />} />

@@ -1,5 +1,5 @@
-import MockRankArea from './MockRankArea'
 import styles from './index.module.scss'
+import MockRankArea from './MockRankArea'
 
 const MockRankListArea: React.FC = () => {
   return (

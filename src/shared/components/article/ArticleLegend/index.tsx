@@ -2,9 +2,18 @@ import styles from './index.module.scss'
 
 interface ArticleLegendProps {
   likeExist: boolean
+  setSort?: (sort: string) => void
 }
 
-const ArticleLegend: React.FC<ArticleLegendProps> = ({ likeExist }) => {
+const ArticleLegend: React.FC<ArticleLegendProps> = ({
+  likeExist,
+  setSort,
+}) => {
+  const handleClick = (sort: string) => {
+    if (setSort) {
+      setSort(sort)
+    }
+  }
   return (
     <div className={styles['article-legend']}>
       <div className={styles['number-output-box']}>
@@ -21,8 +30,15 @@ const ArticleLegend: React.FC<ArticleLegendProps> = ({ likeExist }) => {
       </div>
       {likeExist ? (
         <div className={styles['like-count-output-box']}>
-          <div className={styles['content-box']}>
+          <div
+            className={styles['like-count-click-box']}
+            onClick={() => handleClick('like')}
+          >
             <div className={styles['like-count']}>좋아요</div>
+            <img
+              src="https://image-resource.creatie.ai/150880125742532/150880125742534/ef0d5f9b0dd3ddc582782e4f4b44dd00.png"
+              className={styles['image']}
+            />
           </div>
         </div>
       ) : null}
