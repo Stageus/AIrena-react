@@ -1,4 +1,4 @@
-import FindIdArea from '#features/Authentication/FindIdArea/ui'
+import FindIdArea from '#entities/Authentication/FindIdArea/ui'
 import React from 'react'
 import styles from './index.module.scss'
 

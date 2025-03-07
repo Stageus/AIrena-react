@@ -1,4 +1,4 @@
-import MockSolveArea from '#features/Mock/MockSolveArea/ui'
+import MockSolveArea from '#entities/Mock/MockSolveArea/ui'
 import React from 'react'
 import styles from './index.module.scss'
 

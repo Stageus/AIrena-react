@@ -1,4 +1,4 @@
-import NoticeListArea from '#features/Notice/NoticeListArea/ui'
+import NoticeListArea from '#entities/Notice/NoticeListArea/ui'
 import React from 'react'
 import styles from './index.module.scss'
 

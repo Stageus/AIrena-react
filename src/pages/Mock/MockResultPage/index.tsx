@@ -1,4 +1,4 @@
-import MockResultArea from '#features/Mock/MockResultArea'
+import MockResultArea from '#entities/Mock/MockResultArea'
 import React from 'react'
 import styles from './index.module.scss'
 

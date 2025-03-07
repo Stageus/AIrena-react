@@ -1,4 +1,4 @@
-import NoticeWriteArea from '#features/Notice/NoticeWriteArea/ui'
+import NoticeWriteArea from '#entities/Notice/NoticeWriteArea/ui'
 import styles from './index.module.scss'
 
 const NoticeWritePage: React.FC = () => {

@@ -1,4 +1,4 @@
-import SignupEmailVerificationGuide from '#features/Authentication/SignupEmailVerificationGuide/ui'
+import SignupEmailVerificationGuide from '#entities/Authentication/SignupEmailVerificationGuide/ui'
 import React from 'react'
 import styles from './index.module.scss'
 

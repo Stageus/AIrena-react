@@ -27,8 +27,8 @@ import {
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import IntroductionLayout from 'src/layout/IntroductionLayout'
-import MainHeaderLayout from 'src/layout/MainHeaderLayout'
+import IntroductionLayout from 'src/widgets/IntroductionLayout'
+import MainHeaderLayout from 'src/widgets/MainHeaderLayout'
 
 const AppRouter = () => (
   <Router>

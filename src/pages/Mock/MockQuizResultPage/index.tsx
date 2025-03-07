@@ -1,4 +1,4 @@
-import MockQuizResultArea from '#features/Mock/MockQuizResultArea/ui'
+import MockQuizResultArea from '#entities/Mock/MockQuizResultArea/ui'
 import React from 'react'
 import styles from './index.module.scss'
 
