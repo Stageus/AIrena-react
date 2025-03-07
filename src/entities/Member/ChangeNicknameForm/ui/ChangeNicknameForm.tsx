@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { changeNickname } from '../model'
 import styles from './ChangeNicknameForm.module.scss'
 
-const ChangeNicknameForm: React.FC = () => {
+export const ChangeNicknameForm: React.FC = () => {
   const [nickname, setNickname] = useState('')
 
   return (
@@ -19,5 +19,3 @@ const ChangeNicknameForm: React.FC = () => {
     </div>
   )
 }
-
-export default ChangeNicknameForm
