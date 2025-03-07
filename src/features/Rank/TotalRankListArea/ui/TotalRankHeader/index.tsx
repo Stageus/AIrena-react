@@ -1,14 +1,23 @@
 import { ReactComponent as SearchIcon } from '#assets/icons/search_icon.svg'
 import styles from './index.module.scss'
 
-const TotalRankHeader: React.FC = () => {
+interface TotalRankHeaderProps {
+  setNickname: (nickname: string) => void
+}
+
+const TotalRankHeader: React.FC<TotalRankHeaderProps> = ({ setNickname }) => {
   return (
     <div className={styles['total-rank-header']}>
       <div className={styles['text']}>전체 유저순위</div>
       <div className={styles['search-area']}>
         <div className={styles['nickname-search-box']}>
           <SearchIcon className={styles['search-icon']} />
-          <div className={styles['placeholder']}>닉네임 검색</div>
+          <input
+            type="text"
+            className={styles['placeholder']}
+            placeholder="닉네임 검색"
+            onChange={(e) => setNickname(e.target.value)}
+          />
         </div>
         <div className={styles['tier-select']}>
           <img

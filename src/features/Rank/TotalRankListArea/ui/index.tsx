@@ -1,5 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { RankListResponse, requestRankList } from '../api'
+import {
+  RankListResponse,
+  requestRankList,
+  requestRankListSearch,
+} from '../api'
 import TotalRankArea from './TotalRankArea'
 import TotalRankHeader from './TotalRankHeader'
 import TotalRankLegend from './TotalRankLegend'
@@ -11,7 +15,9 @@ const TotalRankListArea: React.FC = () => {
   const [current, setCurrent] = useState(0)
   const [loading, setLoading] = useState<boolean>(false)
   const [hasMore, setHasMore] = useState<boolean>(true)
-
+  const [nickname, setNickname] = useState<string | null>(null)
+  const [tier, setTier] = useState<string | null>(null)
+  const [fetchMode, setFetchMode] = useState<'NORMAL' | 'SEARCH'>('NORMAL')
   const observer = useRef<IntersectionObserver | null>(null)
 
   const lastItemRef = useCallback(
@@ -30,36 +36,78 @@ const TotalRankListArea: React.FC = () => {
   )
 
   useEffect(() => {
+    setCurrent(0)
+    setRankList(null)
+    setHasMore(true)
+    const fetchData = async () => {
+      console.log(hasMore)
+      setLoading(true)
+      let response: RankListResponse
+      if (!nickname && !tier) {
+        setFetchMode('NORMAL')
+        response = await requestRankList({ current })
+      } else {
+        setFetchMode('SEARCH')
+        response = await requestRankListSearch({
+          current,
+          nickname,
+          tier,
+        })
+      }
+      processResponse(response)
+      setLoading(false)
+    }
+    fetchData()
+  }, [nickname, tier])
+
+  useEffect(() => {
+    if (current === 0) return
+
     const fetchData = async () => {
       setLoading(true)
-      const response = await requestRankList({ current })
-      setRankListLength(response.ranks.length)
-      setRankList((prev) => {
-        if (prev) {
-          return {
-            ranks: [...prev.ranks, ...response.ranks],
-          }
-        }
-        return response
-      })
-      if (response.ranks.length === 0) {
-        setHasMore(false)
+      let response: RankListResponse
+      if (fetchMode == 'NORMAL') {
+        response = await requestRankList({ current })
+      } else if (fetchMode == 'SEARCH') {
+        response = await requestRankListSearch({
+          current,
+          nickname,
+          tier,
+        })
+      } else {
+        return
       }
+      processResponse(response)
       setLoading(false)
     }
     fetchData()
   }, [current])
 
+  const processResponse = (response: RankListResponse) => {
+    setRankListLength(response.ranks.length)
+    setRankList((prev) => {
+      if (prev) {
+        return {
+          ranks: [...prev.ranks, ...response.ranks],
+        }
+      }
+      return response
+    })
+    if (response.ranks.length === 0) {
+      setHasMore(false)
+    }
+  }
+
   return (
     <div className={styles['total-rank-area']}>
-      <TotalRankHeader />
+      <TotalRankHeader setNickname={setNickname} />
       <TotalRankLegend />
       <div className={styles['rank-list-area']}>
         {rankList?.ranks.map((rank, index) => {
           if (index === rankList.ranks.length - 1) {
             return (
               <TotalRankArea
-                key={rank.rank}
+                key={index}
                 ref={lastItemRef}
                 rank={rank.rank}
                 tier={rank.tier}
@@ -70,7 +118,7 @@ const TotalRankListArea: React.FC = () => {
           }
           return (
             <TotalRankArea
-              key={rank.rank}
+              key={index}
               rank={rank.rank}
               tier={rank.tier}
               nickname={rank.nickname}
@@ -79,7 +127,7 @@ const TotalRankListArea: React.FC = () => {
           )
         })}
       </div>
-      {loading && <p>Loading...</p>}
+      {loading && <p> Loading... </p>}
     </div>
   )
 }
