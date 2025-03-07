@@ -1,18 +1,25 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { RankListResponse, requestRankList } from '../api'
+import {
+  RankListResponse,
+  requestRankList,
+  requestRankListSearch,
+} from '../api'
 import TotalRankArea from './TotalRankArea'
 import TotalRankHeader from './TotalRankHeader'
 import TotalRankLegend from './TotalRankLegend'
 import styles from './index.module.scss'
 
 const TotalRankListArea: React.FC = () => {
+  const observer = useRef<IntersectionObserver | null>(null)
+
   const [rankList, setRankList] = useState<RankListResponse | null>(null)
-  const [rankListLength, setRankListLength] = useState<number>(10)
   const [current, setCurrent] = useState(0)
+  const [newSearch, setNewSearch] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(false)
   const [hasMore, setHasMore] = useState<boolean>(true)
-
-  const observer = useRef<IntersectionObserver | null>(null)
+  const [nickname, setNickname] = useState<string | null>(null)
+  const [tier, setTier] = useState<string | null>(null)
+  const [fetchMode, setFetchMode] = useState<'NORMAL' | 'SEARCH'>('NORMAL')
 
   const lastItemRef = useCallback(
     (node: HTMLDivElement | null) => {
@@ -20,7 +27,7 @@ const TotalRankListArea: React.FC = () => {
 
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && hasMore) {
-          setCurrent((prev) => prev + rankListLength)
+          setCurrent((prev) => prev + 10)
         }
       })
 
@@ -30,36 +37,63 @@ const TotalRankListArea: React.FC = () => {
   )
 
   useEffect(() => {
+    setCurrent(0)
+    setNewSearch((prev) => !prev)
+    setRankList(null)
+    setHasMore(true)
+    if (!nickname && !tier) {
+      setFetchMode('NORMAL')
+    } else {
+      setFetchMode('SEARCH')
+    }
+  }, [nickname, tier])
+
+  useEffect(() => {
     const fetchData = async () => {
       setLoading(true)
-      const response = await requestRankList({ current })
-      setRankListLength(response.ranks.length)
-      setRankList((prev) => {
-        if (prev) {
-          return {
-            ranks: [...prev.ranks, ...response.ranks],
-          }
-        }
-        return response
-      })
-      if (response.ranks.length === 0) {
-        setHasMore(false)
+      let response: RankListResponse
+      if (fetchMode == 'NORMAL') {
+        response = await requestRankList({ current })
+      } else if (fetchMode == 'SEARCH') {
+        response = await requestRankListSearch({
+          current,
+          nickname,
+          tier,
+        })
+      } else {
+        return
       }
+      console.log(response)
+      processResponse(response)
       setLoading(false)
     }
     fetchData()
-  }, [current])
+  }, [current, newSearch])
+
+  const processResponse = (response: RankListResponse) => {
+    setRankList((prev) => {
+      if (prev) {
+        return {
+          ranks: [...prev.ranks, ...response.ranks],
+        }
+      }
+      return response
+    })
+    if (response.ranks.length === 0) {
+      setHasMore(false)
+    }
+  }
 
   return (
     <div className={styles['total-rank-area']}>
-      <TotalRankHeader />
+      <TotalRankHeader setNickname={setNickname} setTierProps={setTier} />
       <TotalRankLegend />
       <div className={styles['rank-list-area']}>
         {rankList?.ranks.map((rank, index) => {
           if (index === rankList.ranks.length - 1) {
             return (
               <TotalRankArea
-                key={rank.rank}
+                key={index}
                 ref={lastItemRef}
                 rank={rank.rank}
                 tier={rank.tier}
@@ -70,7 +104,7 @@ const TotalRankListArea: React.FC = () => {
           }
           return (
             <TotalRankArea
-              key={rank.rank}
+              key={index}
               rank={rank.rank}
               tier={rank.tier}
               nickname={rank.nickname}
@@ -79,7 +113,7 @@ const TotalRankListArea: React.FC = () => {
           )
         })}
       </div>
-      {loading && <p>Loading...</p>}
+      {loading && <p> Loading... </p>}
     </div>
   )
 }
