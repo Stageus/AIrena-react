@@ -10,15 +10,16 @@ import TotalRankLegend from './TotalRankLegend'
 import styles from './index.module.scss'
 
 const TotalRankListArea: React.FC = () => {
+  const observer = useRef<IntersectionObserver | null>(null)
+
   const [rankList, setRankList] = useState<RankListResponse | null>(null)
-  const [rankListLength, setRankListLength] = useState<number>(10)
   const [current, setCurrent] = useState(0)
+  const [newSearch, setNewSearch] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(false)
   const [hasMore, setHasMore] = useState<boolean>(true)
   const [nickname, setNickname] = useState<string | null>(null)
   const [tier, setTier] = useState<string | null>(null)
   const [fetchMode, setFetchMode] = useState<'NORMAL' | 'SEARCH'>('NORMAL')
-  const observer = useRef<IntersectionObserver | null>(null)
 
   const lastItemRef = useCallback(
     (node: HTMLDivElement | null) => {
@@ -26,7 +27,7 @@ const TotalRankListArea: React.FC = () => {
 
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && hasMore) {
-          setCurrent((prev) => prev + rankListLength)
+          setCurrent((prev) => prev + 10)
         }
       })
 
@@ -37,32 +38,17 @@ const TotalRankListArea: React.FC = () => {
 
   useEffect(() => {
     setCurrent(0)
+    setNewSearch((prev) => !prev)
     setRankList(null)
     setHasMore(true)
-    const fetchData = async () => {
-      console.log(hasMore)
-      setLoading(true)
-      let response: RankListResponse
-      if (!nickname && !tier) {
-        setFetchMode('NORMAL')
-        response = await requestRankList({ current })
-      } else {
-        setFetchMode('SEARCH')
-        response = await requestRankListSearch({
-          current,
-          nickname,
-          tier,
-        })
-      }
-      processResponse(response)
-      setLoading(false)
+    if (!nickname && !tier) {
+      setFetchMode('NORMAL')
+    } else {
+      setFetchMode('SEARCH')
     }
-    fetchData()
   }, [nickname, tier])
 
   useEffect(() => {
-    if (current === 0) return
-
     const fetchData = async () => {
       setLoading(true)
       let response: RankListResponse
@@ -77,14 +63,14 @@ const TotalRankListArea: React.FC = () => {
       } else {
         return
       }
+      console.log(response)
       processResponse(response)
       setLoading(false)
     }
     fetchData()
-  }, [current])
+  }, [current, newSearch])
 
   const processResponse = (response: RankListResponse) => {
-    setRankListLength(response.ranks.length)
     setRankList((prev) => {
       if (prev) {
         return {
@@ -100,7 +86,7 @@ const TotalRankListArea: React.FC = () => {
 
   return (
     <div className={styles['total-rank-area']}>
-      <TotalRankHeader setNickname={setNickname} />
+      <TotalRankHeader setNickname={setNickname} setTierProps={setTier} />
       <TotalRankLegend />
       <div className={styles['rank-list-area']}>
         {rankList?.ranks.map((rank, index) => {
