@@ -1,4 +1,4 @@
-import ChangeNicknameForm from '#features/Authentication/ChangeNicknameForm/ui/ChangeNicknameForm'
+import ChangeNicknameForm from '#features/Member/ChangeNicknameForm/ui/ChangeNicknameForm'
 import React from 'react'
 import styles from './index.module.scss'
 

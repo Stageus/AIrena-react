@@ -1,4 +1,4 @@
-import FindPasswordVerificationGuide from '#entities/Authentication/FindPasswordVerificationGuide/ui'
+import FindPasswordVerificationGuide from '#features/Member/FindPasswordVerificationGuide/ui'
 import React from 'react'
 import styles from './index.module.scss'
 

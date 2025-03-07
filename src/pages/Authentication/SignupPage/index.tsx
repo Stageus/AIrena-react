@@ -1,4 +1,4 @@
-import SignupForm from '#entities/Authentication/SignupForm/ui'
+import SignupForm from '#features/Member/SignupForm/ui'
 import React from 'react'
 import styles from './index.module.scss'
 

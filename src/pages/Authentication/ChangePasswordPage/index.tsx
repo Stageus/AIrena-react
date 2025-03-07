@@ -1,4 +1,4 @@
-import ChangePasswordForm from '#entities/Authentication/ChangePasswordForm/ui'
+import ChangePasswordForm from '#features/Member/ChangePasswordForm/ui'
 import React from 'react'
 import styles from './index.module.scss'
 
