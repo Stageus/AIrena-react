@@ -1,35 +1,23 @@
 import SharedButton from '#shared/components/button/StandardButton'
 import EmailInput from '#shared/components/input/EmailInput'
 import WeightedTextOutput from '#shared/components/WeightedTextOutput'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { FindIdResponse, requestFindId } from '../api'
-import styles from './index.module.scss'
+import React, { useState } from 'react'
+import { FindIdResponse } from '../api'
+import { getRequestFindIdResult, goLoginPage } from '../model'
+import styles from './FindIdArea.module.scss'
 
-const FindIdArea = ({}) => {
+export const FindIdArea: React.FC = () => {
   const [email, setEmail] = useState('')
   const [findIdResponse, setFindIdResponse] = useState<FindIdResponse | null>(
     null,
   )
 
-  const handleOnClick = (): void => {
+  const setFindIdResponseState = () => {
     const fetch = async () => {
-      const result = await requestFindId({ email })
-      if (!result) {
-        return
-      }
-      if (result) {
-        setFindIdResponse(result)
-      }
+      const result = await getRequestFindIdResult(email)
+      setFindIdResponse(result)
     }
-
     fetch()
-  }
-
-  const navigate = useNavigate()
-
-  const goLoginPage = (): void => {
-    navigate('/')
   }
 
   return findIdResponse ? (
@@ -41,8 +29,7 @@ const FindIdArea = ({}) => {
   ) : (
     <div className={styles['find-id-form']}>
       <EmailInput setEmail={setEmail} />
-      <SharedButton name="아이디 찾기" onClick={handleOnClick} />
+      <SharedButton name="아이디 찾기" onClick={setFindIdResponseState} />
     </div>
   )
 }
-export default FindIdArea

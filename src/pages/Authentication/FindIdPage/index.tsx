@@ -1,4 +1,4 @@
-import FindIdArea from '#features/Member/FindIdArea/ui'
+import FindIdArea from '#features/Member/FindIdArea/ui/FindIdArea'
 import React from 'react'
 import styles from './index.module.scss'
 
