@@ -1,20 +1,12 @@
 import SharedButton from '#shared/components/button/StandardButton'
 import WeightedTextOutput from '#shared/components/WeightedTextOutput'
 import { useLocation } from 'react-router-dom'
-import { requestSendChangePasswordVerifyEmail } from '../api'
-import styles from './index.module.scss'
+import { sendChangePasswordVerifyEmail } from '../model'
+import styles from './FindPasswordVerificationGuide.module.scss'
 
-const FindPasswordVerificationGuide: React.FC = ({}) => {
+export const FindPasswordVerificationGuide: React.FC = ({}) => {
   const location = useLocation()
-  const queryParams = new URLSearchParams(location.search)
-  const email = queryParams.get('email') || ''
-
-  const handleClick = () => {
-    const fetch = async () => {
-      await requestSendChangePasswordVerifyEmail({ email })
-    }
-    fetch()
-  }
+  const email = new URLSearchParams(location.search).get('email') || ''
 
   return (
     <div className={styles['email-verification-guide']}>
@@ -33,8 +25,12 @@ const FindPasswordVerificationGuide: React.FC = ({}) => {
           확인 후 비밀번호 변경을 완료해드릴게요
         </div>
       </div>
-      <SharedButton name={'인증 이메일 다시보내기'} onClick={handleClick} />
+      <SharedButton
+        name={'인증 이메일 다시보내기'}
+        onClick={() => {
+          sendChangePasswordVerifyEmail(email)
+        }}
+      />
     </div>
   )
 }
-export default FindPasswordVerificationGuide
