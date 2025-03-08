@@ -1,4 +1,4 @@
-import FindPasswordForm from '#features/Member/FindPasswordForm/ui'
+import { FindPasswordForm } from '#features/Member/FindPasswordForm'
 import React from 'react'
 import style from './index.module.scss'
 

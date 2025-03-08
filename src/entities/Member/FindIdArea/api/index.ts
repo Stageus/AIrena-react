@@ -14,5 +14,5 @@ export const requestFindId = async (request: FindIdRequest) => {
     '/member/find/id',
     request,
   )
-  return result.data
+  return result
 }
