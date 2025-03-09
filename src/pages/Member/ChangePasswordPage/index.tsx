@@ -1,5 +1,5 @@
-import ChangePasswordForm from '#features/Member/ChangePasswordForm/ui/ChangePasswordForm'
 import React from 'react'
+import ChangePasswordForm from 'src/widgets/Member/ChangePasswordForm/ui/ChangePasswordForm'
 import styles from './index.module.scss'
 
 const ChangePasswordPage: React.FC = () => {

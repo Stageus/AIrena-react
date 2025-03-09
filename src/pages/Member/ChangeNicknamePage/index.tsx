@@ -1,5 +1,5 @@
-import ChangeNicknameForm from '#features/Member/ChangeNicknameForm/ui/ChangeNicknameForm'
 import React from 'react'
+import { ChangeNicknameForm } from 'src/widgets/Member/ChangeNicknameForm'
 import styles from './index.module.scss'
 
 const ChangeNicknamePage: React.FC = () => {

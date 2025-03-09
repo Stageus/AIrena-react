@@ -1,5 +1,5 @@
-import FindIdArea from '#features/Member/FindIdArea/ui/FindIdArea'
 import React from 'react'
+import FindIdArea from 'src/widgets/Member/FindIdArea/ui/FindIdArea'
 import styles from './index.module.scss'
 
 const FindIdPage: React.FC = () => {
