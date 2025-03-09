@@ -21,7 +21,7 @@ const MockListArea: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       if (title === '' && sort === '') {
-        const data = await requestMockList({ current, display })
+        const data = await requestMockList({ current, display, sort, title })
         setMockList(data)
         setLoading(false)
         return
@@ -41,7 +41,7 @@ const MockListArea: React.FC = () => {
 
   const likeExist = true
 
-  if (loading) {
+  if (loading || !mockList) {
     return (
       <div className={styles['mock-list-area']}>
         <ArticleSelectHeader />
@@ -53,7 +53,7 @@ const MockListArea: React.FC = () => {
     <div className={styles['mock-list-area']}>
       <ArticleSelectHeader />
       <ArticleLegend setSort={setSort} likeExist={likeExist} />
-      {mockList?.mocks?.map(
+      {mockList.mocks.map(
         ({ idx, title, writerNickname, createdAt, likeCount }, index) => (
           <ArticleInfoArea
             key={index}
@@ -68,11 +68,11 @@ const MockListArea: React.FC = () => {
         ),
       )}
       <ArticleFooter
-        firstPageNumber={mockList?.firstPageNumber as number}
-        lastPageNumber={mockList?.lastPageNumber as number}
-        currentPageNumber={mockList?.currentPageNumber as number}
-        prevPageExist={mockList?.prevPageExist as boolean}
-        nextPageExist={mockList?.nextPageExist as boolean}
+        firstPageNumber={mockList.firstPageNumber as number}
+        lastPageNumber={mockList.lastPageNumber as number}
+        currentPageNumber={mockList.currentPageNumber as number}
+        prevPageExist={mockList.prevPageExist as boolean}
+        nextPageExist={mockList.nextPageExist as boolean}
         setTitle={setTitle}
         setCurrent={setCurrent}
       />
