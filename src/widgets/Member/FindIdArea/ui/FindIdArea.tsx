@@ -1,7 +1,6 @@
+import { FindIdResult } from '#entities/member'
 import SharedButton from '#shared/components/button/StandardButton'
 import EmailInput from '#shared/components/input/EmailInput'
-import WeightedTextOutput from '#shared/components/WeightedTextOutput'
-import { goLoginPage } from '#shared/libs'
 import React, { useState } from 'react'
 import { FindIdResponse } from '../api'
 import { getRequestFindIdResult } from '../model'
@@ -22,11 +21,7 @@ export const FindIdArea: React.FC = () => {
   }
 
   return findIdResponse ? (
-    <div className={styles['find-id-result-area']}>
-      <div className={styles['find-id-result']}>아이디 찾기 결과</div>
-      <WeightedTextOutput text={findIdResponse.id} />
-      <SharedButton name="로그인 페이지로 이동" onClick={goLoginPage} />
-    </div>
+    <FindIdResult id={findIdResponse.id} />
   ) : (
     <div className={styles['find-id-form']}>
       <EmailInput setEmail={setEmail} />
