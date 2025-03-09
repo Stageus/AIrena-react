@@ -1,14 +1,14 @@
 import { ReactComponent as QuizCountIcon } from '#assets/icons/quiz_count_icon.svg'
 import ArticleCreationBasicInfoArea from '#entities/global/ui/ArticleCreationBasicInfoArea'
-import styles from './index.module.scss'
+import styles from './BasicInfo.module.scss'
 
-interface MockBasicInfoAreaProps {
+interface BasicInfoProps {
   nickname: string
   createdAt: string
   quizCount: number
 }
 
-const MockBasicInfoArea: React.FC<MockBasicInfoAreaProps> = ({
+export const BasicInfo: React.FC<BasicInfoProps> = ({
   nickname,
   createdAt,
   quizCount,
@@ -25,4 +25,3 @@ const MockBasicInfoArea: React.FC<MockBasicInfoAreaProps> = ({
     </div>
   )
 }
-export default MockBasicInfoArea

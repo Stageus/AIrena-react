@@ -1,7 +1,7 @@
-import styles from './index.module.scss'
-import MockRankArea from './MockRankArea'
+import { Rank } from '../Rank/Rank'
+import styles from './RankList.module.scss'
 
-const MockRankListArea: React.FC = () => {
+export const RankList: React.FC = () => {
   return (
     <div className={styles['mock-rank-list-area']}>
       <div className={styles['rank-text']}>
@@ -20,11 +20,9 @@ const MockRankListArea: React.FC = () => {
           </div>
         </div>
         {Array.from({ length: 10 }).map((_, index) => (
-          <MockRankArea key={index} />
+          <Rank key={index} rank={1} nickname="김스테이지어스" score={850} />
         ))}
       </div>
     </div>
   )
 }
-
-export default MockRankListArea
