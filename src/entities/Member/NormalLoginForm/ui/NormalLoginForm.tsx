@@ -11,7 +11,7 @@ import {
 } from '../model'
 import styles from './index.module.scss'
 
-export const NormalLoginForm: React.FC = ({}) => {
+export const NormalLoginForm: React.FC = () => {
   const [id, setId] = useState<string>('')
   const [password, setPassword] = useState<string>('')
 

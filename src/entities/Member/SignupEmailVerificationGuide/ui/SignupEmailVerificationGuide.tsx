@@ -1,20 +1,11 @@
 import SharedButton from '#shared/components/button/StandardButton'
 import WeightedTextOutput from '#shared/components/WeightedTextOutput'
 import { useLocation } from 'react-router-dom'
-import { requestSendSignupVerifyEmail } from '../api'
+import { sendSignupVerifyEmail } from '../model'
 import styles from './index.module.scss'
 
-const SignupEmailVerificationGuide: React.FC = ({}) => {
-  const location = useLocation()
-  const queryParams = new URLSearchParams(location.search)
-  const email = queryParams.get('email') || ''
-
-  const handleClick = () => {
-    const fetch = async () => {
-      await requestSendSignupVerifyEmail({ email })
-    }
-    fetch()
-  }
+export const SignupEmailVerificationGuide: React.FC = () => {
+  const email = new URLSearchParams(useLocation().search).get('email') || ''
 
   return (
     <div className={styles['email-verification-guide']}>
@@ -31,8 +22,12 @@ const SignupEmailVerificationGuide: React.FC = ({}) => {
         <div className={styles['text-3']}>로 인증 이메일을 발송했어요</div>
         <div className={styles['text-4']}>확인 후 가입을 완료해드릴게요</div>
       </div>
-      <SharedButton name={'인증 이메일 다시보내기'} onClick={handleClick} />
+      <SharedButton
+        name={'인증 이메일 다시보내기'}
+        onClick={() => {
+          sendSignupVerifyEmail(email)
+        }}
+      />
     </div>
   )
 }
-export default SignupEmailVerificationGuide

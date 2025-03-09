@@ -4,9 +4,8 @@ import { useLocation } from 'react-router-dom'
 import { sendChangePasswordVerifyEmail } from '../model'
 import styles from './FindPasswordVerificationGuide.module.scss'
 
-export const FindPasswordVerificationGuide: React.FC = ({}) => {
-  const location = useLocation()
-  const email = new URLSearchParams(location.search).get('email') || ''
+export const FindPasswordVerificationGuide: React.FC = () => {
+  const email = new URLSearchParams(useLocation().search).get('email') || ''
 
   return (
     <div className={styles['email-verification-guide']}>
