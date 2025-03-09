@@ -1,4 +1,4 @@
-import { goMockListPage } from '#shared/model'
+import { goMockListPage } from '#shared/libs'
 import { requestChangeNickname } from '../api'
 
 export const changeNicknameWithNavigation = (nickname: string) => {

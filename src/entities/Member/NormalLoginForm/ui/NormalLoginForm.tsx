@@ -2,13 +2,8 @@ import SharedButton from '#shared/components/button/StandardButton'
 import IdInput from '#shared/components/input/IdInput'
 import PasswordInput from '#shared/components/input/PasswordInput'
 import { useEffect, useState } from 'react'
-import {
-  checkLoginWithNavigate,
-  goFindIdPage,
-  goFindPasswordPage,
-  goSignupPage,
-  normalLoginWithNavigate,
-} from '../model'
+import { goFindIdPage, goFindPasswordPage, goSignupPage } from '../libs'
+import { checkLoginWithNavigate, normalLoginWithNavigate } from '../model'
 import styles from './index.module.scss'
 
 export const NormalLoginForm: React.FC = () => {

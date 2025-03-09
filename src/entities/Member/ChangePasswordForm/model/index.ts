@@ -1,7 +1,7 @@
-import { goRootPage } from '#shared/model'
+import { goRootPage } from '#shared/libs'
 import { requestChangePassword } from '../api'
 
-export const changePassword = (
+export const changePasswordWithNavigation = (
   password: string,
   passwordCheck: string,
   token: string,

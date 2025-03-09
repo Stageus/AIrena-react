@@ -1,15 +1,7 @@
+import { goGoogleLoginPage, goKakaoLoginPage } from '../libs'
 import styles from './index.module.scss'
-const API_URL = import.meta.env.VITE_API_URL
 
-const SocialLoginArea: React.FC = () => {
-  const goGoogleLoginPage = (): void => {
-    window.location.href = `${API_URL}/member/login/google`
-  }
-
-  const goKakaoLoginPage = (): void => {
-    window.location.href = `${API_URL}/member/login/kakao`
-  }
-
+export const SocialLoginArea: React.FC = () => {
   return (
     <div className={styles['social-login-area']}>
       <div className={styles['simple-login-content']}>
@@ -36,4 +28,3 @@ const SocialLoginArea: React.FC = () => {
     </div>
   )
 }
-export default SocialLoginArea

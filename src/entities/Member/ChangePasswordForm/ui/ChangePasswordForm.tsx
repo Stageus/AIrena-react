@@ -3,7 +3,7 @@ import PasswordCheckInput from '#shared/components/input/PasswordCheckInput'
 import PasswordInput from '#shared/components/input/PasswordInput'
 import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { changePassword } from '../model'
+import { changePasswordWithNavigation } from '../model'
 import styles from './index.module.scss'
 
 export const ChangePasswordForm: React.FC = () => {
@@ -22,7 +22,7 @@ export const ChangePasswordForm: React.FC = () => {
       <SharedButton
         name="비밀번호 변경"
         onClick={() => {
-          changePassword(password, passwordCheck, token)
+          changePasswordWithNavigation(password, passwordCheck, token)
         }}
       />
     </div>

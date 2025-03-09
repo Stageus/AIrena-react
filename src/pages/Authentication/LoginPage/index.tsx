@@ -1,5 +1,5 @@
 import { NormalLoginForm } from '#features/Member/NormalLoginForm'
-import SocialLoginArea from '#features/Member/SocialLoginArea/ui'
+import { SocialLoginArea } from '#features/Member/SocialLoginArea'
 import React from 'react'
 import styles from './index.module.scss'
 
