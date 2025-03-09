@@ -1,8 +1,8 @@
 import { ReactComponent as HomeIcon } from '#assets/icons/home_icon.svg'
 import { useNavigate } from 'react-router-dom'
-import styles from './Page.module.scss'
+import styles from './index.module.scss'
 
-const ErrorPage: React.FC = () => {
+const Error404Page: React.FC = () => {
   const navigate = useNavigate()
   const goMockPage = () => {
     navigate('/mock')
@@ -38,4 +38,5 @@ const ErrorPage: React.FC = () => {
     </div>
   )
 }
-export default ErrorPage
+
+export default Error404Page

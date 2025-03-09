@@ -1,32 +1,28 @@
-import ErrorPage from '#pages/error/ui/Page'
-import ChangeNicknamePage from '#pages/Member/ChangeNicknamePage'
-import ChangePasswordPage from '#pages/Member/ChangePasswordPage'
-import FindIdPage from '#pages/Member/FindIdPage'
-import FindPasswordEmailVerificationGuidePage from '#pages/Member/FindPasswordEmailVerificationGuidePage'
-import FindPasswordPage from '#pages/Member/FindPasswordPage'
-import LoginPage from '#pages/Member/LoginPage'
-import SignupEmailVerificationGuidePage from '#pages/Member/SignupEmailVerificationGuidePage'
-import SignupPage from '#pages/Member/SignupPage'
-import MockDetailPage from '#pages/Mock/MockDetailPage'
-import MockListPage from '#pages/Mock/MockListPage'
-import MockQuizResultPage from '#pages/Mock/MockQuizResultPage'
-import MockResultPage from '#pages/Mock/MockResultPage'
-import MockSolvePage from '#pages/Mock/MockSolvePage'
-import MockWritePage from '#pages/Mock/MockWritePage'
-import NoticeDetailPage from '#pages/Notice/NoticeDetailPage'
-import NoticeListPage from '#pages/Notice/NoticeListPage'
-import NoticeWritePage from '#pages/Notice/NoticeWritePage'
-import TotalRankPage from '#pages/Rank/TotalRankPage'
-import ChangePasswordRedirectPage from '#pages/Redirection/ChangePasswordRedirectPage'
-import LoginRedirectPage from '#pages/Redirection/LoginRedirectPage'
-import SignupRedirectPage from '#pages/Redirection/SignupRedirectPage'
-import {
-  default as SignupVerifyPage,
-  default as SignupVerifyRedirectPage,
-} from '#pages/Redirection/SignupVerifyRedirectPage'
+import ChangeNicknamePage from '#pages/ChangeNicknamePage'
+import ChangePasswordPage from '#pages/ChangePasswordPage'
+import ChangePasswordRedirectPage from '#pages/ChangePasswordRedirectPage'
+import Error404Page from '#pages/Error404Page'
+import FindIdPage from '#pages/FindIdPage'
+import FindPasswordEmailVerificationGuidePage from '#pages/FindPasswordEmailVerificationGuidePage'
+import FindPasswordPage from '#pages/FindPasswordPage'
+import LoginPage from '#pages/LoginPage'
+import LoginRedirectPage from '#pages/LoginRedirectPage'
+import MockDetailPage from '#pages/MockDetailPage'
+import MockListPage from '#pages/MockListPage'
+import MockQuizResultPage from '#pages/MockQuizResultPage'
+import MockResultPage from '#pages/MockResultPage'
+import MockSolvePage from '#pages/MockSolvePage'
+import MockWritePage from '#pages/MockWritePage'
+import NoticeDetailPage from '#pages/NoticeDetailPage'
+import NoticeListPage from '#pages/NoticeListPage'
+import NoticeWritePage from '#pages/NoticeWritePage'
+import SignupEmailVerificationGuidePage from '#pages/SignupEmailVerificationGuidePage'
+import SignupPage from '#pages/SignupPage'
+import SignupRedirectPage from '#pages/SignupRedirectPage'
+import SignupVerifyRedirectPage from '#pages/SignupVerifyRedirectPage'
+import TotalRankPage from '#pages/TotalRankPage'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 import { IntroductionLayout } from './layouts/IntroductionLayout'
 import { MainHeaderLayout } from './layouts/MainHeaderLayout'
 
@@ -51,7 +47,7 @@ const AppRouter = () => (
         path="/find/password/email-verification-guide"
         element={<FindPasswordEmailVerificationGuidePage />}
       />
-      <Route path="/signup/verify" element={<SignupVerifyPage />} />
+      <Route path="/signup/verify" element={<SignupVerifyRedirectPage />} />
 
       <Route element={<MainHeaderLayout />}>
         {/* 모의고사 페이지 */}
@@ -69,8 +65,8 @@ const AppRouter = () => (
 
         {/* 전체 랭킹 페이지 */}
         <Route path="/rank/total" element={<TotalRankPage />} />
-        {/* 에러 페이지 */}
-        <Route path="*" element={<ErrorPage />} />
+        {/* 404 에러 페이지 */}
+        <Route path="*" element={<Error404Page />} />
       </Route>
 
       {/* 리디렉션 페이지 */}
