@@ -1,5 +1,5 @@
-import MockSolveArea from '#entities/Mock/MockSolveArea/ui'
 import React from 'react'
+import MockSolveArea from 'src/widgets/mock/MockSolveArea/ui'
 import styles from './index.module.scss'
 
 const MockSolvePage: React.FC = () => {

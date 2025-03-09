@@ -1,4 +1,4 @@
-import TotalRankListArea from '#entities/Rank/TotalRankListArea/ui'
+import TotalRankListArea from 'src/widgets/rank/ui'
 import styles from './index.module.scss'
 
 const TotalRankPage: React.FC = () => {

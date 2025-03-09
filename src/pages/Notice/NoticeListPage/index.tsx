@@ -1,5 +1,5 @@
-import NoticeListArea from '#entities/Notice/NoticeListArea/ui'
 import React from 'react'
+import NoticeListArea from 'src/widgets/notice/NoticeListArea/ui'
 import styles from './index.module.scss'
 
 const NoticeListPage: React.FC = () => {

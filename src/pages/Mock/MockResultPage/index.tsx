@@ -1,5 +1,5 @@
-import MockResultArea from '#entities/Mock/MockResultArea'
 import React from 'react'
+import MockResultArea from 'src/widgets/mock/MockResultArea'
 import styles from './index.module.scss'
 
 const MockResultPage: React.FC = () => {

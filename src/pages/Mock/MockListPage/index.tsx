@@ -1,5 +1,5 @@
-import MockListArea from '#entities/Mock/MockListArea/ui'
 import React from 'react'
+import MockListArea from 'src/widgets/mock/MockListArea/ui'
 import styles from './index.module.scss'
 
 const MockListPage: React.FC = () => {

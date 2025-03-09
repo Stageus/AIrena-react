@@ -1,5 +1,5 @@
-import MockQuizResultArea from '#entities/Mock/MockQuizResultArea/ui'
 import React from 'react'
+import MockQuizResultArea from 'src/widgets/mock/MockQuizResultArea/ui'
 import styles from './index.module.scss'
 
 const MockQuizResultPage: React.FC = () => {
