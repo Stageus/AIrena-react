@@ -1,7 +1,7 @@
-import CancelButton from '#shared/components/button/CancelButton'
-import CompleteButton from '#shared/components/button/CompleteButton'
-import DeleteButton from '#shared/components/button/DeleteButton'
-import EditButton from '#shared/components/button/EditButton'
+import CancelButton from '#shared/ui/button/CancelButton'
+import CompleteButton from '#shared/ui/button/CompleteButton'
+import DeleteButton from '#shared/ui/button/DeleteButton'
+import EditButton from '#shared/ui/button/EditButton'
 import styles from './index.module.scss'
 
 const ArticleManagementArea: React.FC = () => {

@@ -1,5 +1,5 @@
-import ArticleCreationBasicInfoArea from '#shared/components/article/ArticleCreationBasicInfoArea'
-import ArticleManagementArea from '#shared/components/article/ArticleManagementArea'
+import ArticleCreationBasicInfoArea from '#entities/global/ui/ArticleCreationBasicInfoArea'
+import ArticleManagementArea from '#entities/global/ui/ArticleManagementArea'
 import { UUID } from 'crypto'
 import DOMPurify from 'dompurify'
 import { useEffect, useState } from 'react'

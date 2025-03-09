@@ -1,6 +1,6 @@
 import { ReactComponent as HomeIcon } from '#assets/icons/home_icon.svg'
 import { useNavigate } from 'react-router-dom'
-import styles from './index.module.scss'
+import styles from './Page.module.scss'
 
 const ErrorPage: React.FC = () => {
   const navigate = useNavigate()

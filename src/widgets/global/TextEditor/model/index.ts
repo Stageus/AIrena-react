@@ -1,4 +1,4 @@
-const option = {
+export const option = {
   modules: {
     toolbar: {
       container: [
@@ -17,5 +17,3 @@ const option = {
   placeholder: '내용을 입력해주세요',
   theme: 'snow',
 }
-
-export default option

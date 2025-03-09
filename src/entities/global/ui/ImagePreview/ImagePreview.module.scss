@@ -1,0 +1,15 @@
+.image-preview-content {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 764px;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0px;
+  .image-preview {
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+  }
+}

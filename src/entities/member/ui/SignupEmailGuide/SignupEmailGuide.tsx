@@ -1,4 +1,4 @@
-import WeightedTextOutput from '#shared/components/WeightedTextOutput'
+import WeightedTextOutput from '#shared/ui/output/WeightedTextOutput/WeightedTextOutput'
 import styles from './SignupEmailGuide.module.scss'
 
 interface SignupEmailGuideProps {

@@ -1,5 +1,5 @@
 import { ReactComponent as SolveIcon } from '#assets/icons/solve_icon.svg'
-import ArticleManagementArea from '#shared/components/article/ArticleManagementArea'
+import ArticleManagementArea from '#entities/global/ui/ArticleManagementArea'
 import { UUID } from 'crypto'
 import DOMPurify from 'dompurify'
 import { useEffect, useState } from 'react'

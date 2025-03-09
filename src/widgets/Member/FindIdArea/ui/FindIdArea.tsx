@@ -1,6 +1,6 @@
 import { FindIdResult } from '#entities/member'
-import SharedButton from '#shared/components/button/StandardButton'
-import EmailInput from '#shared/components/input/EmailInput'
+import SharedButton from '#shared/ui/button/StandardButton'
+import EmailInput from '#shared/ui/input/EmailInput'
 import React, { useState } from 'react'
 import { FindIdResponse } from '../api'
 import { getRequestFindIdResult } from '../model'

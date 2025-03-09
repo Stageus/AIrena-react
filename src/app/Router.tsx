@@ -1,4 +1,4 @@
-import ErrorPage from '#pages/Error'
+import ErrorPage from '#pages/error/ui/Page'
 import ChangeNicknamePage from '#pages/Member/ChangeNicknamePage'
 import ChangePasswordPage from '#pages/Member/ChangePasswordPage'
 import FindIdPage from '#pages/Member/FindIdPage'
