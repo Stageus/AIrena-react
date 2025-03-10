@@ -1,12 +1,12 @@
 import { ReactComponent as SubmitIcon } from '#assets/icons/submit_icon.svg'
 import React from 'react'
-import styles from './index.module.scss'
+import styles from './Submit.module.scss'
 
-interface SubmitButtonProps {
+interface SubmitProps {
   onClick: () => Promise<void>
 }
 
-const SubmitButton: React.FC<SubmitButtonProps> = ({ onClick }) => {
+export const Submit: React.FC<SubmitProps> = ({ onClick }) => {
   return (
     <div onClick={onClick} className={styles['submit-button']}>
       <SubmitIcon className={styles['submit-icon']} />
@@ -14,5 +14,3 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({ onClick }) => {
     </div>
   )
 }
-
-export default SubmitButton

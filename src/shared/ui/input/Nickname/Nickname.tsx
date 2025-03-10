@@ -1,12 +1,12 @@
 import { ReactComponent as NicknameIcon } from '#assets/icons/nickname_icon.svg'
 import React from 'react'
-import styles from './index.module.scss'
+import styles from './Nickname.module.scss'
 
-interface NicknameInputProps {
+interface NicknameProps {
   setNickname: (text: string) => void
 }
 
-const NicknameInput: React.FC<NicknameInputProps> = ({ setNickname }) => {
+export const Nickname: React.FC<NicknameProps> = ({ setNickname }) => {
   return (
     <div className={styles['nickname-input-box']}>
       <input
@@ -19,5 +19,3 @@ const NicknameInput: React.FC<NicknameInputProps> = ({ setNickname }) => {
     </div>
   )
 }
-
-export default NicknameInput

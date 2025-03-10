@@ -1,12 +1,12 @@
 import { ReactComponent as PasswordIcon } from '#assets/icons/password_icon.svg'
 import React from 'react'
-import styles from './index.module.scss'
+import styles from './PasswordCheck.module.scss'
 
-interface PasswordCheckInputProps {
+interface PasswordCheckProps {
   setPasswordCheck: (text: string) => void
 }
 
-const PasswordCheckInput: React.FC<PasswordCheckInputProps> = ({
+export const PasswordCheck: React.FC<PasswordCheckProps> = ({
   setPasswordCheck,
 }) => {
   return (
@@ -17,9 +17,7 @@ const PasswordCheckInput: React.FC<PasswordCheckInputProps> = ({
         placeholder="비밀번호 확인"
         className={styles['password-check-text']}
       />
-      <PasswordIcon className={styles['password-icon']} />
+      <PasswordIcon className={styles['password-check-icon']} />
     </div>
   )
 }
-
-export default PasswordCheckInput

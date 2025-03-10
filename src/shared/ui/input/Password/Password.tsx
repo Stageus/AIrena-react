@@ -1,12 +1,12 @@
 import { ReactComponent as PasswordIcon } from '#assets/icons/password_icon.svg'
 import React from 'react'
-import styles from './index.module.scss'
+import styles from './Password.module.scss'
 
-interface PasswordInputProps {
+interface PasswordProps {
   setPassword: (text: string) => void
 }
 
-const PasswordInput: React.FC<PasswordInputProps> = ({ setPassword }) => {
+export const Password: React.FC<PasswordProps> = ({ setPassword }) => {
   return (
     <div className={styles['password-input-box']}>
       <input
@@ -19,5 +19,3 @@ const PasswordInput: React.FC<PasswordInputProps> = ({ setPassword }) => {
     </div>
   )
 }
-
-export default PasswordInput

@@ -1,12 +1,12 @@
 import { ReactComponent as IdIcon } from '#assets/icons/id_icon.svg'
 import React from 'react'
-import styles from './index.module.scss'
+import styles from './Id.module.scss'
 
-interface IdInputProps {
+interface IdProps {
   setId: (text: string) => void
 }
 
-const IdInput: React.FC<IdInputProps> = ({ setId }) => {
+export const Id: React.FC<IdProps> = ({ setId }) => {
   return (
     <div className={styles['id-input-box']}>
       <input
@@ -19,5 +19,3 @@ const IdInput: React.FC<IdInputProps> = ({ setId }) => {
     </div>
   )
 }
-
-export default IdInput

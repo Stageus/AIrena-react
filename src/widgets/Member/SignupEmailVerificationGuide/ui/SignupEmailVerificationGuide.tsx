@@ -1,5 +1,5 @@
 import { SignupEmailGuide } from '#entities/member'
-import SharedButton from '#shared/ui/button/StandardButton'
+import SharedButton from '#shared/ui/button/Standard/Standard'
 import { useLocation } from 'react-router-dom'
 import { sendSignupVerifyEmail } from '../model'
 import styles from './SignupEmailVerificationGuide.module.scss'

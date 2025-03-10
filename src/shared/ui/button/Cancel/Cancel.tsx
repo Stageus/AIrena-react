@@ -1,12 +1,12 @@
 import { ReactComponent as CancelIcon } from '#assets/icons/cancel_icon.svg'
 import React from 'react'
-import styles from './index.module.scss'
+import styles from './Cancel.module.scss'
 
-interface CancelButtonProps {
+interface CancelProps {
   onClick: () => void
 }
 
-const CancelButton: React.FC<CancelButtonProps> = ({ onClick }) => {
+export const Cancel: React.FC<CancelProps> = ({ onClick }) => {
   return (
     <div onClick={onClick} className={styles['cancel-button']}>
       <CancelIcon className={styles['cancel-icon']} />
@@ -14,5 +14,3 @@ const CancelButton: React.FC<CancelButtonProps> = ({ onClick }) => {
     </div>
   )
 }
-
-export default CancelButton

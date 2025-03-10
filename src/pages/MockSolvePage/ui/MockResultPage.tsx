@@ -1,5 +1,5 @@
 import { UUID } from 'crypto'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { MockQuizResponse, requestMockQuiz, requestQuizAnswer } from '../api'
 import styles from './index.module.scss'
@@ -7,7 +7,7 @@ import SingleChoiceSelectArea from './SingleChoiceSelectArea'
 import Submitting from './Submitting'
 import TextAnswerInputArea from './TextAnswerInputArea'
 
-const MockSolveArea: React.FC = () => {
+const MockSolvePage: React.FC = () => {
   const { idx } = useParams<{ idx: UUID }>()
   if (!idx) {
     return null
@@ -57,7 +57,7 @@ const MockSolveArea: React.FC = () => {
   }
 
   return (
-    <>
+    <div className={styles['mock-solve-container']}>
       <div
         className={styles['mock-solve-area']}
         style={{ display: submitting ? 'none' : 'flex' }}
@@ -78,8 +78,7 @@ const MockSolveArea: React.FC = () => {
         </div>
       </div>
       <Submitting isSubmitting={submitting} />
-    </>
+    </div>
   )
 }
-
-export default MockSolveArea
+export default MockSolvePage

@@ -1,5 +1,5 @@
-import CancelButton from '#shared/ui/button/CancelButton'
-import SubmitButton from '#shared/ui/button/SubmitButton'
+import CancelButton from '#shared/ui/button/Cancel/Cancel'
+import SubmitButton from '#shared/ui/button/Submit/Submit'
 import styles from './index.module.scss'
 
 interface ArticleWriteFooterProps {

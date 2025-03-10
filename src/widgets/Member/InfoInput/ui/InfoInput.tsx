@@ -1,7 +1,7 @@
-import EmailInput from '#shared/ui/input/EmailInput'
-import IdInput from '#shared/ui/input/IdInput'
-import PasswordCheckInput from '#shared/ui/input/PasswordCheckInput'
-import PasswordInput from '#shared/ui/input/PasswordInput'
+import EmailInput from '#shared/ui/input/Email/Email'
+import IdInput from '#shared/ui/input/Id/Id'
+import PasswordInput from '#shared/ui/input/Password/Password'
+import PasswordCheckInput from '#shared/ui/input/PasswordCheck/PasswordCheck'
 import React from 'react'
 import styles from './InfoInput.module.scss'
 

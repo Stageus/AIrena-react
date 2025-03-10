@@ -1,5 +1,5 @@
-import SharedButton from '#shared/ui/button/StandardButton'
-import NicknameInput from '#shared/ui/input/NicknameInput'
+import SharedButton from '#shared/ui/button/Standard/Standard'
+import NicknameInput from '#shared/ui/input/Nickname/Nickname'
 import React, { useState } from 'react'
 import { changeNicknameWithNavigation } from '../model'
 import styles from './index.module.scss'

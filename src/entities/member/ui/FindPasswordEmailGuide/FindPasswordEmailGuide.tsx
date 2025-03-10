@@ -1,4 +1,4 @@
-import WeightedTextOutput from '#shared/ui/output/WeightedTextOutput/WeightedTextOutput'
+import WeightedTextOutput from '#shared/ui/output/WeightedText/WeightedText'
 import styles from './FindPasswordEmailGuide.module.scss'
 
 interface FindPasswordEmailGuideProps {

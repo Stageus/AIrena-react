@@ -1,8 +1,8 @@
 import { ReactComponent as EditIcon } from '#assets/icons/submit_icon.svg'
 import React from 'react'
-import styles from './index.module.scss'
+import styles from './Edit.module.scss'
 
-const EditButton: React.FC = () => {
+export const Edit: React.FC = () => {
   return (
     <div className={styles['edit-button']}>
       <EditIcon className={styles['edit-icon']} />
@@ -10,5 +10,3 @@ const EditButton: React.FC = () => {
     </div>
   )
 }
-
-export default EditButton

@@ -1,6 +1,6 @@
 import { goLoginPage } from '#shared/libs'
-import SharedButton from '#shared/ui/button/StandardButton'
-import WeightedTextOutput from '#shared/ui/output/WeightedTextOutput/WeightedTextOutput'
+import SharedButton from '#shared/ui/button/Standard/Standard'
+import WeightedTextOutput from '#shared/ui/output/WeightedText/WeightedText'
 import styles from './FindIdResult.module.scss'
 
 interface FindIdResponseProps {

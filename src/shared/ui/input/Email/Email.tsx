@@ -1,12 +1,12 @@
 import { ReactComponent as EmailIcon } from '#assets/icons/email_icon.svg'
 import React from 'react'
-import styles from './index.module.scss'
+import styles from './Email.module.scss'
 
-interface EmailInputProps {
+interface EmailProps {
   setEmail: (text: string) => void
 }
 
-const EmailInput: React.FC<EmailInputProps> = ({ setEmail }) => {
+export const Email: React.FC<EmailProps> = ({ setEmail }) => {
   return (
     <div className={styles['email-input-box']}>
       <input
@@ -19,5 +19,3 @@ const EmailInput: React.FC<EmailInputProps> = ({ setEmail }) => {
     </div>
   )
 }
-
-export default EmailInput

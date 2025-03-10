@@ -1,4 +1,4 @@
-import SharedButton from '#shared/ui/button/StandardButton'
+import SharedButton from '#shared/ui/button/Standard/Standard'
 import { InfoInput } from '#widgets/member/InfoInput'
 import React from 'react'
 import { signup } from '../model'
