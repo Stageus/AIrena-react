@@ -1,4 +1,4 @@
-import { ReactComponent as TransparentLikeIcon } from '#assets/icons/transparent_like_icon.svg'
+import { TransparentLikeIcon } from '#shared/icons'
 import styles from './AddLikeButton.module.scss'
 
 export const AddLikeButton: React.FC = () => {

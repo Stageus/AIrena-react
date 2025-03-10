@@ -1,4 +1,4 @@
-import { ReactComponent as CompleteIcon } from '#assets/icons/complete_icon.svg'
+import { CompleteIcon } from '#shared/icons'
 import React from 'react'
 import styles from './Complete.module.scss'
 

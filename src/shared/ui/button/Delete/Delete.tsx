@@ -1,4 +1,4 @@
-import { ReactComponent as DeleteIcon } from '#assets/icons/delete_icon.svg'
+import { DeleteIcon } from '#shared/icons'
 import React from 'react'
 import styles from './Delete.module.scss'
 

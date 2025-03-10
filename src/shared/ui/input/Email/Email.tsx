@@ -1,4 +1,4 @@
-import { ReactComponent as EmailIcon } from '#assets/icons/email_icon.svg'
+import { EmailIcon } from '#shared/icons'
 import React from 'react'
 import styles from './Email.module.scss'
 

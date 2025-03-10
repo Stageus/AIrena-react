@@ -1,4 +1,4 @@
-import { ReactComponent as LikeIcon } from '#assets/icons/like_icon.svg'
+import { LikeIcon } from '#shared/icons'
 import styles from './Like.module.scss'
 
 interface LikeProps {

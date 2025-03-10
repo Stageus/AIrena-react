@@ -1,5 +1,4 @@
-import { ReactComponent as ProfileIcon } from '#assets/icons/profile_icon.svg'
-import { ReactComponent as RankIcon } from '#assets/icons/rank_icon.svg'
+import { ProfileIcon, RankIcon } from '#shared/icons'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'

@@ -1,4 +1,4 @@
-import { ReactComponent as IdIcon } from '#assets/icons/id_icon.svg'
+import { IdIcon } from '#shared/icons'
 import React from 'react'
 import styles from './Id.module.scss'
 

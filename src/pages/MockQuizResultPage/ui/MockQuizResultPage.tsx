@@ -1,4 +1,4 @@
-import { ReactComponent as NextIcon } from '#shared/icons/next_icon.svg'
+import { NextIcon } from '#shared/icons'
 import { UUID } from 'crypto'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'

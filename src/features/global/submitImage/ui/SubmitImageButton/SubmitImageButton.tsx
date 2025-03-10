@@ -1,4 +1,4 @@
-import { ReactComponent as UploadIcon } from '#shared/icons/upload_icon.svg'
+import { UploadIcon } from '#shared/icons'
 import { useRef } from 'react'
 import styles from './SubmitImageButton.module.scss'
 

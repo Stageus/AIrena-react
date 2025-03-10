@@ -1,7 +1,7 @@
+import { SolveIcon } from '#shared/icons'
 import { UUID } from 'crypto'
 import { goToSolvePage } from '../../libs'
 import styles from './GoMockSolvePageButton.module.scss'
-import { ReactComponent as SolveIcon } from './solve-icon.svg'
 
 interface GoMockSolvePageButtonProps {
   idx: UUID

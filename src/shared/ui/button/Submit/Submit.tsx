@@ -1,4 +1,4 @@
-import { ReactComponent as SubmitIcon } from '#assets/icons/submit_icon.svg'
+import { SubmitIcon } from '#shared/icons'
 import React from 'react'
 import styles from './Submit.module.scss'
 

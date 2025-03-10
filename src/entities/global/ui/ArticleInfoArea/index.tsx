@@ -1,4 +1,4 @@
-import { ReactComponent as LikeIcon } from '#assets/icons/like_icon.svg'
+import { LikeIcon } from '#shared/icons'
 import { UUID } from 'crypto'
 import { useLocation, useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'

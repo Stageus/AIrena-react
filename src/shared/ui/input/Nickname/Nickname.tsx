@@ -1,4 +1,4 @@
-import { ReactComponent as NicknameIcon } from '#assets/icons/nickname_icon.svg'
+import { NicknameIcon } from '#shared/icons'
 import React from 'react'
 import styles from './Nickname.module.scss'
 

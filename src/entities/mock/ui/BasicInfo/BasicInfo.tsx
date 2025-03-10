@@ -1,5 +1,5 @@
-import { ReactComponent as QuizCountIcon } from '#assets/icons/quiz_count_icon.svg'
 import ArticleCreationBasicInfoArea from '#entities/global/ui/ArticleCreationBasicInfoArea'
+import { QuizCountIcon } from '#shared/icons'
 import styles from './BasicInfo.module.scss'
 
 interface BasicInfoProps {

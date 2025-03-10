@@ -1,4 +1,4 @@
-import { ReactComponent as WriteIcon } from '#assets/icons/write_icon.svg'
+import { WriteIcon } from '#shared/icons'
 import { useLocation, useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
 import Pagination from './Pagination'

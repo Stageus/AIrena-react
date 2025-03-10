@@ -1,5 +1,4 @@
-import { ReactComponent as DateIcon } from '#assets/icons/date_icon.svg'
-import { ReactComponent as WriterIcon } from '#assets/icons/writer_icon.svg'
+import { DateIcon, WriterIcon } from '#shared/icons'
 import styles from './index.module.scss'
 
 interface ArticleCreationBasicInfoAreaProps {

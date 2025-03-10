@@ -1,4 +1,4 @@
-import { ReactComponent as EditIcon } from '#assets/icons/submit_icon.svg'
+import { EditIcon } from '#shared/icons'
 import React from 'react'
 import styles from './Edit.module.scss'
 

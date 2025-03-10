@@ -1,4 +1,4 @@
-import { ReactComponent as PasswordIcon } from '#assets/icons/password_icon.svg'
+import { PasswordIcon } from '#shared/icons'
 import React from 'react'
 import styles from './Password.module.scss'
 

@@ -1,4 +1,4 @@
-import { ReactComponent as CancelIcon } from '#assets/icons/cancel_icon.svg'
+import { CancelIcon } from '#shared/icons'
 import React from 'react'
 import styles from './Cancel.module.scss'
 

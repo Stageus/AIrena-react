@@ -1,4 +1,4 @@
-import { ReactComponent as HomeIcon } from '#assets/icons/home_icon.svg'
+import { HomeIcon } from '#shared/icons'
 import { useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
 

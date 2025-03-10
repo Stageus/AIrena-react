@@ -1,5 +1,4 @@
-import { ReactComponent as LeftPageIcon } from '#assets/icons/left_page_icon.svg'
-import { ReactComponent as RightPageIcon } from '#assets/icons/right_page_icon.svg'
+import { LeftPageIcon, RightPageIcon } from '#shared/icons'
 import styles from './index.module.scss'
 import PageButton from './PageButton'
 
