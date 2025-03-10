@@ -1,4 +1,4 @@
-import SharedButton from '#shared/ui/button/Standard/Standard'
+import { StandardButton } from '#shared/ui'
 import { InfoInput } from '#widgets/member/InfoInput'
 import React from 'react'
 import { signup } from '../model'
@@ -19,7 +19,7 @@ export const SignupPage: React.FC = () => {
           setPasswordCheck={setPasswordCheck}
           setEmail={setEmail}
         />
-        <SharedButton
+        <StandardButton
           name="회원가입"
           onClick={() => {
             signup(id, password, passwordCheck, email)

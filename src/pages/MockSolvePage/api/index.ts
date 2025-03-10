@@ -16,7 +16,7 @@ export const requestMockQuiz = async (request: MockQuizRequest) => {
   const response = await axiosInstance.get<MockQuizResponse>(
     `/mock/quiz/${request.idx}`,
   )
-  return response.data
+  return response
 }
 
 export interface MockAnswerRequest {

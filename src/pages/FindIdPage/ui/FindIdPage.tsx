@@ -1,6 +1,6 @@
 import { FindIdResult } from '#entities/member'
-import SharedButton from '#shared/ui/button/Standard/Standard'
-import EmailInput from '#shared/ui/input/Email/Email'
+import { StandardButton } from '#shared/ui/button/StandardButton/StandardButton'
+import { EmailInput } from '#shared/ui/input/EmailInput/EmailInput'
 import React, { useState } from 'react'
 import { FindIdResponse } from '../api'
 import { getRequestFindIdResult } from '../model'
@@ -27,7 +27,7 @@ export const FindIdPage: React.FC = () => {
       ) : (
         <div className={styles['find-id-form']}>
           <EmailInput setEmail={setEmail} />
-          <SharedButton name="아이디 찾기" onClick={setFindIdResponseState} />
+          <StandardButton name="아이디 찾기" onClick={setFindIdResponseState} />
         </div>
       )}
     </div>

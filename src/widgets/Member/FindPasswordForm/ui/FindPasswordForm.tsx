@@ -1,6 +1,4 @@
-import SharedButton from '#shared/ui/button/Standard/Standard'
-import EmailInput from '#shared/ui/input/Email/Email'
-import IdInput from '#shared/ui/input/Id/Id'
+import { EmailInput, IdInput, StandardButton } from '#shared/ui'
 import { useState } from 'react'
 import { findPasswordWithNavigation } from '../model'
 import styles from './FindPasswordForm.module.scss'
@@ -15,7 +13,7 @@ export const FindPasswordForm: React.FC = () => {
         <IdInput setId={setId} />
         <EmailInput setEmail={setEmail} />
       </div>
-      <SharedButton
+      <StandardButton
         name="비밀번호 찾기"
         onClick={() => {
           findPasswordWithNavigation(id, email)

@@ -1,6 +1,6 @@
-import SharedButton from '#shared/ui/button/Standard/Standard'
-import PasswordInput from '#shared/ui/input/Password/Password'
-import PasswordCheckInput from '#shared/ui/input/PasswordCheck/PasswordCheck'
+import { StandardButton } from '#shared/ui/button/StandardButton/StandardButton'
+import { PasswordCheckInput } from '#shared/ui/input/PasswordCheckInput/PasswordCheckInput'
+import { PasswordInput } from '#shared/ui/input/PasswordInput/PasswordInput'
 import React, { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { changePasswordWithNavigation } from '../model'
@@ -20,7 +20,7 @@ export const ChangePasswordPage: React.FC = () => {
           <PasswordInput setPassword={setPassword} />
           <PasswordCheckInput setPasswordCheck={setPasswordCheck} />
         </div>
-        <SharedButton
+        <StandardButton
           name="비밀번호 변경"
           onClick={() => {
             changePasswordWithNavigation(password, passwordCheck, token)

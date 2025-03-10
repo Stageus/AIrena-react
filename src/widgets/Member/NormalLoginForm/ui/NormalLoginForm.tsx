@@ -1,9 +1,9 @@
-import SharedButton from '#shared/ui/button/Standard/Standard'
-import IdInput from '#shared/ui/input/Id/Id'
-import PasswordInput from '#shared/ui/input/Password/Password'
+import { StandardButton } from '#shared/ui/button/StandardButton/StandardButton'
+import { IdInput } from '#shared/ui/input/IdInput/IdInput'
+import { PasswordInput } from '#shared/ui/input/PasswordInput/PasswordInput'
 import { useEffect, useState } from 'react'
+import { AuthButtons } from '../../AuthButtons/ui/AuthButtons'
 import { checkLoginWithNavigate, normalLoginWithNavigate } from '../model'
-import { AuthButtons } from './AuthButtons/ui/AuthButtons'
 import styles from './NormalLoginForm.module.scss'
 
 export const NormalLoginForm: React.FC = () => {
@@ -19,7 +19,7 @@ export const NormalLoginForm: React.FC = () => {
       <IdInput setId={setId} />
       <PasswordInput setPassword={setPassword} />
       <AuthButtons />
-      <SharedButton
+      <StandardButton
         name="로그인"
         onClick={() => {
           normalLoginWithNavigate(id, password)

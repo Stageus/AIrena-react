@@ -1,5 +1,4 @@
-import CancelButton from '#shared/ui/button/Cancel/Cancel'
-import SubmitButton from '#shared/ui/button/Submit/Submit'
+import { Cancel, Submit } from '#shared/ui'
 import styles from './index.module.scss'
 
 interface ArticleWriteFooterProps {
@@ -13,8 +12,8 @@ const ArticleWriteFooter: React.FC<ArticleWriteFooterProps> = ({
 }) => {
   return (
     <div className={styles['write-footer']}>
-      <CancelButton onClick={onCancelClick}></CancelButton>
-      <SubmitButton onClick={onSubmitClick}></SubmitButton>
+      <Cancel onClick={onCancelClick}></Cancel>
+      <Submit onClick={onSubmitClick}></Submit>
     </div>
   )
 }
