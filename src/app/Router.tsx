@@ -1,25 +1,36 @@
-import { ChangeNicknamePage } from '#pages/ChangeNicknamePage'
-import { ChangePasswordPage } from '#pages/ChangePasswordPage'
-import ChangePasswordRedirectPage from '#pages/ChangePasswordRedirectPage'
-import Error404Page from '#pages/Error404Page'
-import { FindIdPage } from '#pages/FindIdPage'
-import { FindPasswordEmailVerificationGuidePage } from '#pages/FindPasswordEmailVerificationGuidePage'
-import FindPasswordPage from '#pages/FindPasswordPage'
-import LoginPage from '#pages/LoginPage'
-import LoginRedirectPage from '#pages/LoginRedirectPage'
-import { MockDetailPage } from '#pages/MockDetailPage'
-import MockListPage from '#pages/MockListPage/ui/MockListPage'
-import { MockQuizResultPage } from '#pages/MockQuizResultPage'
-import { MockResultPage } from '#pages/MockResultPage'
-import { MockSolvePage } from '#pages/MockSolvePage'
-import MockWritePage from '#pages/MockWritePage/ui/MockWritePage'
-import NoticeListPage from '#pages/NoticeListPage/ui/NoticeListPage'
-import NoticeWritePage from '#pages/NoticeWritePage'
-import TotalRankPage from '#pages/RankPage/ui/RankPage'
-import { SignupEmailVerificationGuidePage } from '#pages/SignupEmailVerificationGuidePage'
-import { SignupPage } from '#pages/SignupPage'
-import SignupRedirectPage from '#pages/SignupRedirectPage'
-import SignupVerifyRedirectPage from '#pages/SignupVerifyRedirectPage'
+import {
+  ChangeNicknamePage,
+  ChangePasswordPage,
+  ChangePasswordRedirectPage,
+  Error404Page,
+  FindIdPage,
+  FindPasswordEmailVerificationGuidePage,
+  FindPasswordPage,
+  LoginPage,
+  LoginRedirectPage,
+  SignupEmailVerificationGuidePage,
+  SignupPage,
+  SignupRedirectPage,
+  SignupVerifyRedirectPage,
+} from '#pages/member'
+
+import {
+  MockDetailPage,
+  MockListPage,
+  MockQuizResultPage,
+  MockResultPage,
+  MockSolvePage,
+  MockWritePage,
+} from '#pages/mock'
+
+import {
+  NoticeDetailPage,
+  NoticeListPage,
+  NoticeWritePage,
+} from '#pages/notice'
+
+import { RankPage } from '#pages/rank'
+
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import { IntroductionLayout } from './layouts/IntroductionLayout'
@@ -63,7 +74,7 @@ const AppRouter = () => (
         <Route path="/notice/:idx" element={<NoticeDetailPage />} />
 
         {/* 전체 랭킹 페이지 */}
-        <Route path="/rank/total" element={<TotalRankPage />} />
+        <Route path="/rank/total" element={<RankPage />} />
         {/* 404 에러 페이지 */}
         <Route path="*" element={<Error404Page />} />
       </Route>

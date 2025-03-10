@@ -1,5 +1,6 @@
 export { BasicContent } from './BasicContent/BasicContent'
 export { BasicInfo } from './BasicInfo/BasicInfo'
+export { CorrectAnswer } from './CorrectAnswer/CorrectAnswer'
 export { Like } from './Like/Like'
 export { RankList } from './RankList/RankList'
 export { Result } from './Result/Result'
