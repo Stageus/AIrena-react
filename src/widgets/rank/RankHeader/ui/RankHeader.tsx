@@ -1,40 +1,26 @@
 import { SearchIcon } from '#shared/icons'
 import { useState } from 'react'
-import styles from './index.module.scss'
+import { ConvertToKoreanTier } from '../model'
+import styles from './RankHeader.module.scss'
 
-interface TotalRankHeaderProps {
+interface RankHeaderProps {
   setNickname: (nickname: string) => void
   setTierProps: (tier: string | null) => void
 }
 
-const TotalRankHeader: React.FC<TotalRankHeaderProps> = ({
+export const RankHeader: React.FC<RankHeaderProps> = ({
   setNickname,
   setTierProps: setTierProps,
 }) => {
   const [active, setActive] = useState<boolean>(false)
   const [selectedTier, setSelectedTier] = useState<string>('티어 선택')
+
   const toggleActive = () => {
     setActive(!active)
   }
-  const setTier = (tier: string | null) => {
-    if (tier === null) {
-      setSelectedTier('티어 선택')
-    }
-    if (tier === 'DIAMOND') {
-      setSelectedTier('다이아몬드')
-    }
-    if (tier === 'PLATINUM') {
-      setSelectedTier('플래티넘')
-    }
-    if (tier === 'GOLD') {
-      setSelectedTier('골드')
-    }
-    if (tier === 'SILVER') {
-      setSelectedTier('실버')
-    }
-    if (tier === 'BRONZE') {
-      setSelectedTier('브론즈')
-    }
+
+  const setTier = (tier: string) => {
+    setSelectedTier(ConvertToKoreanTier(tier))
     setActive(false)
     setTierProps(tier)
   }
@@ -63,7 +49,7 @@ const TotalRankHeader: React.FC<TotalRankHeaderProps> = ({
           {active && (
             <>
               <div
-                onClick={() => setTier(null)}
+                onClick={() => setTier('TIER_CHOOSE')}
                 className={styles['tier-select']}
               >
                 <div className={styles['text-1']}>전체 티어</div>
@@ -105,5 +91,3 @@ const TotalRankHeader: React.FC<TotalRankHeaderProps> = ({
     </div>
   )
 }
-
-export default TotalRankHeader

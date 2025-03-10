@@ -1,6 +1,6 @@
 import styles from './index.module.scss'
 
-const TotalRankLegend: React.FC = () => {
+export const Legend: React.FC = () => {
   return (
     <div className={styles['total-rank-legend']}>
       <div className={styles['grade-output-box']}>
@@ -18,5 +18,3 @@ const TotalRankLegend: React.FC = () => {
     </div>
   )
 }
-
-export default TotalRankLegend

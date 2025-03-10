@@ -1,14 +1,14 @@
 import { forwardRef } from 'react'
-import styles from './index.module.scss'
+import styles from './Content.module.scss'
 
-interface TotalRankAreaProps {
+interface ContentProps {
   rank: number
   tier: 'DIAMOND' | 'PLATINUM' | 'GOLD' | 'SILVER' | 'BRONZE'
   nickname: string
   score: number
 }
 
-const TotalRankArea = forwardRef<HTMLDivElement, TotalRankAreaProps>(
+export const Content = forwardRef<HTMLDivElement, ContentProps>(
   ({ rank, tier, nickname, score }, ref) => {
     return (
       <div
@@ -33,5 +33,3 @@ const TotalRankArea = forwardRef<HTMLDivElement, TotalRankAreaProps>(
     )
   },
 )
-
-export default TotalRankArea
