@@ -1,7 +1,7 @@
+export { Error404Page } from '../error/Error404Page'
 export { ChangeNicknamePage } from './ChangeNicknamePage'
 export { ChangePasswordPage } from './ChangePasswordPage'
 export { ChangePasswordRedirectPage } from './ChangePasswordRedirectPage'
-export { Error404Page } from './Error404Page'
 export { FindIdPage } from './FindIdPage'
 export { FindPasswordEmailVerificationGuidePage } from './FindPasswordEmailVerificationGuidePage'
 export { FindPasswordPage } from './FindPasswordPage'
