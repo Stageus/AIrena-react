@@ -1,12 +1,13 @@
 import ArticleCreationBasicInfoArea from '#entities/global/ui/ArticleCreationBasicInfoArea'
 import ArticleManagementArea from '#entities/global/ui/ArticleManagementArea'
+import { BasicContent } from '#entities/notice'
 import { UUID } from 'crypto'
-import DOMPurify from 'dompurify'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { NoticeDetailResponse, requestNoticeDetail } from './api'
+import { NoticeDetailResponse, requestNoticeDetail } from '../api'
 import styles from './index.module.scss'
-const NoticeDetailPage: React.FC = () => {
+
+export const NoticeDetailPage: React.FC = () => {
   const { idx } = useParams<{ idx: UUID }>()
 
   if (!idx) {
@@ -20,9 +21,10 @@ const NoticeDetailPage: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await requestNoticeDetail({ idx })
-      console.log(data)
-      setNoticeDetail(data)
+      const response = await requestNoticeDetail({ idx })
+      if (response.status === 200) {
+        setNoticeDetail(response.data)
+      }
       setLoading(false)
     }
 
@@ -37,7 +39,7 @@ const NoticeDetailPage: React.FC = () => {
   const content: string = noticeDetail.content
   const writerNickname: string = noticeDetail.writerNickname
   const createdAt: string = noticeDetail.createdAt
-  const images: string[] = noticeDetail.images
+  const images: string[] = noticeDetail.images || []
 
   return (
     <div className={styles['notice-detail-container']}>
@@ -50,28 +52,10 @@ const NoticeDetailPage: React.FC = () => {
               date={createdAt}
             />
           </div>
-          <div className={styles['content-output-box']}>
-            <div
-              className={styles['content']}
-              dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(content),
-              }}
-            ></div>
-          </div>
-          <div className={styles['image-output-box']}>
-            {images.map((image, index) => (
-              <div
-                key={index}
-                className={styles['img']}
-                style={{ backgroundImage: `url(${image})` }}
-              ></div>
-            ))}
-          </div>
+          <BasicContent title={title} description={content} images={images} />
         </div>
         <ArticleManagementArea />
       </div>
     </div>
   )
 }
-
-export default NoticeDetailPage

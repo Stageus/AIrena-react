@@ -6,11 +6,13 @@ interface BasicWriteAreaProps {
   setTitle: (title: string) => void
   setContent: (content: string) => void
   setFiles: (files: File[]) => void
+  fileLimit: number
 }
 export const BasicWriteArea: React.FC<BasicWriteAreaProps> = ({
   setTitle,
   setContent,
   setFiles,
+  fileLimit,
 }) => {
   return (
     <>
@@ -32,7 +34,7 @@ export const BasicWriteArea: React.FC<BasicWriteAreaProps> = ({
         <TextEditor setContent={setContent} />
       </div>
       <div className={styles['image-submit-area']}>
-        <div className={styles['text-6']}>썸네일 등록</div>
+        <div className={styles['text-6']}>이미지 등록(최대 {fileLimit}개)</div>
         <ImageUploader setFiles={setFiles} />
       </div>
     </>

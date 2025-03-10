@@ -10,5 +10,5 @@ export const requestNoticePost = async (formData: FormData) => {
     '/notice/write',
     formData,
   )
-  return response.data
+  return response
 }

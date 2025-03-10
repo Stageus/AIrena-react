@@ -4,11 +4,6 @@ import { UUID } from 'crypto'
 export interface NoticeListRequest {
   current: number
   display: number
-}
-
-export interface NoticeListSearchRequest {
-  current: number
-  display: number
   title: string
 }
 
@@ -28,16 +23,7 @@ export interface NoticeListResponse {
 
 export const requestNoticeList = async (request: NoticeListRequest) => {
   const response = await axiosInstance.get<NoticeListResponse>(
-    `/notice/list?current=${request.current}&display=${request.display}`,
+    `/notice/list/?current=${request.current}&display=${request.display}&title=${request.title}`,
   )
-  return response.data
-}
-
-export const requestNoticeListSearch = async (
-  request: NoticeListSearchRequest,
-) => {
-  const response = await axiosInstance.get<NoticeListResponse>(
-    `/notice/list/search?current=${request.current}&display=${request.display}&title=${request.title}`,
-  )
-  return response.data
+  return response
 }

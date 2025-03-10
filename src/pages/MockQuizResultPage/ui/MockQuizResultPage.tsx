@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { SubmitAnswer } from '#entities/mock'
-import { CorrectAnswer } from '#entities/mock/ui/CorrectAnswer/CorrentAnswer'
+import { CorrectAnswer } from '#entities/mock/CorrectAnswer/CorrentAnswer'
 import { MockQuizResultResponse, requestMockQuizResult } from '../api'
 import { goNextQuizPage } from '../libs'
 import { mockAnswerWithNavigation } from '../model'

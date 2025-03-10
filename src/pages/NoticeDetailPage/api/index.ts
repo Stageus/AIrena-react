@@ -17,5 +17,5 @@ export const requestNoticeDetail = async (request: NoticeDetailRequest) => {
   const response = await axiosInstance.get<NoticeDetailResponse>(
     `/notice/${request.idx}`,
   )
-  return response.data
+  return response
 }
