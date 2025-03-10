@@ -2,12 +2,12 @@ import { ImageUploader } from '#widgets/global/ImageUploader/ui/ImageUploader'
 import { TextEditor } from '#widgets/global/TextEditor'
 import styles from './BasicWriteArea.module.scss'
 
-interface BasicWriteContentProps {
+interface BasicWriteAreaProps {
   setTitle: (title: string) => void
   setContent: (content: string) => void
   setFiles: (files: File[]) => void
 }
-export const BasicWriteContent: React.FC<BasicWriteContentProps> = ({
+export const BasicWriteArea: React.FC<BasicWriteAreaProps> = ({
   setTitle,
   setContent,
   setFiles,

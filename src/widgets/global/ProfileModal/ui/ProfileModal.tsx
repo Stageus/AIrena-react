@@ -1,19 +1,11 @@
 import { LogoutIcon, ProfileIcon } from '#shared/icons'
+import { goNicknameChangePage } from '#shared/libs'
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { ProfileResponse, requestLogout, requestProfile } from './api'
+import { ProfileResponse, requestProfile } from '../api'
+import { logoutWithNavigate } from '../model'
 import styles from './index.module.scss'
 
 const ProfileModal: React.FC = () => {
-  const navigate = useNavigate()
-
-  const goLoginPage = () => {
-    navigate('/')
-  }
-  const goNicknameChangePage = () => {
-    navigate('/change/nickname')
-  }
-
   const [profileResponse, setProfileResponse] =
     useState<ProfileResponse | null>(null)
 
@@ -21,7 +13,6 @@ const ProfileModal: React.FC = () => {
     const fetchData = async () => {
       const result = await requestProfile()
       if (result.status === 200) {
-        console.log(result.data)
         setProfileResponse(result.data)
       }
     }
@@ -29,16 +20,11 @@ const ProfileModal: React.FC = () => {
     fetchData()
   }, [])
 
-  const handleClick = () => {
-    const fetchData = async () => {
-      const result = await requestLogout()
-      if (result.status === 200) {
-        goLoginPage()
-      }
-    }
-
-    fetchData()
+  if (!profileResponse) {
+    return null
   }
+
+  const nickname: string = profileResponse.nickname
 
   return (
     <div className={styles['profile-modal']}>
@@ -47,11 +33,11 @@ const ProfileModal: React.FC = () => {
           <div className={styles['profile-icon-background']}>
             <ProfileIcon />
           </div>
-          <div className={styles['nickname']}>{profileResponse?.nickname}</div>
+          <div className={styles['nickname']}>{nickname}</div>
         </div>
       </div>
       <div className={styles['divisor']}></div>
-      <div onClick={handleClick} className={styles['logout-button']}>
+      <div onClick={logoutWithNavigate} className={styles['logout-button']}>
         <div className={styles['button-content']}>
           <LogoutIcon className={styles['logout-icon']} />
           <div className={styles['text']}>로그아웃</div>

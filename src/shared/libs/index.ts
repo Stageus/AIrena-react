@@ -17,3 +17,7 @@ export const goLoginPage = () => {
 export const goLoginRedirect = () => {
   navigate('/redirect/login')
 }
+
+export const goNicknameChangePage = () => {
+  navigate('/change/nickname')
+}

@@ -1,19 +1,11 @@
 import { ProfileIcon, RankIcon } from '#shared/icons'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import ProfileModal from '../../ProfileModal/ui/ProfileModal'
+import { goMockPage, goTotalRankPage } from '../libs'
 import styles from './index.module.scss'
-import ProfileModal from './ProfileModal'
 
-const MainHeader: React.FC = () => {
+export const MainHeader: React.FC = () => {
   const [showProfileModal, setShowProfileModal] = useState(false)
-
-  const navigate = useNavigate()
-  const goMockPage = () => {
-    navigate('/mock/list')
-  }
-  const goTotalRankPage = () => {
-    navigate('/rank/total')
-  }
 
   const toggleProfileModal = () => {
     setShowProfileModal((prev) => !prev)
@@ -44,4 +36,3 @@ const MainHeader: React.FC = () => {
     </div>
   )
 }
-export default MainHeader

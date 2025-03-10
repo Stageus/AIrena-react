@@ -1,1 +1,1 @@
-export { BasicWriteContent } from './ui/BasicWriteArea'
+export { BasicWriteArea } from './ui/BasicWriteArea'
