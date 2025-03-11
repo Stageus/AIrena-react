@@ -18,8 +18,10 @@ const MockLikeArea: React.FC<MockLikeAreaProps> = ({
   const handleLike = () => {
     if (pushLike) {
       requestUnlike({ idx: idx })
+      window.location.reload()
     } else {
       requestLike({ idx: idx })
+      window.location.reload()
     }
   }
   return (

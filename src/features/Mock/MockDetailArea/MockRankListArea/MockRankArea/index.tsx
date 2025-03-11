@@ -1,16 +1,25 @@
 import styles from './index.module.scss'
 
-const MockRankArea: React.FC = () => {
+interface MockRankAreaProps {
+  rank: {
+    rank: number
+    nickname: string
+    score: number
+  }
+}
+
+const MockRankArea: React.FC<MockRankAreaProps> = ({ rank }) => {
+  console.log(rank)
   return (
     <div className={styles['mock-rank-area']}>
       <div className={styles['rank-output-area']}>
-        <div className={styles['rank']}>15</div>
+        <div className={styles['rank']}>{rank.rank}</div>
       </div>
       <div className={styles['nickname-output-area']}>
-        <div className={styles['nickname']}>김스테이지어스</div>
+        <div className={styles['nickname']}>{rank.nickname}</div>
       </div>
       <div className={styles['score-output-area']}>
-        <div className={styles['score']}>850점</div>
+        <div className={styles['score']}>{rank.score}점</div>
       </div>
     </div>
   )

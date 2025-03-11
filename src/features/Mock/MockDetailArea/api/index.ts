@@ -14,6 +14,11 @@ export interface MockDetailResponse {
   createdAt: string
   quizCount: number
   firstQuizIdx: UUID
+  ranks: {
+    rank: number
+    nickname: string
+    score: number
+  }[]
 }
 
 export interface MockIndividualResponse {

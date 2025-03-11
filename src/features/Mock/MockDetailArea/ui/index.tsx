@@ -87,7 +87,7 @@ const MockDetailArea: React.FC = () => {
           <div className={styles['text']}>모의고사 풀기</div>
         </div>
       </div>
-      <MockRankListArea />
+      <MockRankListArea ranks={mockDetail.ranks} />
     </div>
   )
 }
