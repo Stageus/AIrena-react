@@ -2,11 +2,6 @@ import axiosInstance from '#shared/api/axiosInstance'
 import { UUID } from 'crypto'
 
 export interface MockListRequest {
-  current: number
-  display: number
-}
-
-export interface MockListSearchRequest {
   title: string
   current: number
   display: number
@@ -29,15 +24,14 @@ export interface MockListResponse {
 }
 
 export const requestMockList = async (request: MockListRequest) => {
-  const response = await axiosInstance.get<MockListResponse>(
-    `/mock/list?current=${request.current}&display=${request.display}`,
-  )
-  return response.data
-}
-
-export const requestMockListSearch = async (request: MockListSearchRequest) => {
-  const response = await axiosInstance.get<MockListResponse>(
-    `/mock/list/search?title=${request.title}&current=${request.current}&display=${request.display}&sort=${request.sort}`,
-  )
+  const params = {
+    current: request.current,
+    display: request.display,
+    ...(request.sort != null && { sort: request.sort }),
+    ...(request.title != null && { title: request.title }),
+  }
+  const response = await axiosInstance.get<MockListResponse>(`/mock/list`, {
+    params,
+  })
   return response.data
 }

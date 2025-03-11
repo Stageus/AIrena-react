@@ -3,11 +3,7 @@ import ArticleLegend from '#shared/components/article/ArticleLegend'
 import ArticleFooter from '#shared/components/article/ArticleListFooter'
 import ArticleSelectHeader from '#shared/components/article/ArticleSelectHeader'
 import { useEffect, useState } from 'react'
-import {
-  MockListResponse,
-  requestMockList,
-  requestMockListSearch,
-} from '../api'
+import { MockListResponse, requestMockList } from '../api'
 import styles from './index.module.scss'
 
 const MockListArea: React.FC = () => {
@@ -17,16 +13,11 @@ const MockListArea: React.FC = () => {
   const [title, setTitle] = useState('')
   const [sort, setSort] = useState('')
   const display = 10
+  const likeExist = true
 
   useEffect(() => {
     const fetchData = async () => {
-      if (title === '' && sort === '') {
-        const data = await requestMockList({ current, display })
-        setMockList(data)
-        setLoading(false)
-        return
-      }
-      const data = await requestMockListSearch({
+      const data = await requestMockList({
         current,
         display,
         sort,
@@ -38,8 +29,6 @@ const MockListArea: React.FC = () => {
 
     fetchData()
   }, [current, sort, title])
-
-  const likeExist = true
 
   if (loading) {
     return (

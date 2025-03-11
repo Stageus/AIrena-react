@@ -3,11 +3,7 @@ import ArticleLegend from '#shared/components/article/ArticleLegend'
 import ArticleFooter from '#shared/components/article/ArticleListFooter'
 import ArticleSelectHeader from '#shared/components/article/ArticleSelectHeader'
 import { useEffect, useState } from 'react'
-import {
-  NoticeListResponse,
-  requestNoticeList,
-  requestNoticeListSearch,
-} from '../api'
+import { NoticeListResponse, requestNoticeList } from '../api'
 import styles from './index.module.scss'
 
 const NoticeListArea: React.FC = () => {
@@ -19,17 +15,7 @@ const NoticeListArea: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      if (title === '') {
-        const data = await requestNoticeList({ current, display })
-        setNoticeList(data)
-        setLoading(false)
-        return
-      }
-      const data = await requestNoticeListSearch({
-        current,
-        display,
-        title,
-      })
+      const data = await requestNoticeList({ current, display, title })
       setNoticeList(data)
       setLoading(false)
     }
