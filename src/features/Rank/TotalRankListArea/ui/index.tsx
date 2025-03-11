@@ -1,9 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import {
-  RankListResponse,
-  requestRankList,
-  requestRankListSearch,
-} from '../api'
+import { RankListResponse, requestRankList } from '../api'
 import TotalRankArea from './TotalRankArea'
 import TotalRankHeader from './TotalRankHeader'
 import TotalRankLegend from './TotalRankLegend'
@@ -19,7 +15,6 @@ const TotalRankListArea: React.FC = () => {
   const [hasMore, setHasMore] = useState<boolean>(true)
   const [nickname, setNickname] = useState<string | null>(null)
   const [tier, setTier] = useState<string | null>(null)
-  const [fetchMode, setFetchMode] = useState<'NORMAL' | 'SEARCH'>('NORMAL')
 
   const lastItemRef = useCallback(
     (node: HTMLDivElement | null) => {
@@ -41,29 +36,12 @@ const TotalRankListArea: React.FC = () => {
     setNewSearch((prev) => !prev)
     setRankList(null)
     setHasMore(true)
-    if (!nickname && !tier) {
-      setFetchMode('NORMAL')
-    } else {
-      setFetchMode('SEARCH')
-    }
   }, [nickname, tier])
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true)
-      let response: RankListResponse
-      if (fetchMode == 'NORMAL') {
-        response = await requestRankList({ current })
-      } else if (fetchMode == 'SEARCH') {
-        response = await requestRankListSearch({
-          current,
-          nickname,
-          tier,
-        })
-      } else {
-        return
-      }
-      console.log(response)
+      const response = await requestRankList({ current, nickname, tier })
       processResponse(response)
       setLoading(false)
     }
