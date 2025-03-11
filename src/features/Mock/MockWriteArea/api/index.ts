@@ -7,8 +7,8 @@ export interface MockWriteResponse {
 
 export const requestMockPost = async (formData: FormData) => {
   const response = await axiosMultipartInstance.post<MockWriteResponse>(
-    '/mock/write',
+    '/mock',
     formData,
   )
-  return response.data
+  return response
 }

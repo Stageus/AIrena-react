@@ -10,8 +10,8 @@ const MockListArea: React.FC = () => {
   const [loading, setLoading] = useState(true)
   const [mockList, setMockList] = useState<MockListResponse | null>(null)
   const [current, setCurrent] = useState(1)
-  const [title, setTitle] = useState('')
-  const [sort, setSort] = useState('')
+  const [title, setTitle] = useState<string | null>(null)
+  const [sort, setSort] = useState<string | null>(null)
   const display = 10
   const likeExist = true
 
@@ -30,7 +30,7 @@ const MockListArea: React.FC = () => {
     fetchData()
   }, [current, sort, title])
 
-  if (loading) {
+  if (loading || !mockList) {
     return (
       <div className={styles['mock-list-area']}>
         <ArticleSelectHeader />
@@ -41,8 +41,8 @@ const MockListArea: React.FC = () => {
   return (
     <div className={styles['mock-list-area']}>
       <ArticleSelectHeader />
-      <ArticleLegend setSort={setSort} likeExist={likeExist} />
-      {mockList?.mocks?.map(
+      <ArticleLegend setSort={setSort} sort={sort} likeExist={likeExist} />
+      {mockList.mocks.map(
         ({ idx, title, writerNickname, createdAt, likeCount }, index) => (
           <ArticleInfoArea
             key={index}
