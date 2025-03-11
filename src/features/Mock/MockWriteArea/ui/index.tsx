@@ -30,7 +30,7 @@ const MockWriteArea: React.FC = () => {
 
     setSubmitting(true)
     const response = await requestMockPost(formData)
-    navigate(`/mock/${response.articleId}`)
+    navigate(`/mock/${response.data.articleId}`)
     setSubmitting(false)
   }
 

@@ -22,7 +22,6 @@ const NoticeDetailArea: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await requestNoticeDetail({ idx })
-      console.log(data)
       setNoticeDetail(data)
       setLoading(false)
     }

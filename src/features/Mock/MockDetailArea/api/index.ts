@@ -1,13 +1,14 @@
 import axiosInstance from '#shared/api/axiosInstance'
 import { UUID } from 'crypto'
 
-export interface MockDetailRequest {
+export interface MockPathRequest {
   idx: UUID
 }
 
 export interface MockDetailResponse {
   title: string
   description: string
+  likeCount: number
   images: string[]
   writerNickname: string
   createdAt: string
@@ -15,9 +16,23 @@ export interface MockDetailResponse {
   firstQuizIdx: UUID
 }
 
-export const requestMockDetail = async (request: MockDetailRequest) => {
+export interface MockIndividualResponse {
+  owner: boolean
+  admin: boolean
+  solved: boolean
+  pushLike: boolean
+}
+
+export const requestMockDetail = async (request: MockPathRequest) => {
   const response = await axiosInstance.get<MockDetailResponse>(
     `/mock/${request.idx}`,
+  )
+  return response.data
+}
+
+export const requestMocIndividual = async (request: MockPathRequest) => {
+  const response = await axiosInstance.get<MockIndividualResponse>(
+    `/mock/${request.idx}/individual`,
   )
   return response.data
 }

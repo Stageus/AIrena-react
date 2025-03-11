@@ -2,10 +2,10 @@ import axiosInstance from '#shared/api/axiosInstance'
 import { UUID } from 'crypto'
 
 export interface MockListRequest {
-  title: string
+  title: string | null
   current: number
   display: number
-  sort: string
+  sort: string | null
 }
 
 export interface MockListResponse {
