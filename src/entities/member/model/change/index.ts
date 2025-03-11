@@ -1,5 +1,18 @@
-import { goRootPage } from '#shared/libs'
-import { requestChangePassword } from '../api'
+import {
+  requestChangeNickname,
+  requestChangePassword,
+} from '#entities/member/api/change'
+import { goMockListPage, goRootPage } from '#shared/libs'
+
+export const changeNicknameWithNavigation = (nickname: string) => {
+  const fetch = async () => {
+    const result = await requestChangeNickname({ nickname })
+    if (result.status === 200) {
+      goMockListPage()
+    }
+  }
+  fetch()
+}
 
 export const changePasswordWithNavigation = (
   password: string,

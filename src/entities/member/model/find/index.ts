@@ -1,4 +1,4 @@
-import { requestFindId } from '../api'
+import { requestFindId } from '#entities/member/api/find'
 
 export const getRequestFindIdResult = async (email: string) => {
   const result = await requestFindId({ email })

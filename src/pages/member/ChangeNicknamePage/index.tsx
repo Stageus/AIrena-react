@@ -1,7 +1,7 @@
+import { changeNicknameWithNavigation } from '#entities/member'
 import { StandardButton } from '#shared/ui/button/StandardButton/StandardButton'
 import { NicknameInput } from '#shared/ui/input/NicknameInput/NicknameInput'
 import React, { useState } from 'react'
-import { changeNicknameWithNavigation } from '../model'
 import styles from './ChangeNicknamePage.module.scss'
 
 export const ChangeNicknamePage: React.FC = () => {

@@ -1,5 +1,5 @@
 import { goLoginPage } from '#shared/libs'
-import SharedButton from '#shared/ui/button/Standard/Standard'
+import { StandardButton } from '#shared/ui/button/StandardButton/StandardButton'
 import { WeightedTextOutput } from '#shared/ui/output/WeightedTextOutput/WeightedTextOutput'
 import styles from './FindIdResult.module.scss'
 
@@ -12,7 +12,7 @@ export const FindIdResult: React.FC<FindIdResponseProps> = ({ id }) => {
     <div className={styles['find-id-result-area']}>
       <div className={styles['find-id-result']}>아이디 찾기 결과</div>
       <WeightedTextOutput text={id} />
-      <SharedButton name="로그인 페이지로 이동" onClick={goLoginPage} />
+      <StandardButton name="로그인 페이지로 이동" onClick={goLoginPage} />
     </div>
   )
 }

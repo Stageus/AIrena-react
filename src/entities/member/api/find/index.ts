@@ -1,13 +1,5 @@
 import axiosInstance from '#shared/api/axiosInstance'
-
-interface FindIdRequest {
-  email: string
-}
-
-export interface FindIdResponse {
-  email: string
-  id: string
-}
+import { FindIdRequest, FindIdResponse } from './types'
 
 export const requestFindId = async (request: FindIdRequest) => {
   const result = await axiosInstance.post<FindIdResponse>(

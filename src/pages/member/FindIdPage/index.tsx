@@ -1,9 +1,9 @@
 import { FindIdResult } from '#entities/member'
+import { FindIdResponse } from '#entities/member/api/find/types'
+import { getRequestFindIdResult } from '#entities/member/model/find'
 import { StandardButton } from '#shared/ui/button/StandardButton/StandardButton'
 import { EmailInput } from '#shared/ui/input/EmailInput/EmailInput'
 import React, { useState } from 'react'
-import { FindIdResponse } from '../api'
-import { getRequestFindIdResult } from '../model'
 import styles from './FindIdPage.module.scss'
 
 export const FindIdPage: React.FC = () => {

@@ -1,9 +1,9 @@
+import { changePasswordWithNavigation } from '#entities/member'
 import { StandardButton } from '#shared/ui/button/StandardButton/StandardButton'
 import { PasswordCheckInput } from '#shared/ui/input/PasswordCheckInput/PasswordCheckInput'
 import { PasswordInput } from '#shared/ui/input/PasswordInput/PasswordInput'
 import React, { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { changePasswordWithNavigation } from '../model'
 import styles from './ChangePasswordPage.module.scss'
 
 export const ChangePasswordPage: React.FC = () => {
