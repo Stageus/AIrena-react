@@ -3,15 +3,19 @@ import { useEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 
 interface ImageUploaderProps {
-  existingUrls?: string[]
+  existingFiles: File[]
   setFiles: (files: File[]) => void
-  setExistingUrls: (urls: string[]) => void
+  existingUrls?: string[]
+  setExistingUrls?: (urls: string[]) => void
+  limit: number
 }
 
 const ImageUploader: React.FC<ImageUploaderProps> = ({
-  existingUrls,
+  existingFiles,
   setFiles,
+  existingUrls,
   setExistingUrls,
+  limit,
 }) => {
   const createdUrls = useRef<string[]>([])
   const [previewUrls, setPreviewUrls] = useState<string[]>(existingUrls || [])
@@ -24,7 +28,16 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
       return
     }
 
-    setFiles(Array.from(files))
+    if (existingFiles.length + (existingUrls?.length || 0) + 1 > limit) {
+      alert(`최대 ${limit}개의 이미지만 업로드할 수 있습니다.`)
+      return
+    }
+
+    if (existingFiles) {
+      setFiles([...existingFiles, ...Array.from(files)])
+    } else {
+      setFiles(Array.from(files))
+    }
 
     const newUrls: string[] = [
       ...previewUrls,
@@ -33,6 +46,12 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
 
     setPreviewUrls(newUrls)
     createdUrls.current.push(...newUrls)
+  }
+
+  const deleteImage = () => {
+    if (!window.confirm('이미지를 삭제하시겠습니까')) {
+      return
+    }
   }
 
   useEffect(() => {
@@ -64,7 +83,12 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
       <div className={styles['image-preview-content']}>
         {previewUrls.length > 0
           ? previewUrls.map((url, index) => (
-              <img key={index} src={url} className={styles['image-preview']} />
+              <img
+                key={index}
+                src={url}
+                className={styles['image-preview']}
+                onClick={deleteImage}
+              />
             ))
           : null}
       </div>

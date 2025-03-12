@@ -17,7 +17,6 @@ import styles from './index.module.scss'
 
 const NoticeDetailArea: React.FC = () => {
   const { idx } = useParams<{ idx: UUID }>()
-
   if (!idx) {
     return null
   }
@@ -27,7 +26,7 @@ const NoticeDetailArea: React.FC = () => {
   const [titleToEdit, setTitleToEdit] = useState('')
   const [contentToEdit, setContentToEdit] = useState('')
   const [existingUrls, setExistingUrls] = useState<string[]>([])
-  const [filesToEdit, setFilesToEdit] = useState<File[] | null>(null)
+  const [filesToEdit, setFilesToEdit] = useState<File[]>([])
   const [noticeDetail, setNoticeDetail] = useState<NoticeDetailResponse | null>(
     null,
   )
@@ -57,7 +56,7 @@ const NoticeDetailArea: React.FC = () => {
     if (existingUrls.length > 0) {
       formData.append('existingUrls', existingUrls.join(','))
     }
-    if (filesToEdit) {
+    if (filesToEdit.length > 0) {
       Array.from(filesToEdit).forEach((file) => {
         formData.append('image', file)
       })
@@ -94,10 +93,13 @@ const NoticeDetailArea: React.FC = () => {
           </div>
           <TextEditor content={contentToEdit} setContent={setContentToEdit} />
           <div className={styles['image-submit-area']}>
-            <div className={styles['text-3']}>이미지 등록</div>
+            <div className={styles['text-3']}>이미지 등록(최대 5개)</div>
             <ImageUploader
-              existingUrls={existingUrls}
+              existingFiles={filesToEdit}
               setFiles={setFilesToEdit}
+              existingUrls={existingUrls}
+              setExistingUrls={setExistingUrls}
+              limit={5}
             />
           </div>
           <ArticleEditButtons

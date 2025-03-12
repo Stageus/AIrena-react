@@ -9,7 +9,7 @@ import styles from './index.module.scss'
 const NoticeWriteArea: React.FC = () => {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
-  const [files, setFiles] = useState<File[] | null>(null)
+  const [files, setFiles] = useState<File[]>([])
 
   const navigate = useNavigate()
   const goNoticePage = () => {
@@ -20,7 +20,7 @@ const NoticeWriteArea: React.FC = () => {
     const formData = new FormData()
     formData.append('title', title)
     formData.append('content', content)
-    if (files) {
+    if (files.length > 0) {
       Array.from(files).forEach((file) => {
         formData.append('image', file)
       })
@@ -48,8 +48,8 @@ const NoticeWriteArea: React.FC = () => {
         <TextEditor setContent={setContent} />
       </div>
       <div className={styles['image-submit-area']}>
-        <div className={styles['text-3']}>이미지 등록</div>
-        <ImageUploader setFiles={setFiles} />
+        <div className={styles['text-3']}>이미지 등록(최대 5개)</div>
+        <ImageUploader existingFiles={files} setFiles={setFiles} limit={5} />
       </div>
       <WriteFooter onCancelClick={goNoticePage} onSubmitClick={handleSubmit} />
     </div>

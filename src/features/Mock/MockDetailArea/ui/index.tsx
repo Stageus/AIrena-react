@@ -1,4 +1,7 @@
 import { ReactComponent as SolveIcon } from '#assets/icons/solve_icon.svg'
+import ImageUploader from '#shared/components/ImageUploader'
+import TextEditor from '#shared/components/TextEditor/ui'
+import { ArticleEditButtons } from '#shared/components/article/ArticleEditButtons'
 import ArticleManagementArea from '#shared/components/article/ArticleManagementArea'
 import { UUID } from 'crypto'
 import DOMPurify from 'dompurify'
@@ -10,6 +13,7 @@ import {
   MockIndividualResponse,
   requestMocIndividual,
   requestMockDetail,
+  requestMockEdit,
 } from '../api'
 import MockBasicInfoArea from './MockBasicInfoArea'
 import MockLikeArea from './MockLikeArea'
@@ -30,8 +34,29 @@ const MockDetailArea: React.FC = () => {
     navigate(`/mock/solve/${mockDetail.firstQuizIdx}`)
   }
 
+  const handleSubmit = async () => {
+    const formData = new FormData()
+    formData.append('title', titleToEdit)
+    formData.append('description', descriptionToEdit)
+    if (existingUrls.length > 0) {
+      formData.append('existingUrls', existingUrls.join(','))
+    }
+    if (filesToEdit.length > 0) {
+      Array.from(filesToEdit).forEach((file) => {
+        formData.append('image', file)
+      })
+    }
+    await requestMockEdit(idx, formData)
+    window.location.reload()
+  }
+
   const [loading, setLoading] = useState(true)
   const [mockDetail, setMockDetail] = useState<MockDetailResponse | null>(null)
+  const [titleToEdit, setTitleToEdit] = useState('')
+  const [descriptionToEdit, setDescriptionToEdit] = useState('')
+  const [existingUrls, setExistingUrls] = useState<string[]>([])
+  const [filesToEdit, setFilesToEdit] = useState<File[]>([])
+  const [editMode, setEditMode] = useState(false)
   const [mockIndividual, setMockIndividual] =
     useState<MockIndividualResponse | null>(null)
 
@@ -39,8 +64,12 @@ const MockDetailArea: React.FC = () => {
     const fetchData = async () => {
       const data = await requestMockDetail({ idx })
       const individualData = await requestMocIndividual({ idx })
-      console.log(individualData)
       setMockDetail(data)
+      setTitleToEdit(data.title)
+      setDescriptionToEdit(data.description)
+      if (data.images) {
+        setExistingUrls(data.images)
+      }
       setMockIndividual(individualData)
       setLoading(false)
     }
@@ -68,31 +97,66 @@ const MockDetailArea: React.FC = () => {
   return (
     <div className={styles['mock-detail-area']}>
       <div className={styles['mock-content-area']}>
-        <div className={styles['title']}>{title}</div>
-        <div
-          className={styles['description']}
-          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(description) }}
-        ></div>
-        <div
-          className={styles['thumbnail']}
-          style={{ backgroundImage: `url(${image})` }}
-        ></div>
-        <MockBasicInfoArea
-          nickname={writerNickname}
-          createdAt={createdAt}
-          quizCount={quizCount}
-        />
-        {(owner || admin) && <ArticleManagementArea />}
-        <MockLikeArea likeCount={likeCount} pushLike={pushLike} idx={idx} />
-        <div
-          onClick={navigateToSolvePage}
-          className={styles['mock-solve-button']}
-        >
-          <SolveIcon className={styles['solve-icon']} />
-          <div className={styles['text']}>
-            {solved ? '다시 풀기(랭킹에 반영되지 않습니다)' : '모의고사 풀기'}
-          </div>
-        </div>
+        {editMode ? (
+          <>
+            <input
+              type="text"
+              className={styles['title']}
+              value={titleToEdit}
+              onChange={(e) => setTitleToEdit(e.target.value)}
+            />
+            <TextEditor
+              content={descriptionToEdit}
+              setContent={setDescriptionToEdit}
+            />
+            <div className={styles['text-3']}>이미지 등록(최대 1개)</div>
+            <ImageUploader
+              existingFiles={filesToEdit}
+              setFiles={setFilesToEdit}
+              existingUrls={existingUrls}
+              setExistingUrls={setExistingUrls}
+              limit={1}
+            />
+            <ArticleEditButtons
+              setEditMode={setEditMode}
+              onCompleteClick={handleSubmit}
+            />
+          </>
+        ) : (
+          <>
+            <div className={styles['title']}>{title}</div>
+            <div
+              className={styles['description']}
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(description),
+              }}
+            ></div>
+            <div
+              className={styles['thumbnail']}
+              style={{ backgroundImage: `url(${image})` }}
+            ></div>
+            <MockBasicInfoArea
+              nickname={writerNickname}
+              createdAt={createdAt}
+              quizCount={quizCount}
+            />
+            {(owner || admin) && (
+              <ArticleManagementArea setEditMode={setEditMode} />
+            )}
+            <MockLikeArea likeCount={likeCount} pushLike={pushLike} idx={idx} />
+            <div
+              onClick={navigateToSolvePage}
+              className={styles['mock-solve-button']}
+            >
+              <SolveIcon className={styles['solve-icon']} />
+              <div className={styles['text']}>
+                {solved
+                  ? '다시 풀기(랭킹에 반영되지 않습니다)'
+                  : '모의고사 풀기'}
+              </div>
+            </div>
+          </>
+        )}
       </div>
       <MockRankListArea ranks={mockDetail.ranks} />
     </div>

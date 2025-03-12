@@ -2,12 +2,12 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 const apiBaseUrl = import.meta.env.VITE_API_URL as string
 
-const axiosInstance = axios.create({
+const axiosMultipartInstance = axios.create({
   baseURL: apiBaseUrl,
   withCredentials: true,
 })
 
-axiosInstance.interceptors.request.use(
+axiosMultipartInstance.interceptors.request.use(
   (config) => {
     return config
   },
@@ -16,7 +16,7 @@ axiosInstance.interceptors.request.use(
   },
 )
 
-axiosInstance.interceptors.response.use(
+axiosMultipartInstance.interceptors.response.use(
   (response) => response,
   (error) => {
     toast.error(error.response.data.message)
@@ -24,4 +24,4 @@ axiosInstance.interceptors.response.use(
   },
 )
 
-export default axiosInstance
+export default axiosMultipartInstance

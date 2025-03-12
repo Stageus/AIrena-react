@@ -12,7 +12,7 @@ const MockWriteArea: React.FC = () => {
   const [quizCount, setQuizCount] = useState<number>(0)
   const [title, setTitle] = useState<string>('')
   const [content, setContent] = useState<string>('')
-  const [files, setFiles] = useState<File[] | null>(null)
+  const [files, setFiles] = useState<File[]>([])
   const [submitting, setSubmitting] = useState<boolean>(false)
   const navigate = useNavigate()
 
@@ -99,8 +99,8 @@ const MockWriteArea: React.FC = () => {
           <TextEditor setContent={setContent} />
         </div>
         <div className={styles['image-submit-area']}>
-          <div className={styles['text-6']}>썸네일 등록</div>
-          <ImageUploader setFiles={setFiles} />
+          <div className={styles['text-6']}>썸네일 등록(최대 1개)</div>
+          <ImageUploader existingFiles={files} setFiles={setFiles} limit={1} />
         </div>
         <WriteFooter onCancelClick={goMockPage} onSubmitClick={handleSubmit} />
       </div>

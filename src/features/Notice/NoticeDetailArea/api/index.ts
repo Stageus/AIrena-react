@@ -1,4 +1,4 @@
-import axiosInstance from '#shared/api/axiosInstance'
+import axiosInstance from '#shared/api/axiosMultipartInstance'
 import { UUID } from 'crypto'
 
 export interface NoticeDetailRequest {
