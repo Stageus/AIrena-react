@@ -3,12 +3,18 @@ import { useEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 
 interface ImageUploaderProps {
+  existingUrls?: string[]
   setFiles: (files: File[]) => void
+  setExistingUrls: (urls: string[]) => void
 }
 
-const ImageUploader: React.FC<ImageUploaderProps> = ({ setFiles }) => {
+const ImageUploader: React.FC<ImageUploaderProps> = ({
+  existingUrls,
+  setFiles,
+  setExistingUrls,
+}) => {
   const createdUrls = useRef<string[]>([])
-  const [previewUrls, setPreviewUrls] = useState<string[]>([])
+  const [previewUrls, setPreviewUrls] = useState<string[]>(existingUrls || [])
   const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files
     if (!files) {
@@ -41,6 +47,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ setFiles }) => {
       inputRef.current.click()
     }
   }
+
   const ImageInput = (
     <input
       type="file"

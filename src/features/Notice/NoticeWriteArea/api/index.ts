@@ -7,7 +7,7 @@ export interface NoticeWriteResponse {
 
 export const requestNoticePost = async (formData: FormData) => {
   const response = await axiosMultipartInstance.post<NoticeWriteResponse>(
-    '/notice/write',
+    '/notice',
     formData,
   )
   return response.data

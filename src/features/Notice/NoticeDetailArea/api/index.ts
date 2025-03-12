@@ -19,3 +19,7 @@ export const requestNoticeDetail = async (request: NoticeDetailRequest) => {
   )
   return response.data
 }
+
+export const requestNoticeEdit = async (idx: UUID, formData: FormData) => {
+  await axiosInstance.patch(`/notice/${idx}`, formData)
+}

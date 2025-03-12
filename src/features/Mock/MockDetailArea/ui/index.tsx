@@ -39,6 +39,7 @@ const MockDetailArea: React.FC = () => {
     const fetchData = async () => {
       const data = await requestMockDetail({ idx })
       const individualData = await requestMocIndividual({ idx })
+      console.log(individualData)
       setMockDetail(data)
       setMockIndividual(individualData)
       setLoading(false)
@@ -58,6 +59,10 @@ const MockDetailArea: React.FC = () => {
   const quizCount: number = mockDetail.quizCount
   const image: string = mockDetail.images[0]
   const likeCount: number = mockDetail.likeCount
+
+  const owner = mockIndividual.owner
+  const admin = mockIndividual.admin
+  const solved = mockIndividual.solved
   const pushLike: boolean = mockIndividual.pushLike
 
   return (
@@ -77,14 +82,16 @@ const MockDetailArea: React.FC = () => {
           createdAt={createdAt}
           quizCount={quizCount}
         />
-        <ArticleManagementArea />
+        {(owner || admin) && <ArticleManagementArea />}
         <MockLikeArea likeCount={likeCount} pushLike={pushLike} idx={idx} />
         <div
           onClick={navigateToSolvePage}
           className={styles['mock-solve-button']}
         >
           <SolveIcon className={styles['solve-icon']} />
-          <div className={styles['text']}>모의고사 풀기</div>
+          <div className={styles['text']}>
+            {solved ? '다시 풀기(랭킹에 반영되지 않습니다)' : '모의고사 풀기'}
+          </div>
         </div>
       </div>
       <MockRankListArea ranks={mockDetail.ranks} />

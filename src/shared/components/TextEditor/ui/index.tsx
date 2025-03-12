@@ -5,14 +5,19 @@ import option from '../model/option'
 import './index.module.css'
 
 interface TextEditorProps {
+  content?: string
   setContent: (content: string) => void
 }
 
-const TextEditor: React.FC<TextEditorProps> = ({ setContent }) => {
+const TextEditor: React.FC<TextEditorProps> = ({ setContent, content }) => {
   const editorRef = useRef<HTMLDivElement | null>(null)
+
   useEffect(() => {
     if (editorRef.current) {
       const quill = new Quill(editorRef.current, option)
+      if (content) {
+        quill.root.innerHTML = content
+      }
       quill.on('text-change', () => {
         setContent(quill.root.innerHTML)
       })
