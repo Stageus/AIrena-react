@@ -1,15 +1,17 @@
-import CancelButton from '#shared/components/button/CancelButton'
-import CompleteButton from '#shared/components/button/CompleteButton'
 import DeleteButton from '#shared/components/button/DeleteButton'
 import EditButton from '#shared/components/button/EditButton'
 import styles from './index.module.scss'
 
-const ArticleManagementArea: React.FC = () => {
+interface ArticleManagementAreaProps {
+  onEditButtonClick: () => void
+}
+
+const ArticleManagementArea: React.FC<ArticleManagementAreaProps> = ({
+  onEditButtonClick,
+}) => {
   return (
     <div className={styles['article-management-area']}>
-      <EditButton />
-      <CompleteButton />
-      <CancelButton />
+      <EditButton onClick={onEditButtonClick} />
       <DeleteButton />
     </div>
   )

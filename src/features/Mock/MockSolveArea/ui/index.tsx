@@ -47,14 +47,14 @@ const MockSolveArea: React.FC = () => {
     fetchData()
   }
 
-  const type: 'SINGLE_CHOICE' | 'TEXT' = mockQuiz?.type ?? 'TEXT'
-  const title: string = mockQuiz?.title ?? ''
-  const description: string = mockQuiz?.description ?? ''
-  const singleChoiceChoices: string[] = mockQuiz?.singleChoiceChoices ?? []
-
-  if (loading) {
+  if (loading || !mockQuiz) {
     return null
   }
+
+  const type: 'SINGLE_CHOICE' | 'TEXT' = mockQuiz.type
+  const title: string = mockQuiz.title
+  const description: string = mockQuiz.description
+  const singleChoiceChoices: string[] = mockQuiz.singleChoiceChoices ?? []
 
   return (
     <>

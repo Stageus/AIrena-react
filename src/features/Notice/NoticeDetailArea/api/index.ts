@@ -1,4 +1,4 @@
-import axiosInstance from '#shared/api/axiosInstance'
+import axiosInstance from '#shared/api/axiosMultipartInstance'
 import { UUID } from 'crypto'
 
 export interface NoticeDetailRequest {
@@ -18,4 +18,8 @@ export const requestNoticeDetail = async (request: NoticeDetailRequest) => {
     `/notice/${request.idx}`,
   )
   return response.data
+}
+
+export const requestNoticeEdit = async (idx: UUID, formData: FormData) => {
+  await axiosInstance.patch(`/notice/${idx}`, formData)
 }
