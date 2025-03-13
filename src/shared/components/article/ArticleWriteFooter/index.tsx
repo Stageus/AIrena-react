@@ -1,10 +1,11 @@
 import CancelButton from '#shared/components/button/CancelButton'
 import SubmitButton from '#shared/components/button/SubmitButton'
+import React from 'react'
 import styles from './index.module.scss'
 
 interface ArticleWriteFooterProps {
   onCancelClick: () => void
-  onSubmitClick: () => Promise<void>
+  onSubmitClick: () => void
 }
 
 const ArticleWriteFooter: React.FC<ArticleWriteFooterProps> = ({

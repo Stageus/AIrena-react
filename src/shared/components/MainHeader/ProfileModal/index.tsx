@@ -1,7 +1,7 @@
 import { ReactComponent as LogoutIcon } from '#assets/icons/logout_icon.svg'
 import { ReactComponent as ProfileIcon } from '#assets/icons/profile_icon.svg'
 import { ProfileResponse, requestProfile } from '#shared/api/profile'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { requestLogout } from './api'
 import styles from './index.module.scss'

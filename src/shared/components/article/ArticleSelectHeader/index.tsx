@@ -1,8 +1,8 @@
-import { useLocation, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { useLocation } from 'react-router-dom'
 import styles from './index.module.scss'
 
-const ArticleSelectHeader: React.FC = ({}) => {
-  const navigate = useNavigate()
+const ArticleSelectHeader: React.FC = () => {
   const goMockListPage = () => {
     window.location.replace('/mock/list')
   }

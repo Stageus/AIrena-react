@@ -1,12 +1,12 @@
 import SharedButton from '#shared/components/button/StandardButton'
 import EmailInput from '#shared/components/input/EmailInput'
 import IdInput from '#shared/components/input/IdInput'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { requestFindPassword } from '../api'
 import styles from './index.module.scss'
 
-const FindPasswordForm: React.FC = ({}) => {
+const FindPasswordForm: React.FC = () => {
   const [id, setId] = useState('')
   const [email, setEmail] = useState('')
 

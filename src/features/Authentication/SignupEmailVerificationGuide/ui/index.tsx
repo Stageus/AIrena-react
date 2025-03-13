@@ -1,10 +1,11 @@
 import SharedButton from '#shared/components/button/StandardButton'
 import WeightedTextOutput from '#shared/components/WeightedTextOutput'
+import React from 'react'
 import { useLocation } from 'react-router-dom'
 import { requestSendSignupVerifyEmail } from '../api'
 import styles from './index.module.scss'
 
-const SignupEmailVerificationGuide: React.FC = ({}) => {
+const SignupEmailVerificationGuide: React.FC = () => {
   const location = useLocation()
   const queryParams = new URLSearchParams(location.search)
   const email = queryParams.get('email') || ''

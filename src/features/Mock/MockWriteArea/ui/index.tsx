@@ -1,12 +1,12 @@
 import WriteFooter from '#shared/components/article/ArticleWriteFooter'
 import ImageUploader from '#shared/components/ImageUploader'
+import { LoadingIndicator } from '#shared/components/LoadingIndicator'
 import TextEditor from '#shared/components/TextEditor/ui'
 import { FileWithID } from '#shared/model/file'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { requestMockPost } from '../api'
 import styles from './index.module.scss'
-import Submitting from './Submitting'
 
 const MockWriteArea: React.FC = () => {
   const [subject, setSubject] = useState<string>('')
@@ -109,7 +109,10 @@ const MockWriteArea: React.FC = () => {
         </div>
         <WriteFooter onCancelClick={goMockPage} onSubmitClick={handleSubmit} />
       </div>
-      <Submitting submitting={submitting} />
+      <LoadingIndicator
+        message={'모의고사를 생성하고 있습니다..'}
+        submitting={submitting}
+      />
     </>
   )
 }

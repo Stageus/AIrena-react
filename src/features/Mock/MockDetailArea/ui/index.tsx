@@ -7,7 +7,7 @@ import ArticleManagementArea from '#shared/components/article/ArticleManagementA
 import { FileWithID, UrlWithID } from '#shared/model/file'
 import { UUID } from 'crypto'
 import DOMPurify from 'dompurify'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import MockRankListArea from '../MockRankListArea'
 import {

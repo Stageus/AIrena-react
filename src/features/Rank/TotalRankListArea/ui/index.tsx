@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { RankListResponse, requestRankList } from '../api'
-import TotalRankArea from './TotalRankArea'
+import { TotalRankArea } from './TotalRankArea'
 import TotalRankHeader from './TotalRankHeader'
 import TotalRankLegend from './TotalRankLegend'
 import styles from './index.module.scss'

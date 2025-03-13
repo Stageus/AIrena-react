@@ -1,5 +1,6 @@
 import { ReactComponent as LikeIcon } from '#assets/icons/like_icon.svg'
 import { ReactComponent as TransparentLikeIcon } from '#assets/icons/transparent_like_icon.svg'
+import React from 'react'
 import styles from './index.module.scss'
 
 interface MockLikeAreaProps {

@@ -1,17 +1,22 @@
+import React from 'react'
 import styles from './index.module.scss'
 
-interface SharedButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface StandardButtonProps {
   name: string
-  onClick: () => void
+  onClick?: () => void
+  type?: 'submit' | 'button'
 }
 
-const SharedButton: React.FC<SharedButtonProps> = ({ name, onClick }) => {
+const StandardButton: React.FC<StandardButtonProps> = ({
+  name,
+  onClick,
+  type = 'button',
+}) => {
   return (
-    <div className={styles['shared-button']} onClick={onClick}>
-      <div className={styles['shared-button-text']}>{name}</div>
-    </div>
+    <button type={type} onClick={onClick} className={styles['standard-button']}>
+      {name}
+    </button>
   )
 }
 
-export default SharedButton
+export default StandardButton

@@ -1,10 +1,9 @@
 import js from '@eslint/js'
-import globals from 'globals'
+import tsEslintPlugin from '@typescript-eslint/eslint-plugin'
+import tsParser from '@typescript-eslint/parser'
 import react from 'eslint-plugin-react'
 import reactRefresh from 'eslint-plugin-react-refresh'
-import tsParser from '@typescript-eslint/parser'
-import tsEslintPlugin from '@typescript-eslint/eslint-plugin'
-
+import globals from 'globals'
 export default [
   { ignores: ['dist'] },
   {
@@ -30,7 +29,6 @@ export default [
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
-      ...reactHooks.configs.recommended.rules,
       ...tsEslintPlugin.configs.recommended.rules,
       'react/jsx-no-target-blank': 'off',
       'react-refresh/only-export-components': [

@@ -1,5 +1,6 @@
 import DeleteButton from '#shared/components/button/DeleteButton'
 import EditButton from '#shared/components/button/EditButton'
+import React from 'react'
 import styles from './index.module.scss'
 
 interface ArticleManagementAreaProps {

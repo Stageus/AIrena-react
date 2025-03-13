@@ -1,5 +1,6 @@
 import { ReactComponent as QuizCountIcon } from '#assets/icons/quiz_count_icon.svg'
 import ArticleCreationBasicInfoArea from '#shared/components/article/ArticleCreationBasicInfoArea'
+import React from 'react'
 import styles from './index.module.scss'
 
 interface MockBasicInfoAreaProps {

@@ -1,20 +1,21 @@
 import { ReactComponent as WriteIcon } from '#assets/icons/write_icon.svg'
+import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
 import Pagination from './Pagination'
 import SearchFooter from './SearchFooter'
 
-interface ArticleFooterProps {
+interface ArticleListFooterProps {
   firstPageNumber: number
   lastPageNumber: number
   currentPageNumber: number
   prevPageExist: boolean
   nextPageExist: boolean
   setTitle: (title: string) => void
-  setCurrent: (current: number) => void
+  setCurrent: (page: number) => void
 }
 
-const ArticleFooter: React.FC<ArticleFooterProps> = ({
+const ArticleListFooter: React.FC<ArticleListFooterProps> = ({
   firstPageNumber,
   lastPageNumber,
   currentPageNumber,
@@ -49,4 +50,4 @@ const ArticleFooter: React.FC<ArticleFooterProps> = ({
     </div>
   )
 }
-export default ArticleFooter
+export default ArticleListFooter

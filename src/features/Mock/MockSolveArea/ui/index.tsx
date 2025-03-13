@@ -1,10 +1,10 @@
 import { UUID } from 'crypto'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { MockQuizResponse, requestMockQuiz, requestQuizAnswer } from '../api'
 import styles from './index.module.scss'
+import Submitting from './LoadingIndicator'
 import SingleChoiceSelectArea from './SingleChoiceSelectArea'
-import Submitting from './Submitting'
 import TextAnswerInputArea from './TextAnswerInputArea'
 
 const MockSolveArea: React.FC = () => {

@@ -1,13 +1,14 @@
 import CancelButton from '#shared/components/button/CancelButton'
 import CompleteButton from '#shared/components/button/CompleteButton'
+import React from 'react'
 import styles from './index.module.scss'
 
 interface ArticleEditButtonsProps {
-  setEditMode: (editMode: boolean) => void
+  setEditMode: (mode: boolean) => void
   onCompleteClick: () => void
 }
 
-export const ArticleEditButtons: React.FC<ArticleEditButtonsProps> = ({
+const ArticleEditButtons: React.FC<ArticleEditButtonsProps> = ({
   setEditMode,
   onCompleteClick,
 }) => {
@@ -18,3 +19,5 @@ export const ArticleEditButtons: React.FC<ArticleEditButtonsProps> = ({
     </div>
   )
 }
+
+export default ArticleEditButtons

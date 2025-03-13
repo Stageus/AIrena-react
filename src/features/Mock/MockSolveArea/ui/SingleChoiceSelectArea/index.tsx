@@ -1,11 +1,9 @@
+import React from 'react'
 import styles from './index.module.scss'
 
 interface SingleChoiceSelectAreaProps {
   choices: string[]
-  handleSubmit: (
-    singleChoiceAnswer: number | null,
-    textAnswer: string | null,
-  ) => void
+  handleSubmit: (choice: string) => void
 }
 
 const SingleChoiceSelectArea: React.FC<SingleChoiceSelectAreaProps> = ({
@@ -13,7 +11,7 @@ const SingleChoiceSelectArea: React.FC<SingleChoiceSelectAreaProps> = ({
   handleSubmit,
 }) => {
   const handleClick = (index: number) => {
-    handleSubmit(index, null)
+    handleSubmit(choices[index])
   }
 
   return (

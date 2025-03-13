@@ -1,7 +1,7 @@
 import { ReactComponent as UploadIcon } from '#assets/icons/upload_icon.svg'
 import { FileWithID, UrlWithID } from '#shared/model/file'
 import { UUID } from 'crypto'
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 
 interface ImageUploaderProps {

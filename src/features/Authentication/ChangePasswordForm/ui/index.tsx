@@ -1,7 +1,7 @@
 import SharedButton from '#shared/components/button/StandardButton'
 import PasswordCheckInput from '#shared/components/input/PasswordCheckInput'
 import PasswordInput from '#shared/components/input/PasswordInput'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { requestChangePassword } from '../api'
 import styles from './index.module.scss'
@@ -9,7 +9,7 @@ import styles from './index.module.scss'
 const ChangePasswordForm: React.FC = () => {
   const [password, setPassword] = useState('')
   const [passwordCheck, setPasswordCheck] = useState('')
-  const [searchParams, setSearchParams] = useSearchParams()
+  const [searchParams] = useSearchParams()
   const navigate = useNavigate()
 
   const token = searchParams.get('token') as string

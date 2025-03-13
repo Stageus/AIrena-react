@@ -1,11 +1,8 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import styles from './index.module.scss'
 
 interface TextAnswerInputAreaProps {
-  handleSubmit: (
-    singleChoiceAnswer: number | null,
-    textAnswer: string | null,
-  ) => void
+  handleSubmit: (answer: string) => void
 }
 
 const TextAnswerInputArea: React.FC<TextAnswerInputAreaProps> = ({
@@ -14,7 +11,7 @@ const TextAnswerInputArea: React.FC<TextAnswerInputAreaProps> = ({
   const [text, setText] = useState<string>('')
 
   const handleClick = () => {
-    handleSubmit(null, text)
+    handleSubmit(text)
   }
 
   return (
