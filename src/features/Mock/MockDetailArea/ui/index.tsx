@@ -1,16 +1,16 @@
 import { ReactComponent as SolveIcon } from '#assets/icons/solve_icon.svg'
+import { requestLike, requestUnlike } from '#shared/api/like'
 import ImageUploader from '#shared/components/ImageUploader'
 import TextEditor from '#shared/components/TextEditor/ui'
 import { ArticleEditButtons } from '#shared/components/article/ArticleEditButtons'
 import ArticleManagementArea from '#shared/components/article/ArticleManagementArea'
+import { FileWithID, UrlWithID } from '#shared/model/file'
 import { UUID } from 'crypto'
 import DOMPurify from 'dompurify'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import MockRankListArea from '../MockRankListArea'
 import {
-  MockDetailResponse,
-  MockIndividualResponse,
   requestMocIndividual,
   requestMockDetail,
   requestMockEdit,
@@ -20,6 +20,35 @@ import MockLikeArea from './MockLikeArea'
 import styles from './index.module.scss'
 
 const MockDetailArea: React.FC = () => {
+  const [loading, setLoading] = useState(true)
+
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
+  const [writerNickname, setWriterNickname] = useState('')
+  const [createdAt, setCreatedAt] = useState('')
+  const [quizCount, setQuizCount] = useState(0)
+  const [image, setImage] = useState('')
+  const [likeCount, setLikeCount] = useState(0)
+  const [ranks, setRanks] = useState<
+    {
+      rank: number
+      nickname: string
+      score: number
+    }[]
+  >([])
+  const [firstQuizIdx, setFirstQuizIdx] = useState<UUID | null>(null)
+
+  const [pushLike, setPushLike] = useState(false)
+  const [owner, setOwner] = useState(false)
+  const [admin, setAdmin] = useState(false)
+  const [solved, setSolved] = useState(false)
+
+  const [existingUrls, setExistingUrls] = useState<UrlWithID[]>([])
+  const [titleToEdit, setTitleToEdit] = useState('')
+  const [descriptionToEdit, setDescriptionToEdit] = useState('')
+  const [filesToEdit, setFilesToEdit] = useState<FileWithID[]>([])
+  const [editMode, setEditMode] = useState(false)
+
   const { idx } = useParams<{ idx: UUID }>()
 
   if (!idx) {
@@ -28,10 +57,7 @@ const MockDetailArea: React.FC = () => {
 
   const navigate = useNavigate()
   const navigateToSolvePage = () => {
-    if (!mockDetail) {
-      return
-    }
-    navigate(`/mock/solve/${mockDetail.firstQuizIdx}`)
+    navigate(`/mock/solve/${firstQuizIdx}`)
   }
 
   const handleSubmit = async () => {
@@ -39,60 +65,81 @@ const MockDetailArea: React.FC = () => {
     formData.append('title', titleToEdit)
     formData.append('description', descriptionToEdit)
     if (existingUrls.length > 0) {
-      formData.append('existingUrls', existingUrls.join(','))
+      formData.append(
+        'existingUrls',
+        existingUrls.map((urlWithId) => urlWithId.url).join(','),
+      )
     }
     if (filesToEdit.length > 0) {
-      Array.from(filesToEdit).forEach((file) => {
-        formData.append('image', file)
+      Array.from(filesToEdit).forEach((fileWithId) => {
+        formData.append('image', fileWithId.file)
       })
     }
     await requestMockEdit(idx, formData)
-    window.location.reload()
+    await setMockDetail()
+    await setMockIndividual()
+    setEditMode(false)
   }
 
-  const [loading, setLoading] = useState(true)
-  const [mockDetail, setMockDetail] = useState<MockDetailResponse | null>(null)
-  const [titleToEdit, setTitleToEdit] = useState('')
-  const [descriptionToEdit, setDescriptionToEdit] = useState('')
-  const [existingUrls, setExistingUrls] = useState<string[]>([])
-  const [filesToEdit, setFilesToEdit] = useState<File[]>([])
-  const [editMode, setEditMode] = useState(false)
-  const [mockIndividual, setMockIndividual] =
-    useState<MockIndividualResponse | null>(null)
+  const setMockDetail = async () => {
+    const data = await requestMockDetail({ idx })
+    setTitle(data.title)
+    setDescription(data.description)
+    setWriterNickname(data.writerNickname)
+    setCreatedAt(data.createdAt)
+    setQuizCount(data.quizCount)
+    setImage(data.images[0])
+    setLikeCount(data.likeCount)
+    setRanks(data.ranks)
+    setFirstQuizIdx(data.firstQuizIdx)
+    setExistingUrls(
+      data.images.map((image) => ({
+        url: image,
+        id: window.crypto.randomUUID(),
+      })),
+    )
+    return data
+  }
+
+  const setMockIndividual = async () => {
+    const data = await requestMocIndividual({ idx })
+    setPushLike(data.pushLike)
+    setOwner(data.owner)
+    setAdmin(data.admin)
+    setSolved(data.solved)
+  }
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await requestMockDetail({ idx })
-      const individualData = await requestMocIndividual({ idx })
-      setMockDetail(data)
-      setTitleToEdit(data.title)
-      setDescriptionToEdit(data.description)
-      if (data.images) {
-        setExistingUrls(data.images)
-      }
-      setMockIndividual(individualData)
+      await setMockDetail()
+      await setMockIndividual()
       setLoading(false)
     }
 
     fetchData()
   }, [idx])
 
-  if (loading || !mockDetail || !mockIndividual) {
-    return null
+  const onEditButtonClick = () => {
+    setTitleToEdit(title)
+    setDescriptionToEdit(description)
+    setFilesToEdit(filesToEdit)
+    setExistingUrls(existingUrls)
+    setEditMode(true)
   }
 
-  const title: string = mockDetail.title
-  const description: string = mockDetail.description
-  const writerNickname: string = mockDetail.writerNickname
-  const createdAt: string = mockDetail.createdAt
-  const quizCount: number = mockDetail.quizCount
-  const image: string = mockDetail.images[0]
-  const likeCount: number = mockDetail.likeCount
+  const onLikeClick = async () => {
+    if (pushLike) {
+      await requestUnlike({ idx })
+    } else {
+      await requestLike({ idx })
+    }
+    await setMockDetail()
+    await setMockIndividual()
+  }
 
-  const owner = mockIndividual.owner
-  const admin = mockIndividual.admin
-  const solved = mockIndividual.solved
-  const pushLike: boolean = mockIndividual.pushLike
+  if (loading) {
+    return null
+  }
 
   return (
     <div className={styles['mock-detail-area']}>
@@ -141,9 +188,13 @@ const MockDetailArea: React.FC = () => {
               quizCount={quizCount}
             />
             {(owner || admin) && (
-              <ArticleManagementArea setEditMode={setEditMode} />
+              <ArticleManagementArea onEditButtonClick={onEditButtonClick} />
             )}
-            <MockLikeArea likeCount={likeCount} pushLike={pushLike} idx={idx} />
+            <MockLikeArea
+              likeCount={likeCount}
+              pushLike={pushLike}
+              onClick={onLikeClick}
+            />
             <div
               onClick={navigateToSolvePage}
               className={styles['mock-solve-button']}
@@ -158,7 +209,7 @@ const MockDetailArea: React.FC = () => {
           </>
         )}
       </div>
-      <MockRankListArea ranks={mockDetail.ranks} />
+      <MockRankListArea ranks={ranks} />
     </div>
   )
 }

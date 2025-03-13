@@ -1,6 +1,7 @@
 import WriteFooter from '#shared/components/article/ArticleWriteFooter'
 import ImageUploader from '#shared/components/ImageUploader'
 import TextEditor from '#shared/components/TextEditor/ui'
+import { FileWithID } from '#shared/model/file'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { requestMockPost } from '../api'
@@ -12,7 +13,7 @@ const MockWriteArea: React.FC = () => {
   const [quizCount, setQuizCount] = useState<number>(0)
   const [title, setTitle] = useState<string>('')
   const [content, setContent] = useState<string>('')
-  const [files, setFiles] = useState<File[]>([])
+  const [fileWithIds, setFileWithIds] = useState<FileWithID[]>([])
   const [submitting, setSubmitting] = useState<boolean>(false)
   const navigate = useNavigate()
 
@@ -22,9 +23,9 @@ const MockWriteArea: React.FC = () => {
     formData.append('quizCount', quizCount.toString())
     formData.append('title', title)
     formData.append('description', content)
-    if (files) {
-      Array.from(files).forEach((file) => {
-        formData.append('image', file)
+    if (fileWithIds) {
+      fileWithIds.forEach((fileWithId) => {
+        formData.append('image', fileWithId.file)
       })
     }
 
@@ -100,7 +101,11 @@ const MockWriteArea: React.FC = () => {
         </div>
         <div className={styles['image-submit-area']}>
           <div className={styles['text-6']}>썸네일 등록(최대 1개)</div>
-          <ImageUploader existingFiles={files} setFiles={setFiles} limit={1} />
+          <ImageUploader
+            existingFiles={fileWithIds}
+            setFiles={setFileWithIds}
+            limit={1}
+          />
         </div>
         <WriteFooter onCancelClick={goMockPage} onSubmitClick={handleSubmit} />
       </div>

@@ -3,15 +3,15 @@ import EditButton from '#shared/components/button/EditButton'
 import styles from './index.module.scss'
 
 interface ArticleManagementAreaProps {
-  setEditMode: (editMode: boolean) => void
+  onEditButtonClick: () => void
 }
 
 const ArticleManagementArea: React.FC<ArticleManagementAreaProps> = ({
-  setEditMode,
+  onEditButtonClick,
 }) => {
   return (
     <div className={styles['article-management-area']}>
-      <EditButton setEditMode={setEditMode} />
+      <EditButton onClick={onEditButtonClick} />
       <DeleteButton />
     </div>
   )

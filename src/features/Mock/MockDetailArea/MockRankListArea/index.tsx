@@ -27,7 +27,9 @@ const MockRankListArea: React.FC<MockRankListAreaProps> = ({ ranks }) => {
             <div className={styles['text--2']}>점수</div>
           </div>
         </div>
-        {ranks?.map((rank, index) => <MockRankArea key={index} rank={rank} />)}
+        {ranks.map((rank, index) => (
+          <MockRankArea key={index} rank={rank} />
+        ))}
       </div>
     </div>
   )

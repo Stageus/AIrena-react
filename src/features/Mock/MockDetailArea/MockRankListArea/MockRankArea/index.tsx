@@ -9,7 +9,6 @@ interface MockRankAreaProps {
 }
 
 const MockRankArea: React.FC<MockRankAreaProps> = ({ rank }) => {
-  console.log(rank)
   return (
     <div className={styles['mock-rank-area']}>
       <div className={styles['rank-output-area']}>

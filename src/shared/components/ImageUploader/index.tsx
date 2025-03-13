@@ -1,12 +1,14 @@
 import { ReactComponent as UploadIcon } from '#assets/icons/upload_icon.svg'
+import { FileWithID, UrlWithID } from '#shared/model/file'
+import { UUID } from 'crypto'
 import { useEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 
 interface ImageUploaderProps {
-  existingFiles: File[]
-  setFiles: (files: File[]) => void
-  existingUrls?: string[]
-  setExistingUrls?: (urls: string[]) => void
+  existingFiles: FileWithID[]
+  setFiles: (files: FileWithID[]) => void
+  existingUrls?: UrlWithID[]
+  setExistingUrls?: (urls: UrlWithID[]) => void
   limit: number
 }
 
@@ -17,8 +19,9 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
   setExistingUrls,
   limit,
 }) => {
-  const createdUrls = useRef<string[]>([])
-  const [previewUrls, setPreviewUrls] = useState<string[]>(existingUrls || [])
+  const [previewUrls, setPreviewUrls] = useState<UrlWithID[]>(
+    existingUrls || [],
+  )
   const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files
     if (!files) {
@@ -33,30 +36,51 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
       return
     }
 
-    if (existingFiles) {
-      setFiles([...existingFiles, ...Array.from(files)])
-    } else {
-      setFiles(Array.from(files))
-    }
+    const fileWithIds = Array.from(files).map((file) => ({
+      file,
+      id: window.crypto.randomUUID(),
+    }))
 
-    const newUrls: string[] = [
+    setFiles([...existingFiles, ...fileWithIds])
+
+    const newUrls: UrlWithID[] = [
       ...previewUrls,
-      ...Array.from(files).map((file) => URL.createObjectURL(file)),
+      ...fileWithIds.map((fileWithId) => ({
+        url: URL.createObjectURL(fileWithId.file),
+        id: fileWithId.id,
+      })),
     ]
 
     setPreviewUrls(newUrls)
-    createdUrls.current.push(...newUrls)
+
+    if (inputRef.current) {
+      inputRef.current.value = ''
+    }
   }
 
-  const deleteImage = () => {
+  const deleteImage = (id: UUID) => {
     if (!window.confirm('이미지를 삭제하시겠습니까')) {
       return
     }
+
+    setPreviewUrls(
+      previewUrls.filter((urlWithId) => {
+        if (urlWithId.id === id) {
+          URL.revokeObjectURL(urlWithId.url)
+        }
+        return urlWithId.id !== id
+      }),
+    )
+    setFiles(existingFiles.filter((fileWithId) => fileWithId.id !== id))
+    if (!setExistingUrls || !existingUrls) {
+      return
+    }
+    setExistingUrls(existingUrls.filter((urlWithId) => urlWithId.id !== id))
   }
 
   useEffect(() => {
     return () => {
-      createdUrls.current.forEach((url) => URL.revokeObjectURL(url))
+      previewUrls.forEach((urlWithId) => URL.revokeObjectURL(urlWithId.url))
     }
   }, [])
 
@@ -82,12 +106,12 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
     <div className={styles['image-uploader']}>
       <div className={styles['image-preview-content']}>
         {previewUrls.length > 0
-          ? previewUrls.map((url, index) => (
+          ? previewUrls.map((urlWithId, index) => (
               <img
                 key={index}
-                src={url}
+                src={urlWithId.url}
                 className={styles['image-preview']}
-                onClick={deleteImage}
+                onClick={() => deleteImage(urlWithId.id)}
               />
             ))
           : null}
