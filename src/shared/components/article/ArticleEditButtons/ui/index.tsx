@@ -1,9 +1,10 @@
 import CancelButton from '#shared/components/button/CancelButton'
 import CompleteButton from '#shared/components/button/CompleteButton'
+import React from 'react'
 import styles from './index.module.scss'
 
 interface ArticleEditButtonsProps {
-  setEditMode: (editMode: boolean) => void
+  setEditMode: (mode: boolean) => void
   onCompleteClick: () => void
 }
 

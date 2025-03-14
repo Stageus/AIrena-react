@@ -11,13 +11,11 @@ export interface MockQuizResultResponse {
   mockIdx: UUID
 }
 
-export const requestMockQuizResult = async (
-  idx: UUID,
-): Promise<MockQuizResultResponse> => {
+export const requestMockQuizResult = async (idx: UUID) => {
   const response = await axiosInstance.get<MockQuizResultResponse>(
     `/mock/quiz/${idx}/result`,
   )
-  return response.data
+  return response
 }
 
 export const requestMockAnswer = async (idx: UUID) => {

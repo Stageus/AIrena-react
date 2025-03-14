@@ -1,42 +1,42 @@
 import { ReactComponent as SearchIcon } from '#assets/icons/search_icon.svg'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import styles from './index.module.scss'
+
+type TierType = 'DIAMOND' | 'PLATINUM' | 'GOLD' | 'SILVER' | 'BRONZE' | ''
 
 interface TotalRankHeaderProps {
   setNickname: (nickname: string) => void
-  setTierProps: (tier: string | null) => void
+  setTierProps: (tier: TierType) => void
 }
 
 const TotalRankHeader: React.FC<TotalRankHeaderProps> = ({
   setNickname,
-  setTierProps: setTierProps,
+  setTierProps,
 }) => {
   const [active, setActive] = useState<boolean>(false)
   const [selectedTier, setSelectedTier] = useState<string>('티어 선택')
+
   const toggleActive = () => {
     setActive(!active)
   }
-  const setTier = (tier: string | null) => {
-    if (tier === null) {
+
+  const setTier = (tier: TierType) => {
+    if (tier === '') {
       setSelectedTier('티어 선택')
-    }
-    if (tier === 'DIAMOND') {
-      setSelectedTier('다이아몬드')
-    }
-    if (tier === 'PLATINUM') {
-      setSelectedTier('플래티넘')
-    }
-    if (tier === 'GOLD') {
-      setSelectedTier('골드')
-    }
-    if (tier === 'SILVER') {
-      setSelectedTier('실버')
-    }
-    if (tier === 'BRONZE') {
-      setSelectedTier('브론즈')
+      setTierProps('')
+    } else {
+      const tierDisplayNames: Record<TierType, string> = {
+        DIAMOND: '다이아몬드',
+        PLATINUM: '플래티넘',
+        GOLD: '골드',
+        SILVER: '실버',
+        BRONZE: '브론즈',
+        '': '티어 선택',
+      }
+      setSelectedTier(tierDisplayNames[tier])
+      setTierProps(tier)
     }
     setActive(false)
-    setTierProps(tier)
   }
 
   return (
@@ -50,6 +50,7 @@ const TotalRankHeader: React.FC<TotalRankHeaderProps> = ({
             className={styles['placeholder']}
             placeholder="닉네임 검색"
             onChange={(e) => setNickname(e.target.value)}
+            maxLength={12}
           />
         </div>
         <div className={styles['tier-select-area']}>
@@ -63,7 +64,7 @@ const TotalRankHeader: React.FC<TotalRankHeaderProps> = ({
           {active && (
             <>
               <div
-                onClick={() => setTier(null)}
+                onClick={() => setTier('')}
                 className={styles['tier-select']}
               >
                 <div className={styles['text-1']}>전체 티어</div>

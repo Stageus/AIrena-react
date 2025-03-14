@@ -1,6 +1,7 @@
 .find-id-form {
   width: 480px;
-  height: 168px;
+  height: fit-content;
+  min-height: 168px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

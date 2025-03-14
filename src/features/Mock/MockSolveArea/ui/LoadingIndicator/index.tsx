@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './index.module.scss'
 
 interface LoadingProps {
@@ -7,32 +7,26 @@ interface LoadingProps {
 
 const Submitting: React.FC<LoadingProps> = ({ isSubmitting }) => {
   const [elapsedTime, setElapsedTime] = useState<number>(0)
-  const timerRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
+    let interval: ReturnType<typeof setInterval>
     if (isSubmitting) {
-      let seconds = 0
-      if (timerRef.current) clearInterval(timerRef.current)
-
-      timerRef.current = setInterval(() => {
-        seconds++
-        setElapsedTime(seconds)
+      interval = setInterval(() => {
+        setElapsedTime((prev) => prev + 1)
       }, 1000)
     }
     return () => {
-      if (timerRef.current) {
-        clearInterval(timerRef.current)
-        timerRef.current = null
-      }
+      if (interval) clearInterval(interval)
       setElapsedTime(0)
     }
   }, [isSubmitting])
 
+  if (!isSubmitting) {
+    return null
+  }
+
   return (
-    <div
-      className={styles['loading-container']}
-      style={{ display: isSubmitting ? 'flex' : 'none' }}
-    >
+    <div className={styles['loading-container']}>
       <div className={styles['loading-area']}>
         <div className={styles['spinner']}></div>
         <div className={styles['text']}>문제를 채점하고 있습니다...</div>

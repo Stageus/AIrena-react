@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import styles from './index.module.scss'
 
 interface SearchFooterProps {
@@ -12,17 +12,16 @@ const SearchFooter: React.FC<SearchFooterProps> = ({ setTitle }) => {
         <input
           className={styles['text']}
           placeholder="검색어를 입력하세요"
-          value={inputValue} // input 값 바인딩
-          onChange={(e) => setInputValue(e.target.value)} // 값 변경 시 상태 업데이트
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          maxLength={100}
         />
       </div>
-      <div className={styles['search-button']}>
-        <div
-          className={styles['text-1']}
-          onClick={() => setTitle(inputValue)} // 현재 input 값을 title에 전달
-        >
-          검색
-        </div>
+      <div
+        onClick={() => setTitle(inputValue)}
+        className={styles['search-button']}
+      >
+        <div className={styles['text-1']}>검색</div>
       </div>
     </div>
   )

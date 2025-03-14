@@ -1,6 +1,7 @@
+import React from 'react'
 import styles from './index.module.scss'
 
-const TotalRankLegend: React.FC = () => {
+export const TotalRankLegend: React.FC = () => {
   return (
     <div className={styles['total-rank-legend']}>
       <div className={styles['grade-output-box']}>

@@ -7,7 +7,7 @@ import TextEditor from '#shared/components/TextEditor/ui'
 import { FileWithID, UrlWithID } from '#shared/model/file'
 import { UUID } from 'crypto'
 import DOMPurify from 'dompurify'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { requestNoticeDetail, requestNoticeEdit } from '../api'
 import styles from './index.module.scss'
@@ -70,28 +70,28 @@ const NoticeDetailArea: React.FC = () => {
 
   const setNoticeDetail = async () => {
     const data = await requestNoticeDetail({ idx })
-    setTitleToEdit(data.title)
-    setContentToEdit(data.content)
+    setTitle(data.title)
+    setContent(data.content)
     setImages(data.images)
   }
 
   const handleSubmit = async () => {
+    if (titleToEdit.length < 1) {
+      alert('제목을 입력해주세요.')
+      return
+    }
     const formData = new FormData()
     formData.append('title', titleToEdit)
     formData.append('content', contentToEdit)
-    if (existingUrlWithIds.length > 0) {
-      formData.append(
-        'existingUrls',
-        existingUrlWithIds
-          .map((existingUrlWithId) => existingUrlWithId.url)
-          .join(','),
-      )
-    }
-    if (fileWithIdsToEdit.length > 0) {
-      Array.from(fileWithIdsToEdit).forEach((file) => {
-        formData.append('image', file.file)
-      })
-    }
+    formData.append(
+      'existingUrls',
+      existingUrlWithIds
+        .map((existingUrlWithId) => existingUrlWithId.url)
+        .join(','),
+    )
+    Array.from(fileWithIdsToEdit).forEach((file) => {
+      formData.append('image', file.file)
+    })
     await requestNoticeEdit(idx, formData)
     await setNoticeDetail()
     await setProfile()

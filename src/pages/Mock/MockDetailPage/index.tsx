@@ -1,4 +1,5 @@
 import MockDetailArea from '#features/Mock/MockDetailArea/ui'
+import React from 'react'
 import styles from './index.module.scss'
 
 const MockDetailPage: React.FC = () => {

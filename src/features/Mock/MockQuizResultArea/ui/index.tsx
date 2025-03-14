@@ -1,6 +1,6 @@
 import { ReactComponent as NextIcon } from '#assets/icons/next_icon.svg'
 import { UUID } from 'crypto'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import {
   MockQuizResultResponse,
@@ -10,31 +10,27 @@ import {
 import styles from './index.module.scss'
 
 const MockQuizResultArea: React.FC = () => {
-  const { idx } = useParams<{ idx: UUID }>()
-  if (!idx) {
-    return null
-  }
+  const { idx } = useParams() as { idx: UUID }
+  if (!idx) return
 
-  const [loading, setLoading] = useState(true)
-  const [mockAnswer, setMockAnswer] = useState<MockQuizResultResponse | null>(
-    null,
-  )
+  const [isLoading, setIsLoading] = useState(true)
+  const [result, setResult] = useState<MockQuizResultResponse | null>(null)
 
   const navigate = useNavigate()
   const goNextQuizPage = () => {
-    navigate(`/mock/solve/${mockAnswer?.nextQuizIdx}`, { replace: true })
+    navigate(`/mock/solve/${result?.nextQuizIdx}`, { replace: true })
   }
 
   const goMockResultPage = () => {
-    navigate(`/mock/result/${mockAnswer?.mockIdx}`, { replace: true })
+    navigate(`/mock/result/${result?.mockIdx}`, { replace: true })
   }
 
   const handleClick = () => {
     const fetchData = async () => {
-      if (!mockAnswer?.mockIdx) {
+      if (!result?.mockIdx) {
         return
       }
-      const data = await requestMockAnswer(mockAnswer?.mockIdx)
+      await requestMockAnswer(result.mockIdx)
       goMockResultPage()
     }
 
@@ -42,26 +38,26 @@ const MockQuizResultArea: React.FC = () => {
   }
 
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await requestMockQuizResult(idx)
-      console.log(data)
-      setMockAnswer(data)
-      setLoading(false)
+    const fetch = async () => {
+      const response = await requestMockQuizResult(idx)
+      if (response.status === 200) {
+        setResult(response.data)
+      }
+      setIsLoading(false)
     }
-
-    fetchData()
+    fetch()
   }, [idx])
 
-  if (loading) {
+  if (isLoading || !result) {
     return null
   }
 
-  const submitAnswer: string = mockAnswer?.submitAnswer ?? ''
-  const correctAnswer: string = mockAnswer?.correctAnswer ?? ''
-  const reason: string = mockAnswer?.reason ?? ''
-  const score: number = mockAnswer?.score ?? 0
-  const maxScore: number = mockAnswer?.maxScore ?? 0
-  const nextQuizIdx: UUID | null = mockAnswer?.nextQuizIdx ?? null
+  const submitAnswer: string = result.submitAnswer ?? ''
+  const correctAnswer: string = result.correctAnswer ?? ''
+  const reason: string = result.reason ?? ''
+  const score: number = result.score ?? 0
+  const maxScore: number = result.maxScore ?? 0
+  const nextQuizIdx: UUID | null = result.nextQuizIdx ?? null
 
   return (
     <div className={styles['mock-submit-answer-grading-area']}>

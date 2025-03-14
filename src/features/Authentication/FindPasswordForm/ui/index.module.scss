@@ -1,16 +1,17 @@
 .find-password-form {
   width: 480px;
-  height: 251px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  row-gap: 14px;
   background: rgba(0, 0, 0, 0);
   .input-area {
     flex-shrink: 0;
     align-self: stretch;
     width: 480px;
-    height: 153px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

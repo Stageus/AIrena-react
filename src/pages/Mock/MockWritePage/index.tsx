@@ -1,4 +1,5 @@
 import MockWriteArea from '#features/Mock/MockWriteArea/ui'
+import React from 'react'
 import styles from './index.module.scss'
 
 const MockWritePage: React.FC = () => {

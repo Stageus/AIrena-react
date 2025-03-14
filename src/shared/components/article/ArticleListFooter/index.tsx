@@ -1,25 +1,28 @@
 import { ReactComponent as WriteIcon } from '#assets/icons/write_icon.svg'
+import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
 import Pagination from './Pagination'
 import SearchFooter from './SearchFooter'
 
-interface ArticleFooterProps {
+interface ArticleListFooterProps {
   firstPageNumber: number
   lastPageNumber: number
   currentPageNumber: number
   prevPageExist: boolean
   nextPageExist: boolean
+  authority: boolean
   setTitle: (title: string) => void
-  setCurrent: (current: number) => void
+  setCurrent: (page: number) => void
 }
 
-const ArticleFooter: React.FC<ArticleFooterProps> = ({
+const ArticleListFooter: React.FC<ArticleListFooterProps> = ({
   firstPageNumber,
   lastPageNumber,
   currentPageNumber,
   prevPageExist,
   nextPageExist,
+  authority,
   setTitle,
   setCurrent,
 }) => {
@@ -40,13 +43,15 @@ const ArticleFooter: React.FC<ArticleFooterProps> = ({
           nextPageExist={nextPageExist}
           setCurrent={setCurrent}
         />
-        <div onClick={goMockWritePage} className={styles['write-button']}>
-          <WriteIcon className={styles['write-icon']} />
-          <div className={styles['text']}>작성</div>
-        </div>
+        {authority && (
+          <div onClick={goMockWritePage} className={styles['write-button']}>
+            <WriteIcon className={styles['write-icon']} />
+            <div className={styles['text']}>작성</div>
+          </div>
+        )}
       </div>
       <SearchFooter setTitle={setTitle} />
     </div>
   )
 }
-export default ArticleFooter
+export default ArticleListFooter

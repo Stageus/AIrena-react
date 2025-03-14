@@ -1,5 +1,6 @@
 import { ReactComponent as LeftPageIcon } from '#assets/icons/left_page_icon.svg'
 import { ReactComponent as RightPageIcon } from '#assets/icons/right_page_icon.svg'
+import React from 'react'
 import styles from './index.module.scss'
 import PageButton from './PageButton'
 
@@ -9,7 +10,7 @@ interface PaginationProps {
   prevPageExist: boolean
   nextPageExist: boolean
   currentPageNumber: number
-  setCurrent: (current: number) => void
+  setCurrent: (page: number) => void
 }
 
 const Pagination: React.FC<PaginationProps> = ({

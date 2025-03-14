@@ -3,17 +3,18 @@ import React from 'react'
 import styles from './index.module.scss'
 
 interface PasswordInputProps {
-  setPassword: (text: string) => void
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const PasswordInput: React.FC<PasswordInputProps> = ({ setPassword }) => {
+const PasswordInput: React.FC<PasswordInputProps> = ({ onChange }) => {
   return (
     <div className={styles['password-input-box']}>
       <input
         type="password"
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={onChange}
         placeholder="비밀번호"
         className={styles['password-text']}
+        maxLength={16}
       />
       <PasswordIcon className={styles['password-icon']} />
     </div>

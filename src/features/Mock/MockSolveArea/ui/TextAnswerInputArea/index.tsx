@@ -1,11 +1,8 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import styles from './index.module.scss'
 
 interface TextAnswerInputAreaProps {
-  handleSubmit: (
-    singleChoiceAnswer: number | null,
-    textAnswer: string | null,
-  ) => void
+  handleSubmit: (answer: string) => void
 }
 
 const TextAnswerInputArea: React.FC<TextAnswerInputAreaProps> = ({
@@ -14,7 +11,11 @@ const TextAnswerInputArea: React.FC<TextAnswerInputAreaProps> = ({
   const [text, setText] = useState<string>('')
 
   const handleClick = () => {
-    handleSubmit(null, text)
+    if (text.length < 1) {
+      alert('답을 입력해주세요')
+      return
+    }
+    handleSubmit(text)
   }
 
   return (
@@ -26,6 +27,7 @@ const TextAnswerInputArea: React.FC<TextAnswerInputAreaProps> = ({
             onChange={(e) => setText(e.target.value)}
             placeholder="답을 입력하세요"
             className={styles['placeholder']}
+            maxLength={100}
           />
         </div>
       </div>

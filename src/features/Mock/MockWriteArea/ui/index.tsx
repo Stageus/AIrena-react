@@ -1,28 +1,41 @@
 import WriteFooter from '#shared/components/article/ArticleWriteFooter'
 import ImageUploader from '#shared/components/ImageUploader'
+import { LoadingIndicator } from '#shared/components/LoadingIndicator'
 import TextEditor from '#shared/components/TextEditor/ui'
 import { FileWithID } from '#shared/model/file'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { requestMockPost } from '../api'
 import styles from './index.module.scss'
-import Submitting from './Submitting'
 
 const MockWriteArea: React.FC = () => {
   const [subject, setSubject] = useState<string>('')
   const [quizCount, setQuizCount] = useState<number>(0)
   const [title, setTitle] = useState<string>('')
-  const [content, setContent] = useState<string>('')
+  const [description, setDescription] = useState<string>('')
   const [fileWithIds, setFileWithIds] = useState<FileWithID[]>([])
   const [submitting, setSubmitting] = useState<boolean>(false)
   const navigate = useNavigate()
 
   const handleSubmit = async () => {
+    if (subject.length < 1) {
+      alert('주제를 입력해주세요.')
+      return
+    }
+    if (quizCount < 1 || quizCount > 10) {
+      alert('퀴즈 생성 개수는 1~10개 이내로 입력해주세요.')
+      return
+    }
+    if (title.length < 1) {
+      alert('제목을 입력해주세요.')
+      return
+    }
+
     const formData = new FormData()
     formData.append('subject', subject)
     formData.append('quizCount', quizCount.toString())
     formData.append('title', title)
-    formData.append('description', content)
+    formData.append('description', description)
     if (fileWithIds) {
       fileWithIds.forEach((fileWithId) => {
         formData.append('image', fileWithId.file)
@@ -31,7 +44,9 @@ const MockWriteArea: React.FC = () => {
 
     setSubmitting(true)
     const response = await requestMockPost(formData)
-    navigate(`/mock/${response.data.articleId}`)
+    if (response.status === 200) {
+      navigate(`/mock/${response.data.articleId}`)
+    }
     setSubmitting(false)
   }
 
@@ -51,7 +66,6 @@ const MockWriteArea: React.FC = () => {
         style={{ display: submitting ? 'none' : 'flex' }}
       >
         <div className={styles['text']}>모의고사 작성</div>
-        {/* 퀴즈 생성 주제 입력 */}
         <div className={styles['subject-input-area']}>
           <div className={styles['text-1']}>퀴즈 생성 주제</div>
           <div className={styles['subject-input-box']}>
@@ -61,10 +75,10 @@ const MockWriteArea: React.FC = () => {
               onChange={(e) => setSubject(e.target.value)}
               placeholder="ex) 대한민국"
               className={styles['subject-input']}
+              maxLength={50}
             />
           </div>
         </div>
-        {/* 퀴즈 생성 개수 입력 */}
         <div className={styles['quiz-count-input-area']}>
           <div className={styles['text-2']}>퀴즈 생성 개수(최대 10개 가능)</div>
           <div className={styles['subject-input-content']}>
@@ -92,12 +106,13 @@ const MockWriteArea: React.FC = () => {
               }}
               placeholder="ex) 대한민국 상식 퀴즈"
               className={styles['title-input']}
+              maxLength={50}
             />
           </div>
         </div>
         <div className={styles['content-input-area']}>
           <div className={styles['text-5']}>내용</div>
-          <TextEditor setContent={setContent} />
+          <TextEditor setContent={setDescription} />
         </div>
         <div className={styles['image-submit-area']}>
           <div className={styles['text-6']}>썸네일 등록(최대 1개)</div>
@@ -109,7 +124,10 @@ const MockWriteArea: React.FC = () => {
         </div>
         <WriteFooter onCancelClick={goMockPage} onSubmitClick={handleSubmit} />
       </div>
-      <Submitting submitting={submitting} />
+      <LoadingIndicator
+        message={'모의고사를 생성하고 있습니다..'}
+        submitting={submitting}
+      />
     </>
   )
 }

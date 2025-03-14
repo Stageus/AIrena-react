@@ -8,7 +8,7 @@ interface TotalRankAreaProps {
   score: number
 }
 
-const TotalRankArea = forwardRef<HTMLDivElement, TotalRankAreaProps>(
+export const TotalRankArea = forwardRef<HTMLDivElement, TotalRankAreaProps>(
   ({ rank, tier, nickname, score }, ref) => {
     return (
       <div
@@ -34,4 +34,4 @@ const TotalRankArea = forwardRef<HTMLDivElement, TotalRankAreaProps>(
   },
 )
 
-export default TotalRankArea
+TotalRankArea.displayName = 'TotalRankArea'

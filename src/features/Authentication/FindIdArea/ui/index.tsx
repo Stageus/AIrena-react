@@ -1,47 +1,72 @@
 import SharedButton from '#shared/components/button/StandardButton'
-import EmailInput from '#shared/components/input/EmailInput'
+import { ErrorMessage } from '#shared/components/ErrorMessage'
+import EmailInput from '#shared/components/input/EmailInput/ui'
 import WeightedTextOutput from '#shared/components/WeightedTextOutput'
-import { useState } from 'react'
+import { Email, EmailSchema } from '#shared/model/input'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { FindIdResponse, requestFindId } from '../api'
+import { requestFindId } from '../api'
 import styles from './index.module.scss'
 
-const FindIdArea = ({}) => {
-  const [email, setEmail] = useState('')
-  const [findIdResponse, setFindIdResponse] = useState<FindIdResponse | null>(
-    null,
-  )
+const FindIdArea: React.FC = () => {
+  const navigate = useNavigate()
+  const [email, setEmail] = useState<Email>({ email: '' })
+  const [id, setId] = useState<string | null>(null)
+  const [errorMessage, setErrorMessage] = useState<{
+    email: string | null
+  }>({
+    email: null,
+  })
 
-  const handleOnClick = (): void => {
-    const fetch = async () => {
-      const result = await requestFindId({ email })
-      if (!result) {
-        return
-      }
-      if (result) {
-        setFindIdResponse(result)
-      }
+  const validateEmail = (newEmail: Email) => {
+    const parsed = EmailSchema.safeParse(newEmail)
+    if (parsed.success) {
+      setErrorMessage({
+        ...errorMessage,
+        email: null,
+      })
+      return true
+    } else {
+      setErrorMessage({
+        ...errorMessage,
+        email: parsed.error.issues[0].message,
+      })
+      return false
     }
-
-    fetch()
   }
 
-  const navigate = useNavigate()
+  const handleFindId = () => {
+    if (!validateEmail(email)) {
+      return
+    }
+    const fetchFindId = async () => {
+      const response = await requestFindId({ email: email.email })
+      setId(response.id)
+    }
+    fetchFindId()
+  }
 
-  const goLoginPage = (): void => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newEmail = { email: e.target.value }
+    setEmail(newEmail)
+    validateEmail(newEmail)
+  }
+
+  const goLoginPage = () => {
     navigate('/')
   }
 
-  return findIdResponse ? (
+  return id ? (
     <div className={styles['find-id-result-area']}>
       <div className={styles['find-id-result']}>아이디 찾기 결과</div>
-      <WeightedTextOutput text={findIdResponse.id} />
-      <SharedButton name="로그인페이지로 이동" onClick={goLoginPage} />
+      <WeightedTextOutput text={id} />
+      <SharedButton name="로그인 페이지로 이동" onClick={goLoginPage} />
     </div>
   ) : (
     <div className={styles['find-id-form']}>
-      <EmailInput setEmail={setEmail} />
-      <SharedButton name="아이디 찾기" onClick={handleOnClick} />
+      <EmailInput onChange={onChange} />
+      {errorMessage.email && <ErrorMessage message={errorMessage.email} />}
+      <SharedButton name="아이디 찾기" onClick={handleFindId} />
     </div>
   )
 }

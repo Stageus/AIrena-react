@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from './index.module.scss'
 const API_URL = import.meta.env.VITE_API_URL
 
