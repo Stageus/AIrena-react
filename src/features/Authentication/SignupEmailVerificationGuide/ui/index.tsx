@@ -12,7 +12,10 @@ const SignupEmailVerificationGuide: React.FC = () => {
 
   const handleClick = () => {
     const fetch = async () => {
-      await requestSendSignupVerifyEmail({ email })
+      const result = await requestSendSignupVerifyEmail({ email })
+      if (result.status === 200) {
+        alert('인증 이메일을 발송했어요')
+      }
     }
     fetch()
   }

@@ -18,11 +18,6 @@ import { requestSignup } from '../api'
 import styles from './index.module.scss'
 
 const SignupForm: React.FC = () => {
-  const navigate = useNavigate()
-  const goEmailVerificationGuidePage = () => {
-    navigate(`/signup/email-verification-guide?email=${email}`)
-  }
-
   const [id, setId] = React.useState<Id>({ id: '' })
   const [password, setPassword] = React.useState<Password>({ password: '' })
   const [passwordCheck, setPasswordCheck] = React.useState<Password>({
@@ -40,6 +35,11 @@ const SignupForm: React.FC = () => {
     passwordCheck: null,
     email: null,
   })
+
+  const navigate = useNavigate()
+  const goEmailVerificationGuidePage = () => {
+    navigate(`/signup/email-verification-guide?email=${email.email}`)
+  }
 
   const validateEmail = (newEmail: Email) => {
     const parsed = EmailSchema.safeParse(newEmail)
