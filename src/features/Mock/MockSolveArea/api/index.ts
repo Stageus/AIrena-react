@@ -28,5 +28,5 @@ export const requestQuizAnswer = async (
   idx: UUID,
   request: MockAnswerRequest,
 ) => {
-  await axiosInstance.post<void>(`/mock/quiz/${idx}`, request)
+  return await axiosInstance.post<void>(`/mock/quiz/${idx}`, request)
 }

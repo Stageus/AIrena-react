@@ -11,6 +11,10 @@ const TextAnswerInputArea: React.FC<TextAnswerInputAreaProps> = ({
   const [text, setText] = useState<string>('')
 
   const handleClick = () => {
+    if (text.length < 1) {
+      alert('답을 입력해주세요')
+      return
+    }
     handleSubmit(text)
   }
 
@@ -23,6 +27,7 @@ const TextAnswerInputArea: React.FC<TextAnswerInputAreaProps> = ({
             onChange={(e) => setText(e.target.value)}
             placeholder="답을 입력하세요"
             className={styles['placeholder']}
+            maxLength={100}
           />
         </div>
       </div>

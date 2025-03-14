@@ -11,6 +11,7 @@ interface ArticleListFooterProps {
   currentPageNumber: number
   prevPageExist: boolean
   nextPageExist: boolean
+  authority: boolean
   setTitle: (title: string) => void
   setCurrent: (page: number) => void
 }
@@ -21,6 +22,7 @@ const ArticleListFooter: React.FC<ArticleListFooterProps> = ({
   currentPageNumber,
   prevPageExist,
   nextPageExist,
+  authority,
   setTitle,
   setCurrent,
 }) => {
@@ -41,10 +43,12 @@ const ArticleListFooter: React.FC<ArticleListFooterProps> = ({
           nextPageExist={nextPageExist}
           setCurrent={setCurrent}
         />
-        <div onClick={goMockWritePage} className={styles['write-button']}>
-          <WriteIcon className={styles['write-icon']} />
-          <div className={styles['text']}>작성</div>
-        </div>
+        {authority && (
+          <div onClick={goMockWritePage} className={styles['write-button']}>
+            <WriteIcon className={styles['write-icon']} />
+            <div className={styles['text']}>작성</div>
+          </div>
+        )}
       </div>
       <SearchFooter setTitle={setTitle} />
     </div>

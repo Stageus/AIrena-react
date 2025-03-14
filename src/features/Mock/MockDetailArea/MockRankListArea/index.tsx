@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './index.module.scss'
 import MockRankArea from './MockRankArea'
@@ -37,16 +36,6 @@ const MockRankListArea: React.FC<RankListProps> = ({ ranks }) => {
       </div>
     </div>
   )
-}
-
-MockRankListArea.propTypes = {
-  ranks: PropTypes.arrayOf(
-    PropTypes.shape({
-      rank: PropTypes.number.isRequired,
-      nickname: PropTypes.string.isRequired,
-      score: PropTypes.number.isRequired,
-    }),
-  ).isRequired,
 }
 
 export default MockRankListArea

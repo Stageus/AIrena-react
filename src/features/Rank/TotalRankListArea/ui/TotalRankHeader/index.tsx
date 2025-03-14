@@ -50,6 +50,7 @@ const TotalRankHeader: React.FC<TotalRankHeaderProps> = ({
             className={styles['placeholder']}
             placeholder="닉네임 검색"
             onChange={(e) => setNickname(e.target.value)}
+            maxLength={12}
           />
         </div>
         <div className={styles['tier-select-area']}>

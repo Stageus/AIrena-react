@@ -57,11 +57,12 @@ const MockListArea: React.FC = () => {
         ),
       )}
       <ArticleFooter
-        firstPageNumber={mockList?.firstPageNumber as number}
-        lastPageNumber={mockList?.lastPageNumber as number}
-        currentPageNumber={mockList?.currentPageNumber as number}
-        prevPageExist={mockList?.prevPageExist as boolean}
-        nextPageExist={mockList?.nextPageExist as boolean}
+        authority={true}
+        firstPageNumber={mockList.firstPageNumber}
+        lastPageNumber={mockList.lastPageNumber}
+        currentPageNumber={mockList.currentPageNumber}
+        prevPageExist={mockList.prevPageExist}
+        nextPageExist={mockList.nextPageExist}
         setTitle={setTitle}
         setCurrent={setCurrent}
       />

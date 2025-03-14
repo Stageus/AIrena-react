@@ -36,12 +36,14 @@ const MockSolveArea: React.FC = () => {
   ) => {
     const fetchData = async () => {
       setSubmitting(true)
-      await requestQuizAnswer(idx, {
+      const response = await requestQuizAnswer(idx, {
         singleChoiceAnswer,
         textAnswer,
       })
       setSubmitting(false)
-      navigate(`/mock/grading/${idx}`, { replace: true })
+      if (response.status === 201) {
+        navigate(`/mock/grading/${idx}`, { replace: true })
+      }
     }
 
     fetchData()
@@ -68,10 +70,12 @@ const MockSolveArea: React.FC = () => {
             <div className={styles['description']}>{description}</div>
           </div>
           {type === 'TEXT' ? (
-            <TextAnswerInputArea handleSubmit={handleSubmit} />
+            <TextAnswerInputArea
+              handleSubmit={(answer: string) => handleSubmit(null, answer)}
+            />
           ) : type === 'SINGLE_CHOICE' ? (
             <SingleChoiceSelectArea
-              handleSubmit={handleSubmit}
+              handleSubmit={(choice: number) => handleSubmit(choice, null)}
               choices={singleChoiceChoices}
             />
           ) : null}

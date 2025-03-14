@@ -41,6 +41,14 @@ const NormalLoginForm: React.FC = () => {
     fetchData()
   }, [])
 
+  const onIdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setId(e.target.value)
+  }
+
+  const onPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value)
+  }
+
   const handleClick = () => {
     if (id === '' || password === '') {
       setErrorMessage('아이디 또는 비밀번호를 입력해주세요.')
@@ -55,10 +63,11 @@ const NormalLoginForm: React.FC = () => {
 
     fetchData()
   }
+
   return (
     <div className={styles['normal-login-form']}>
-      <IdInput setId={setId} />
-      <PasswordInput setPassword={setPassword} />
+      <IdInput onChange={onIdChange} />
+      <PasswordInput onChange={onPasswordChange} />
       <div className={styles['auth-button-area']}>
         <div onClick={goFindId} className={styles['find-id-button']}>
           아이디 찾기

@@ -18,6 +18,10 @@ const NoticeWriteArea: React.FC = () => {
   }
 
   const handleSubmit = async () => {
+    if (title.length < 1) {
+      alert('제목을 입력해주세요.')
+      return
+    }
     const formData = new FormData()
     formData.append('title', title)
     formData.append('content', content)
@@ -41,6 +45,7 @@ const NoticeWriteArea: React.FC = () => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className={styles['title-input']}
+            maxLength={50}
           />
         </div>
       </div>

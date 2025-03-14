@@ -6,7 +6,8 @@ export const EmailSchema = z.object({
 
 export const IdSchema = z.object({
   id: z.string().regex(/^(?=.*[a-zA-Z])[a-zA-Z0-9]{5,16}$/, {
-    message: '아이디는 영문자와 숫자로 이루어진 5~16자 이내로 입력해주세요.',
+    message:
+      '아이디는 영문자와 숫자로 이루어진 5~16자 이내로 입력해주세요.(영문자 필수)',
   }),
 })
 
@@ -17,7 +18,7 @@ export const PasswordSchema = z.object({
       /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z0-9!@#$%^&*()_+={}:;'<>,.?~`-]{8,16}$/,
       {
         message:
-          '비밀번호는 영문자, 숫자, 특수문자로 이루어진 8~16자 이내로 입력해주세요.',
+          '비밀번호는 영문자, 숫자, 특수문자로 이루어진 8~16자 이내로 입력해주세요.(영문자, 숫자 필수)',
       },
     ),
 })

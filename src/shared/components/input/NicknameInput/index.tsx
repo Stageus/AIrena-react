@@ -3,17 +3,18 @@ import React from 'react'
 import styles from './index.module.scss'
 
 interface NicknameInputProps {
-  setNickname: (text: string) => void
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const NicknameInput: React.FC<NicknameInputProps> = ({ setNickname }) => {
+const NicknameInput: React.FC<NicknameInputProps> = ({ onChange }) => {
   return (
     <div className={styles['nickname-input-box']}>
       <input
         type="text"
-        onChange={(e) => setNickname(e.target.value)}
+        onChange={onChange}
         placeholder="닉네임"
         className={styles['nickname-text']}
+        maxLength={12}
       />
       <NicknameIcon className={styles['nickname-icon']} />
     </div>

@@ -48,5 +48,5 @@ export const requestMockEdit = async (idx: UUID, formData: FormData) => {
     `/mock/${idx}`,
     formData,
   )
-  return response.data
+  return response
 }

@@ -1,7 +1,7 @@
 import { ReactComponent as NextIcon } from '#assets/icons/next_icon.svg'
 import { UUID } from 'crypto'
 import React, { useEffect, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import {
   MockQuizResultResponse,
   requestMockAnswer,
@@ -10,9 +10,8 @@ import {
 import styles from './index.module.scss'
 
 const MockQuizResultArea: React.FC = () => {
-  const location = useLocation()
-  const queryParams = new URLSearchParams(location.search)
-  const mockId = queryParams.get('mockId') as UUID | null
+  const { idx } = useParams() as { idx: UUID }
+  if (!idx) return
 
   const [isLoading, setIsLoading] = useState(true)
   const [result, setResult] = useState<MockQuizResultResponse | null>(null)
@@ -40,29 +39,25 @@ const MockQuizResultArea: React.FC = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      try {
-        if (!mockId) return
-        const response = await requestMockQuizResult(mockId)
-        setResult(response)
-      } catch (error) {
-        console.error('Error fetching quiz result:', error)
-      } finally {
-        setIsLoading(false)
+      const response = await requestMockQuizResult(idx)
+      if (response.status === 200) {
+        setResult(response.data)
       }
+      setIsLoading(false)
     }
     fetch()
-  }, [mockId])
+  }, [idx])
 
-  if (isLoading) {
+  if (isLoading || !result) {
     return null
   }
 
-  const submitAnswer: string = result?.submitAnswer ?? ''
-  const correctAnswer: string = result?.correctAnswer ?? ''
-  const reason: string = result?.reason ?? ''
-  const score: number = result?.score ?? 0
-  const maxScore: number = result?.maxScore ?? 0
-  const nextQuizIdx: UUID | null = result?.nextQuizIdx ?? null
+  const submitAnswer: string = result.submitAnswer ?? ''
+  const correctAnswer: string = result.correctAnswer ?? ''
+  const reason: string = result.reason ?? ''
+  const score: number = result.score ?? 0
+  const maxScore: number = result.maxScore ?? 0
+  const nextQuizIdx: UUID | null = result.nextQuizIdx ?? null
 
   return (
     <div className={styles['mock-submit-answer-grading-area']}>

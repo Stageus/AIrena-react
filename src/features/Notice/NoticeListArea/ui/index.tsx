@@ -60,17 +60,17 @@ const NoticeListArea: React.FC = () => {
           />
         ),
       )}
-      {profile.role === 'ADMIN' && (
-        <ArticleFooter
-          firstPageNumber={noticeList.firstPageNumber}
-          lastPageNumber={noticeList.lastPageNumber}
-          currentPageNumber={noticeList.currentPageNumber}
-          prevPageExist={noticeList.prevPageExist}
-          nextPageExist={noticeList.nextPageExist}
-          setTitle={setTitle}
-          setCurrent={setCurrent}
-        />
-      )}
+
+      <ArticleFooter
+        firstPageNumber={noticeList.firstPageNumber}
+        lastPageNumber={noticeList.lastPageNumber}
+        currentPageNumber={noticeList.currentPageNumber}
+        prevPageExist={noticeList.prevPageExist}
+        nextPageExist={noticeList.nextPageExist}
+        authority={profile.role === 'ADMIN'}
+        setTitle={setTitle}
+        setCurrent={setCurrent}
+      />
     </div>
   )
 }

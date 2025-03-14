@@ -61,6 +61,10 @@ const MockDetailArea: React.FC = () => {
   }
 
   const handleSubmit = async () => {
+    if (titleToEdit.length < 1) {
+      alert('제목을 입력해주세요.')
+      return
+    }
     const formData = new FormData()
     formData.append('title', titleToEdit)
     formData.append('description', descriptionToEdit)
@@ -75,10 +79,12 @@ const MockDetailArea: React.FC = () => {
         formData.append('image', fileWithId.file)
       })
     }
-    await requestMockEdit(idx, formData)
-    await setMockDetail()
-    await setMockIndividual()
-    setEditMode(false)
+    const response = await requestMockEdit(idx, formData)
+    if (response.status === 200) {
+      await setMockDetail()
+      await setMockIndividual()
+      setEditMode(false)
+    }
   }
 
   const setMockDetail = async () => {
@@ -92,12 +98,6 @@ const MockDetailArea: React.FC = () => {
     setLikeCount(data.likeCount)
     setRanks(data.ranks)
     setFirstQuizIdx(data.firstQuizIdx)
-    setExistingUrls(
-      data.images.map((image) => ({
-        url: image,
-        id: window.crypto.randomUUID(),
-      })),
-    )
     return data
   }
 
@@ -122,8 +122,12 @@ const MockDetailArea: React.FC = () => {
   const onEditButtonClick = () => {
     setTitleToEdit(title)
     setDescriptionToEdit(description)
-    setFilesToEdit(filesToEdit)
-    setExistingUrls(existingUrls)
+    setExistingUrls([
+      {
+        url: image,
+        id: window.crypto.randomUUID(),
+      },
+    ])
     setEditMode(true)
   }
 
@@ -146,12 +150,15 @@ const MockDetailArea: React.FC = () => {
       <div className={styles['mock-content-area']}>
         {editMode ? (
           <>
-            <input
-              type="text"
-              className={styles['title']}
-              value={titleToEdit}
-              onChange={(e) => setTitleToEdit(e.target.value)}
-            />
+            <div>
+              <input
+                type="text"
+                className={styles['title']}
+                value={titleToEdit}
+                onChange={(e) => setTitleToEdit(e.target.value)}
+                maxLength={50}
+              />
+            </div>
             <TextEditor
               content={descriptionToEdit}
               setContent={setDescriptionToEdit}

@@ -1,14 +1,16 @@
 .signup-form {
   width: 480px;
-  height: 430px;
+  height: fit-content;
   display: flex;
+  row-gap: 14px;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   background: rgba(0, 0, 0, 0);
   .info-input-area {
     width: 480px;
-    height: 322px;
+    height: fit-content;
+    row-gap: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
