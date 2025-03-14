@@ -26,7 +26,7 @@ const MockResultArea: React.FC = () => {
     fetchData()
   }, [idx])
 
-  if (loading) {
+  if (loading || !mockResult) {
     return null
   }
 
@@ -34,9 +34,11 @@ const MockResultArea: React.FC = () => {
     navigate(`/mock/${idx}`)
   }
 
-  const score: number = mockResult?.score ?? 0
-  const maxScore: number = mockResult?.maxScore ?? 0
-  const topPercentile: number = mockResult?.topPercentile ?? 0
+  const score: number = mockResult.score ?? 0
+  const maxScore: number = mockResult.maxScore ?? 0
+  const greaterEqualCandidateCount: number =
+    mockResult.greaterEqualCandidateCount ?? 0
+  const totalCandidateCount: number = mockResult.totalCandidateCount ?? 0
 
   return (
     <div className={styles['mock-result-area']}>
@@ -50,9 +52,15 @@ const MockResultArea: React.FC = () => {
           </div>
           <div className={styles['text-1']}>총점</div>
         </div>
-        <div className={styles['top-rate-output-content']}>
-          <div className={styles['top-rate']}>상위 {topPercentile}%</div>
-          <div className={styles['text-2']}>백분위</div>
+        <div className={styles['rank-output-content']}>
+          <div className={styles['rank']}>
+            <div className={styles['rank-1']}>{greaterEqualCandidateCount}</div>
+            <div className={styles['divisor']}>/</div>
+            <div className={styles['total-candidate-count']}>
+              {totalCandidateCount}
+            </div>
+          </div>
+          <div className={styles['text-1']}>랭킹</div>
         </div>
         <div onClick={goMockDetail} className={styles['ok-button']}>
           <div className={styles['text-3']}>확인</div>

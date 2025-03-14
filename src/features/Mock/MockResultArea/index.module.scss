@@ -107,30 +107,66 @@
         text-align: center;
       }
     }
-    .top-rate-output-content {
+    .rank-output-content {
       flex-shrink: 0;
-      width: 144px;
-      height: 60px;
+      width: 148px;
+      height: 68px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       background: rgba(0, 0, 0, 0);
-      .top-rate {
+      .rank {
         flex-shrink: 0;
-        width: 144px;
-        height: 40px;
-        white-space: nowrap;
-        color: #000000;
-        font-family: 'Roboto';
-        font-size: 36px;
-        line-height: 40px;
-        font-weight: 700;
-        text-align: center;
+        width: fit-content;
+        height: 48px;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: end;
+        row-gap: 0px;
+        .rank-1 {
+          flex-shrink: 0;
+          min-width: 40px;
+          width: fit-content;
+          height: 48px;
+          white-space: nowrap;
+          color: #000000;
+          font-family: 'Roboto';
+          font-size: 48px;
+          line-height: 48px;
+          font-weight: 700;
+          text-align: center;
+        }
+        .divisor {
+          flex-shrink: 0;
+          width: 9px;
+          height: 32px;
+          white-space: nowrap;
+          color: #6b7280;
+          font-family: 'Roboto';
+          font-size: 24px;
+          line-height: 32px;
+          font-weight: 700;
+          text-align: center;
+        }
+        .total-candidate-count {
+          flex-shrink: 0;
+          min-width: 30px;
+          width: fit-content;
+          height: 32px;
+          white-space: nowrap;
+          color: #6b7280;
+          font-family: 'Roboto';
+          font-size: 24px;
+          line-height: 32px;
+          font-weight: 700;
+          text-align: center;
+        }
       }
-      .text-2 {
+      .text-1 {
         flex-shrink: 0;
-        width: 39px;
+        width: 26px;
         height: 20px;
         white-space: nowrap;
         color: #6b7280;

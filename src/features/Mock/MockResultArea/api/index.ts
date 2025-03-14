@@ -8,7 +8,8 @@ export interface MockResultRequest {
 export interface MockResultResponse {
   score: number
   maxScore: number
-  topPercentile: number
+  greaterEqualCandidateCount: number
+  totalCandidateCount: number
 }
 
 export const requestMockResult = async (request: MockResultRequest) => {
