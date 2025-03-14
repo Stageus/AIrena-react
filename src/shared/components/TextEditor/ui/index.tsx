@@ -2,7 +2,6 @@ import Quill from 'quill'
 import 'quill/dist/quill.snow.css'
 import React, { useEffect, useRef } from 'react'
 import option from '../libs/option'
-import './index.module.scss'
 
 interface TextEditorProps {
   content?: string

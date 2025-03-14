@@ -5,7 +5,6 @@ interface FindIdRequest {
 }
 
 export interface FindIdResponse {
-  email: string
   id: string
 }
 

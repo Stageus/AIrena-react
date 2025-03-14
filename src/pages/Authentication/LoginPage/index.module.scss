@@ -15,7 +15,7 @@
   .info-input-area {
     flex-shrink: 0;
     width: 480px;
-    height: 500px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

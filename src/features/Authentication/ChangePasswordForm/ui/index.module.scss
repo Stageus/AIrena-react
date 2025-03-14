@@ -1,7 +1,8 @@
 .change-password-form {
   width: 480px;
-  height: 251px;
+  height: fit-content;
   display: flex;
+  row-gap: 14px;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -10,7 +11,7 @@
     flex-shrink: 0;
     align-self: stretch;
     width: 480px;
-    height: 153px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

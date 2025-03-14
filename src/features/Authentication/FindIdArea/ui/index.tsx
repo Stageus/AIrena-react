@@ -1,68 +1,73 @@
 import SharedButton from '#shared/components/button/StandardButton'
-import EmailInput from '#shared/components/input/EmailInput'
+import { ErrorMessage } from '#shared/components/ErrorMessage'
+import EmailInput from '#shared/components/input/EmailInput/ui'
 import WeightedTextOutput from '#shared/components/WeightedTextOutput'
+import { Email, EmailSchema } from '#shared/model/input'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { FindIdResponse, requestFindId } from '../api'
-import { Email, schema } from '../model'
+import { requestFindId } from '../api'
 import styles from './index.module.scss'
 
 const FindIdArea: React.FC = () => {
-  const [email, setEmail] = useState<Email>({ email: '' })
-  const [errorMessage, setErrorMessage] = useState<{ [key: string]: string }>(
-    {},
-  )
-  const [findIdResponse, setFindIdResponse] = useState<FindIdResponse | null>(
-    null,
-  )
-
-  const fetch = async () => {
-    const result = await requestFindId(email)
-    if (!result) {
-      return
-    }
-    if (result) {
-      setFindIdResponse(result)
-    }
-  }
-  const handleOnClick = (e: React.FormEvent<HTMLFormElement>): void => {
-    e.preventDefault()
-
-    const result = schema.safeParse(email)
-
-    if (!result.success) {
-      const newErrorMessage: { [key: string]: string } = {}
-      result.error.issues.forEach((issue) => {
-        newErrorMessage[issue.path[0]] = issue.message
-      })
-      setErrorMessage(newErrorMessage)
-      return
-    } else {
-      setErrorMessage({})
-      fetch()
-    }
-  }
-
   const navigate = useNavigate()
+  const [email, setEmail] = useState<Email>({ email: '' })
+  const [id, setId] = useState<string | null>(null)
+  const [errorMessage, setErrorMessage] = useState<{
+    email: string | null
+  }>({
+    email: null,
+  })
 
-  const goLoginPage = (): void => {
+  const validateEmail = (newEmail: Email) => {
+    const parsed = EmailSchema.safeParse(newEmail)
+    if (parsed.success) {
+      setErrorMessage({
+        ...errorMessage,
+        email: null,
+      })
+      return true
+    } else {
+      setErrorMessage({
+        ...errorMessage,
+        email: parsed.error.issues[0].message,
+      })
+      return false
+    }
+  }
+
+  const handleFindId = () => {
+    if (!validateEmail(email)) {
+      return
+    }
+    const fetchFindId = async () => {
+      const response = await requestFindId({ email: email.email })
+      setId(response.id)
+    }
+    fetchFindId()
+  }
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newEmail = { email: e.target.value }
+    setEmail(newEmail)
+    validateEmail(newEmail)
+  }
+
+  const goLoginPage = () => {
     navigate('/')
   }
 
-  return findIdResponse ? (
+  return id ? (
     <div className={styles['find-id-result-area']}>
       <div className={styles['find-id-result']}>아이디 찾기 결과</div>
-      <WeightedTextOutput text={findIdResponse.id} />
-      <SharedButton name="로그인페이지로 이동" onClick={goLoginPage} />
+      <WeightedTextOutput text={id} />
+      <SharedButton name="로그인 페이지로 이동" onClick={goLoginPage} />
     </div>
   ) : (
-    <form className={styles['find-id-form']} onSubmit={handleOnClick}>
-      <EmailInput setEmail={setEmail} />
-      {errorMessage && (
-        <div className={styles['error-message']}>{errorMessage.email}</div>
-      )}
-      <SharedButton name="아이디 찾기" type="submit" />
-    </form>
+    <div className={styles['find-id-form']}>
+      <EmailInput onChange={onChange} />
+      {errorMessage.email && <ErrorMessage message={errorMessage.email} />}
+      <SharedButton name="아이디 찾기" onClick={handleFindId} />
+    </div>
   )
 }
 export default FindIdArea

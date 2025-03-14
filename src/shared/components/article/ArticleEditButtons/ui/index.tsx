@@ -8,7 +8,7 @@ interface ArticleEditButtonsProps {
   onCompleteClick: () => void
 }
 
-const ArticleEditButtons: React.FC<ArticleEditButtonsProps> = ({
+export const ArticleEditButtons: React.FC<ArticleEditButtonsProps> = ({
   setEditMode,
   onCompleteClick,
 }) => {
@@ -19,5 +19,3 @@ const ArticleEditButtons: React.FC<ArticleEditButtonsProps> = ({
     </div>
   )
 }
-
-export default ArticleEditButtons

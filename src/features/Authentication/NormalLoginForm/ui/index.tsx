@@ -1,4 +1,5 @@
 import SharedButton from '#shared/components/button/StandardButton'
+import { ErrorMessage } from '#shared/components/ErrorMessage'
 import IdInput from '#shared/components/input/IdInput'
 import PasswordInput from '#shared/components/input/PasswordInput'
 import React, { useEffect, useState } from 'react'
@@ -26,6 +27,7 @@ const NormalLoginForm: React.FC = () => {
   }
 
   const [id, setId] = useState<string>('')
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const [password, setPassword] = useState<string>('')
 
   useEffect(() => {
@@ -40,6 +42,10 @@ const NormalLoginForm: React.FC = () => {
   }, [])
 
   const handleClick = () => {
+    if (id === '' || password === '') {
+      setErrorMessage('아이디 또는 비밀번호를 입력해주세요.')
+      return
+    }
     const fetchData = async () => {
       const result = await requestNormalLogin({ id, password })
       if (result.status === 200) {
@@ -69,6 +75,7 @@ const NormalLoginForm: React.FC = () => {
           회원가입
         </div>
       </div>
+      {errorMessage && <ErrorMessage message={errorMessage} />}
       <SharedButton name="로그인" onClick={handleClick} />
     </div>
   )

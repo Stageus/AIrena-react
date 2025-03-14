@@ -3,19 +3,14 @@ import styles from './index.module.scss'
 
 interface StandardButtonProps {
   name: string
-  onClick?: () => void
-  type?: 'submit' | 'button'
+  onClick: () => void
 }
 
-const StandardButton: React.FC<StandardButtonProps> = ({
-  name,
-  onClick,
-  type = 'button',
-}) => {
+const StandardButton: React.FC<StandardButtonProps> = ({ name, onClick }) => {
   return (
-    <button type={type} onClick={onClick} className={styles['standard-button']}>
-      {name}
-    </button>
+    <div onClick={onClick} className={styles['standard-button']}>
+      <div className={styles['standard-button-text']}>{name}</div>
+    </div>
   )
 }
 

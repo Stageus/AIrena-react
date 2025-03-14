@@ -3,19 +3,20 @@ import React from 'react'
 import styles from './index.module.scss'
 
 interface PasswordCheckInputProps {
-  setPasswordCheck: (text: string) => void
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const PasswordCheckInput: React.FC<PasswordCheckInputProps> = ({
-  setPasswordCheck,
+  onChange,
 }) => {
   return (
     <div className={styles['password-check-input-box']}>
       <input
         type="password"
-        onChange={(e) => setPasswordCheck(e.target.value)}
+        onChange={onChange}
         placeholder="비밀번호 확인"
         className={styles['password-check-text']}
+        maxLength={16}
       />
       <PasswordIcon className={styles['password-icon']} />
     </div>
